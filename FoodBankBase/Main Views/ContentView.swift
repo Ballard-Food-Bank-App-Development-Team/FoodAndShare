@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var userInfo: UserInfo
 
+    // Hello Ben (delete this later)
+
     var body: some View {
         Group {
             if userInfo.isUserAutheticated == .undefined {
