@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AccountSettingsView: View {
     @Environment(\.presentationMode) var presentation
-    
+
     var body: some View {
         VStack {
             Text("Account Settings")
@@ -18,10 +18,13 @@ struct AccountSettingsView: View {
         .navigationTitle("Account Login")
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
-            leading: Button(action: { presentation.wrappedValue.dismiss() }) {
+            leading: Button(action: { presentation.wrappedValue.dismiss()
+            }
+            , label: {
                 Image(systemName: "arrow.backward")
                     .imageScale(.large)
             })
+        )
     }
 }
 
