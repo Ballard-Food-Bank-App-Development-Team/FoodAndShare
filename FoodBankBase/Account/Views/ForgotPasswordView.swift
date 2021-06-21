@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ForgotPasswordView: View {
     @Environment(\.presentationMode) var presentation
-    
+
     var body: some View {
         Text("Forgot Password Page")
     }

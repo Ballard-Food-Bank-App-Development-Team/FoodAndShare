@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D30086B72680F5220054514E /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086B62680F5220054514E /* FBAuth.swift */; };
+		D30086B92680F5350054514E /* FBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086B82680F5350054514E /* FBUser.swift */; };
 		D3333DD72675964D00447A3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DD62675964D00447A3B /* AppDelegate.swift */; };
 		D3333DD92675964D00447A3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DD82675964D00447A3B /* SceneDelegate.swift */; };
 		D3333DDB2675964D00447A3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DDA2675964D00447A3B /* ContentView.swift */; };
@@ -16,16 +18,10 @@
 		D3333DEB2675968D00447A3B /* AccountChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DEA2675968D00447A3B /* AccountChoiceView.swift */; };
 		D3333DED267596AB00447A3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DEC267596AB00447A3B /* LoginView.swift */; };
 		D3333DEF267596BD00447A3B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DEE267596BD00447A3B /* SignUpView.swift */; };
-		D35D1084267A4CF500C2FB39 /* FBFireStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35D1080267A4CF400C2FB39 /* FBFireStore.swift */; };
-		D35D1085267A4CF500C2FB39 /* FBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35D1081267A4CF400C2FB39 /* FBKeys.swift */; };
-		D35D1086267A4CF500C2FB39 /* FBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35D1082267A4CF500C2FB39 /* FBUser.swift */; };
-		D35D1087267A4CF500C2FB39 /* FBFireStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35D1083267A4CF500C2FB39 /* FBFireStoreError.swift */; };
 		D3C4BDC22678125900731539 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3C4BDC12678125900731539 /* GoogleService-Info.plist */; };
-		D3C4BDC9267968E800731539 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDC8267968E800731539 /* UserInfo.swift */; };
 		D3C4BDCB2679803F00731539 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */; };
 		D3C4BDCF267980D200731539 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCE267980D200731539 /* AccountSettingsView.swift */; };
-		D3C4BDD32679899000731539 /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDD12679899000731539 /* FBAuth.swift */; };
-		D3C4BDD42679899000731539 /* FBAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDD22679899000731539 /* FBAuthError.swift */; };
+		D3D46606267C2BAD0006F9A3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D46605267C2BAD0006F9A3 /* HomeView.swift */; };
 		EE11511B4EB9D84FC2267333 /* Pods_FoodBankBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F396719407A92FFB2C66947 /* Pods_FoodBankBase.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +29,8 @@
 		3625E3D1B890F58F54CB597B /* Pods-FoodBankBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.debug.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.debug.xcconfig"; sourceTree = "<group>"; };
 		8F396719407A92FFB2C66947 /* Pods_FoodBankBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodBankBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6584F326D1C3EEAB28DB6A /* Pods-FoodBankBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.release.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.release.xcconfig"; sourceTree = "<group>"; };
+		D30086B62680F5220054514E /* FBAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAuth.swift; sourceTree = "<group>"; };
+		D30086B82680F5350054514E /* FBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUser.swift; sourceTree = "<group>"; };
 		D3333DD32675964D00447A3B /* FoodBankBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBankBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3333DD62675964D00447A3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3333DD82675964D00447A3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,16 +42,10 @@
 		D3333DEA2675968D00447A3B /* AccountChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountChoiceView.swift; sourceTree = "<group>"; };
 		D3333DEC267596AB00447A3B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D3333DEE267596BD00447A3B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		D35D1080267A4CF400C2FB39 /* FBFireStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFireStore.swift; sourceTree = "<group>"; };
-		D35D1081267A4CF400C2FB39 /* FBKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBKeys.swift; sourceTree = "<group>"; };
-		D35D1082267A4CF500C2FB39 /* FBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUser.swift; sourceTree = "<group>"; };
-		D35D1083267A4CF500C2FB39 /* FBFireStoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBFireStoreError.swift; sourceTree = "<group>"; };
 		D3C4BDC12678125900731539 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D3C4BDC8267968E800731539 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		D3C4BDCE267980D200731539 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
-		D3C4BDD12679899000731539 /* FBAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAuth.swift; sourceTree = "<group>"; };
-		D3C4BDD22679899000731539 /* FBAuthError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAuthError.swift; sourceTree = "<group>"; };
+		D3D46605267C2BAD0006F9A3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +100,8 @@
 			children = (
 				D3333DD62675964D00447A3B /* AppDelegate.swift */,
 				D3333DD82675964D00447A3B /* SceneDelegate.swift */,
-				D3C4BDC8267968E800731539 /* UserInfo.swift */,
-				D3333DF0267596C400447A3B /* UI Views */,
+				D3333DF0267596C400447A3B /* Main Views */,
+				D3333DF1267596DB00447A3B /* Account */,
 				D3333DDC2675964E00447A3B /* Assets.xcassets */,
 				D3333DE12675964E00447A3B /* LaunchScreen.storyboard */,
 				D3333DE42675964E00447A3B /* Info.plist */,
@@ -127,24 +119,20 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		D3333DF0267596C400447A3B /* UI Views */ = {
+		D3333DF0267596C400447A3B /* Main Views */ = {
 			isa = PBXGroup;
 			children = (
 				D3333DDA2675964D00447A3B /* ContentView.swift */,
-				D3333DF1267596DB00447A3B /* Account */,
+				D3D46605267C2BAD0006F9A3 /* HomeView.swift */,
 			);
-			path = "UI Views";
+			path = "Main Views";
 			sourceTree = "<group>";
 		};
 		D3333DF1267596DB00447A3B /* Account */ = {
 			isa = PBXGroup;
 			children = (
 				D3C4BDD02679897900731539 /* Firebase */,
-				D3333DEA2675968D00447A3B /* AccountChoiceView.swift */,
-				D3333DEE267596BD00447A3B /* SignUpView.swift */,
-				D3333DEC267596AB00447A3B /* LoginView.swift */,
-				D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */,
-				D3C4BDCE267980D200731539 /* AccountSettingsView.swift */,
+				D3D46601267BF9D00006F9A3 /* Views */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -152,30 +140,22 @@
 		D3C4BDD02679897900731539 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				D3C4BDD7267989CE00731539 /* Firestore */,
-				D3C4BDD6267989C600731539 /* Auth */,
+				D30086B62680F5220054514E /* FBAuth.swift */,
+				D30086B82680F5350054514E /* FBUser.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
 		};
-		D3C4BDD6267989C600731539 /* Auth */ = {
+		D3D46601267BF9D00006F9A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D3C4BDD22679899000731539 /* FBAuthError.swift */,
-				D3C4BDD12679899000731539 /* FBAuth.swift */,
+				D3333DEA2675968D00447A3B /* AccountChoiceView.swift */,
+				D3333DEE267596BD00447A3B /* SignUpView.swift */,
+				D3333DEC267596AB00447A3B /* LoginView.swift */,
+				D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */,
+				D3C4BDCE267980D200731539 /* AccountSettingsView.swift */,
 			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
-		D3C4BDD7267989CE00731539 /* Firestore */ = {
-			isa = PBXGroup;
-			children = (
-				D35D1080267A4CF400C2FB39 /* FBFireStore.swift */,
-				D35D1083267A4CF500C2FB39 /* FBFireStoreError.swift */,
-				D35D1081267A4CF400C2FB39 /* FBKeys.swift */,
-				D35D1082267A4CF500C2FB39 /* FBUser.swift */,
-			);
-			path = Firestore;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +165,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3333DE72675964E00447A3B /* Build configuration list for PBXNativeTarget "FoodBankBase" */;
 			buildPhases = (
+				D3CDFB41267EA441001A7C4D /* SwiftLint */,
+				D3CDFB42267EBBB1001A7C4D /* SwiftLint Autocorrect */,
 				398DE41F44C086CE1EC1582B /* [CP] Check Pods Manifest.lock */,
 				D3333DCF2675964D00447A3B /* Sources */,
 				D3333DD02675964D00447A3B /* Frameworks */,
@@ -286,6 +268,44 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D3CDFB41267EA441001A7C4D /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		D3CDFB42267EBBB1001A7C4D /* SwiftLint Autocorrect */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Autocorrect";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -295,19 +315,15 @@
 			files = (
 				D3333DD72675964D00447A3B /* AppDelegate.swift in Sources */,
 				D3333DEB2675968D00447A3B /* AccountChoiceView.swift in Sources */,
-				D3C4BDD42679899000731539 /* FBAuthError.swift in Sources */,
-				D35D1084267A4CF500C2FB39 /* FBFireStore.swift in Sources */,
+				D3D46606267C2BAD0006F9A3 /* HomeView.swift in Sources */,
+				D30086B92680F5350054514E /* FBUser.swift in Sources */,
 				D3C4BDCB2679803F00731539 /* ForgotPasswordView.swift in Sources */,
-				D35D1087267A4CF500C2FB39 /* FBFireStoreError.swift in Sources */,
 				D3333DD92675964D00447A3B /* SceneDelegate.swift in Sources */,
 				D3C4BDCF267980D200731539 /* AccountSettingsView.swift in Sources */,
 				D3333DED267596AB00447A3B /* LoginView.swift in Sources */,
+				D30086B72680F5220054514E /* FBAuth.swift in Sources */,
 				D3333DEF267596BD00447A3B /* SignUpView.swift in Sources */,
-				D3C4BDD32679899000731539 /* FBAuth.swift in Sources */,
-				D3C4BDC9267968E800731539 /* UserInfo.swift in Sources */,
 				D3333DDB2675964D00447A3B /* ContentView.swift in Sources */,
-				D35D1086267A4CF500C2FB39 /* FBUser.swift in Sources */,
-				D35D1085267A4CF500C2FB39 /* FBKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
