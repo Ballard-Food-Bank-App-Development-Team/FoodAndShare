@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D30086B72680F5220054514E /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086B62680F5220054514E /* FBAuth.swift */; };
-		D30086B92680F5350054514E /* FBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086B82680F5350054514E /* FBUser.swift */; };
+		D30086BB26811CE40054514E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086BA26811CE40054514E /* UserInfo.swift */; };
+		D30086C126812C900054514E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086C026812C900054514E /* UserViewModel.swift */; };
+		D30086C526813EAB0054514E /* FSFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086C426813EAB0054514E /* FSFetch.swift */; };
 		D3333DD72675964D00447A3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DD62675964D00447A3B /* AppDelegate.swift */; };
 		D3333DD92675964D00447A3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DD82675964D00447A3B /* SceneDelegate.swift */; };
 		D3333DDB2675964D00447A3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DDA2675964D00447A3B /* ContentView.swift */; };
@@ -30,7 +32,9 @@
 		8F396719407A92FFB2C66947 /* Pods_FoodBankBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodBankBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6584F326D1C3EEAB28DB6A /* Pods-FoodBankBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.release.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.release.xcconfig"; sourceTree = "<group>"; };
 		D30086B62680F5220054514E /* FBAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAuth.swift; sourceTree = "<group>"; };
-		D30086B82680F5350054514E /* FBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUser.swift; sourceTree = "<group>"; };
+		D30086BA26811CE40054514E /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		D30086C026812C900054514E /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		D30086C426813EAB0054514E /* FSFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSFetch.swift; sourceTree = "<group>"; };
 		D3333DD32675964D00447A3B /* FoodBankBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBankBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3333DD62675964D00447A3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3333DD82675964D00447A3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,7 +145,9 @@
 			isa = PBXGroup;
 			children = (
 				D30086B62680F5220054514E /* FBAuth.swift */,
-				D30086B82680F5350054514E /* FBUser.swift */,
+				D30086C426813EAB0054514E /* FSFetch.swift */,
+				D30086BA26811CE40054514E /* UserInfo.swift */,
+				D30086C026812C900054514E /* UserViewModel.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -316,10 +322,12 @@
 				D3333DD72675964D00447A3B /* AppDelegate.swift in Sources */,
 				D3333DEB2675968D00447A3B /* AccountChoiceView.swift in Sources */,
 				D3D46606267C2BAD0006F9A3 /* HomeView.swift in Sources */,
-				D30086B92680F5350054514E /* FBUser.swift in Sources */,
+				D30086BB26811CE40054514E /* UserInfo.swift in Sources */,
+				D30086C126812C900054514E /* UserViewModel.swift in Sources */,
 				D3C4BDCB2679803F00731539 /* ForgotPasswordView.swift in Sources */,
 				D3333DD92675964D00447A3B /* SceneDelegate.swift in Sources */,
 				D3C4BDCF267980D200731539 /* AccountSettingsView.swift in Sources */,
+				D30086C526813EAB0054514E /* FSFetch.swift in Sources */,
 				D3333DED267596AB00447A3B /* LoginView.swift in Sources */,
 				D30086B72680F5220054514E /* FBAuth.swift in Sources */,
 				D3333DEF267596BD00447A3B /* SignUpView.swift in Sources */,

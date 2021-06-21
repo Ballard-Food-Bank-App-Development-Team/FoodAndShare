@@ -159,7 +159,11 @@ struct SignUpView: View {
 
             // MARK: - Sign Up Button
             Button(action: {
-                FBAuth.createUser(
+                // Validate all Feilds
+                
+
+                // Sign Up User
+                FBAuth.signUpUser(
                     firstName: self.user.firstName.trimmingCharacters(in: .whitespacesAndNewlines),
                     lastName: self.user.lastName.trimmingCharacters(in: .whitespacesAndNewlines),
                     email: self.user.email.trimmingCharacters(in: .whitespacesAndNewlines),
@@ -169,11 +173,12 @@ struct SignUpView: View {
                     case .failure(let error):
                         firebaseError = error.localizedDescription
                         firebaseErrorOpacity = 1.0
-                    case .success( _):
+                    case .success(_):
                         print("Account Succesfully Created")
                     }
                 }
-
+                // Update UserInfo
+                self.userInfo.setUpNewUserAccount()
             }
             , label: {
                 Text("Sign Up")
