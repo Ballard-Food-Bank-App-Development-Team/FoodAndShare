@@ -103,28 +103,18 @@ struct LoginView: View {
                     return
                 }
 
-                // Create cleaned versions of data
-                let emailClean = self.user.email.trimmingCharacters(in: .whitespacesAndNewlines)
-                let passwordClean = self.user.password.trimmingCharacters(in: .whitespacesAndNewlines)
-
-                // Atempt to login the user
-                Auth.auth().signIn(withEmail: emailClean, password: passwordClean) { _, error in
-
-                    if error != nil {
-                        // There was an error creating the user
-                        firebaseError = error!.localizedDescription
+                FBAuth.loginUser(email: self.user.email.trimmingCharacters(in: .whitespacesAndNewlines), password: self.user.password.trimmingCharacters(in: .whitespacesAndNewlines)) { (result) in
+                    switch result {
+                    case .failure(let error):
+                        firebaseError = error.localizedDescription
                         firebaseErrorOpacity = 1.0
-                    } else {
-                        firebaseErrorOpacity = 0.0
-
-                        // Set user state
-                        self.userInfo.isUserAutheticated = .signedIn
-
-                        // Transiiton to the home screen
-                        print("Successfully Logged In")
-                        print(self.userInfo.isUserAutheticated)
+                    case .success(_):
+                        print("Successfully logged in")
                     }
                 }
+
+                // Update UserInfo
+                self.userInfo.setUpNewUserAccount()
             }, label: {
                 Text("Login")
                     .padding(.all)

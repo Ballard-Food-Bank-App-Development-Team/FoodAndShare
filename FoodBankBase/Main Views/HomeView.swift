@@ -14,16 +14,8 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Welcome to Food Bank Base \(userInfo.user.firstName)")
+                Text("Welcome to Food Bank Base \(userInfo.firstName!)")
                     .padding(.all)
-
-                Spacer()
-
-                Button(action: {
-                    print(userInfo.user.firstName)
-                }, label: {
-                    Text("Button")
-                })
 
                 Spacer()
             }
@@ -36,20 +28,6 @@ struct HomeView: View {
                             .padding(.all)
                     }
             )
-            .onAppear {
-                guard let uid = Auth.auth().currentUser?.uid else {
-                    return
-                }
-                FBFirestore.retrieveFBUser(uid: uid) {(result) in
-                    switch result {
-                    case .failure(let error):
-                        print("ERROR")
-                        print(error.localizedDescription)
-                    case .success(let user):
-                        self.userInfo.user = user
-                    }
-                }
-            }
         }
         .accentColor(Color("darkInvert"))
     }
