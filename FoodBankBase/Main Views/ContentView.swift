@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var userInfo: UserInfo
 
     var body: some View {
         Group {

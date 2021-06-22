@@ -99,7 +99,7 @@ struct LoginView: View {
             // MARK: - Login Button
             Button(action: {
                 // Validate all Fields
-                if !(emailBorder == .green && passwordBorder == .green) {
+                if emailBorder == .red || passwordBorder == .red {
                     return
                 }
 

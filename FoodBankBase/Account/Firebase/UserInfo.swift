@@ -18,11 +18,11 @@ class UserInfo: ObservableObject {
 
     init() {
         if UserDefaults.standard.string(forKey: "uid") != nil {
-            signedIn = true
             self.uid = UserDefaults.standard.string(forKey: "uid")
             self.firstName = UserDefaults.standard.string(forKey: "firstName")
             self.lastName = UserDefaults.standard.string(forKey: "lastName")
             self.email = UserDefaults.standard.string(forKey: "email")
+            signedIn = true
         } else {
             signedIn = false
         }
@@ -33,7 +33,6 @@ class UserInfo: ObservableObject {
         self.firstName = UserDefaults.standard.string(forKey: "firstName")
         self.lastName = UserDefaults.standard.string(forKey: "lastName")
         self.email = UserDefaults.standard.string(forKey: "email")
-
         signedIn = true
     }
 }
