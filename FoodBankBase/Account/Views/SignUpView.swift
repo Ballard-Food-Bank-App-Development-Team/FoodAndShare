@@ -160,7 +160,9 @@ struct SignUpView: View {
             // MARK: - Sign Up Button
             Button(action: {
                 // Validate all Feilds
-                
+                if firstNameBorder == .red || lastNameBorder == .red || emailBorder == .red || passwordBorder == .red {
+                    return
+                }
 
                 // Sign Up User
                 FBAuth.signUpUser(

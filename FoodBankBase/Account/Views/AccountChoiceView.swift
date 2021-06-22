@@ -12,41 +12,46 @@ struct AccountChoiceView: View {
     @EnvironmentObject var userInfo: UserInfo
 
     var body: some View {
-        VStack(spacing: 15) {
-            Spacer()
+        NavigationView {
+            VStack(spacing: 15) {
+                Spacer()
+                Spacer()
 
-            NavigationLink(destination: SignUpView()) {
-                Text("Sign Up")
-                    .padding(.all)
-                    .foregroundColor(Color("darkInvert"))
+                NavigationLink(destination: SignUpView()) {
+                    Text("Sign Up")
+                        .padding(.all)
+                        .foregroundColor(Color("darkInvert"))
+                }
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("darkInvert"), lineWidth: 2)
+                        .foregroundColor(.green)
+                )
+                NavigationLink(destination: LoginView()) {
+                    Text("Login")
+                        .padding(.all)
+                        .foregroundColor(Color("darkInvert"))
+                }
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("darkInvert"), lineWidth: 2)
+                        .foregroundColor(.blue)
+                )
+
+                Spacer()
             }
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(.green)
-                    .border(Color("darkInvert"), width: 2)
-            )
-            NavigationLink(destination: LoginView()) {
-                Text("Login")
-                    .padding(.all)
-                    .foregroundColor(Color("darkInvert"))
-            }
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(.blue)
-                    .border(Color("darkInvert"), width: 2)
+            .navigationTitle("Account Setup")
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(
+                leading: Button(action: {
+                    presentation.wrappedValue.dismiss()
+                }
+                , label: {
+                    Image(systemName: "arrow.backward")
+                        .imageScale(.large)
+                })
             )
         }
-        .navigationTitle("Account Setup")
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(
-            leading: Button(action: {
-                presentation.wrappedValue.dismiss()
-            }
-            , label: {
-                Image(systemName: "arrow.backward")
-                    .imageScale(.large)
-            })
-        )
     }
 }
 
