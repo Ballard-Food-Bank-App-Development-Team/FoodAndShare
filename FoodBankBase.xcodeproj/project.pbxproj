@@ -20,6 +20,8 @@
 		D3333DEB2675968D00447A3B /* AccountChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DEA2675968D00447A3B /* AccountChoiceView.swift */; };
 		D3333DED267596AB00447A3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DEC267596AB00447A3B /* LoginView.swift */; };
 		D3333DEF267596BD00447A3B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DEE267596BD00447A3B /* SignUpView.swift */; };
+		D3A163A2268BF539003CEA31 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = D3A163A1268BF539003CEA31 /* ElegantCalendar */; };
+		D3A163A6268BF5E3003CEA31 /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A163A5268BF5E3003CEA31 /* ElegantCalendar.xcassets */; };
 		D3C4BDC22678125900731539 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3C4BDC12678125900731539 /* GoogleService-Info.plist */; };
 		D3C4BDCB2679803F00731539 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */; };
 		D3C4BDCF267980D200731539 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCE267980D200731539 /* AccountSettingsView.swift */; };
@@ -46,6 +48,8 @@
 		D3333DEA2675968D00447A3B /* AccountChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountChoiceView.swift; sourceTree = "<group>"; };
 		D3333DEC267596AB00447A3B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D3333DEE267596BD00447A3B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		D3A163A3268BF5B7003CEA31 /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ElegantCalendar.xcassets; sourceTree = "<group>"; };
+		D3A163A5268BF5E3003CEA31 /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = "../../../Library/Developer/Xcode/DerivedData/FoodBankBase-gxonjodeykfgjnewgcqfwbtxxnfh/SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets"; sourceTree = "<group>"; };
 		D3C4BDC12678125900731539 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		D3C4BDCE267980D200731539 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE11511B4EB9D84FC2267333 /* Pods_FoodBankBase.framework in Frameworks */,
+				D3A163A2268BF539003CEA31 /* ElegantCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +89,8 @@
 		D3333DCA2675964D00447A3B = {
 			isa = PBXGroup;
 			children = (
+				D3A163A3268BF5B7003CEA31 /* ElegantCalendar.xcassets */,
+				D3A163A5268BF5E3003CEA31 /* ElegantCalendar.xcassets */,
 				D3333DD52675964D00447A3B /* FoodBankBase */,
 				D3333DD42675964D00447A3B /* Products */,
 				A452C5E351033CFCAC4E6094 /* Pods */,
@@ -184,6 +191,9 @@
 			dependencies = (
 			);
 			name = FoodBankBase;
+			packageProductDependencies = (
+				D3A163A1268BF539003CEA31 /* ElegantCalendar */,
+			);
 			productName = FoodBankBase;
 			productReference = D3333DD32675964D00447A3B /* FoodBankBase.app */;
 			productType = "com.apple.product-type.application";
@@ -211,6 +221,9 @@
 				Base,
 			);
 			mainGroup = D3333DCA2675964D00447A3B;
+			packageReferences = (
+				D3A163A0268BF539003CEA31 /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
+			);
 			productRefGroup = D3333DD42675964D00447A3B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -229,6 +242,7 @@
 				D3C4BDC22678125900731539 /* GoogleService-Info.plist in Resources */,
 				D3333DE02675964E00447A3B /* Preview Assets.xcassets in Resources */,
 				D3333DDD2675964E00447A3B /* Assets.xcassets in Resources */,
+				D3A163A6268BF5E3003CEA31 /* ElegantCalendar.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +545,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D3A163A0268BF539003CEA31 /* XCRemoteSwiftPackageReference "ElegantCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ThasianX/ElegantCalendar.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D3A163A1268BF539003CEA31 /* ElegantCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3A163A0268BF539003CEA31 /* XCRemoteSwiftPackageReference "ElegantCalendar" */;
+			productName = ElegantCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D3333DCB2675964D00447A3B /* Project object */;
 }

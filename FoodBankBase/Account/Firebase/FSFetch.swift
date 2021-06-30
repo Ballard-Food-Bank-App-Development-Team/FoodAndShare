@@ -10,13 +10,13 @@ import Firebase
 
 struct FSFetch {
 
-    static func fetchFullName(uid: String, completionHandler: @escaping ((Result<Bool, Error>) -> Void)) -> [String] {
+    static func fetchFullName(uid: String, completionHandler: @escaping ((Result<Bool, Error>) -> Void)) -> [Any?] {
         // Fetch firstName and lastName
         let database = Firestore.firestore()
         let docRef = database.collection("users").document(uid)
 
-        var firstName: String?
-        var lastName: String?
+        var firstName: Any?
+        var lastName: Any?
         docRef.getDocument { (document, error) in
             // Check for errors
             if error != nil {
@@ -24,9 +24,9 @@ struct FSFetch {
                 return
             }
 
-            firstName = document?.data()?["firstName"] as? String
-            lastName = document?.data()?["lastName"] as? String
+            firstName = document!.data()!["firstName"]
+            lastName = document!.data()!["lastName"]
         }
-        return [firstName ?? "", lastName ?? ""]
+        return [firstName, lastName]
     }
 }

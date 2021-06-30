@@ -15,7 +15,7 @@ struct AccountSettingsView: View {
             Text("Account Settings")
         }
         .navigationBarTitleDisplayMode(.large)
-        .navigationTitle("Account Login")
+        .navigationTitle("Account Settings")
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading: Button(action: { presentation.wrappedValue.dismiss()
@@ -23,6 +23,11 @@ struct AccountSettingsView: View {
             , label: {
                 Image(systemName: "arrow.backward")
                     .imageScale(.large)
+            }),
+            trailing: Button(action: {
+
+            }, label: {
+                Text("Log Out")
             })
         )
     }

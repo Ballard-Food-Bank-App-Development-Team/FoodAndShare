@@ -14,7 +14,7 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Welcome to Food Bank Base \(userInfo.firstName!)")
+                Text("Welcome to Food Bank Base \(userInfo.user.firstName)")
                     .padding(.all)
 
                 Spacer()

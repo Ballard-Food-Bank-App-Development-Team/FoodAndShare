@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AccountChoiceView: View {
-    @Environment(\.presentationMode) var presentation
     @EnvironmentObject var userInfo: UserInfo
 
     var body: some View {
@@ -41,17 +40,8 @@ struct AccountChoiceView: View {
                 Spacer()
             }
             .navigationTitle("Account Setup")
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(
-                leading: Button(action: {
-                    presentation.wrappedValue.dismiss()
-                }
-                , label: {
-                    Image(systemName: "arrow.backward")
-                        .imageScale(.large)
-                })
-            )
         }
+        .accentColor(Color("darkInvert"))
     }
 }
 

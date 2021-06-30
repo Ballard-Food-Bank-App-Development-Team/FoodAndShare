@@ -113,8 +113,10 @@ struct LoginView: View {
                     }
                 }
 
+                // Retrive User's Name
+
                 // Update UserInfo
-                self.userInfo.setUpNewUserAccount()
+                self.userInfo.setUpNewUserAccount(firstName: self.user.firstName, lastName: self.user.lastName, email: self.user.email)
             }, label: {
                 Text("Login")
                     .padding(.all)

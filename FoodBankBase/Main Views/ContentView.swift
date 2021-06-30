@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var userInfo: UserInfo
+     @EnvironmentObject var userInfo: UserInfo
 
     var body: some View {
         Group {
@@ -16,11 +16,14 @@ struct ContentView: View {
                 HomeView()
             } else { AccountChoiceView() }
         }
+        .onAppear {
+            self.userInfo.checkUserState()
+        }
     }
 }
 
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
+}
