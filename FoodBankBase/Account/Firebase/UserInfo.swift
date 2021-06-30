@@ -9,30 +9,43 @@ import Foundation
 
 class UserInfo: ObservableObject {
 
-    var uid: String?
-    var firstName: String?
-    var lastName: String?
-    var email: String?
+    @Published var signedIn: Bool = false
+    @Published var user: FBUser = .init(uid: "", firstName: "", lastName: "", email: "")
 
-    var signedIn: Bool = false
+    func setUpNewUserAccount(firstName: String, lastName: String, email: String) {
+        // Set UserDefauls
+        UserDefaults.standard.set(firstName, forKey: "firstName")
+        UserDefaults.standard.set(lastName, forKey: "lastName")
+        UserDefaults.standard.set(email, forKey: "email")
 
-    init() {
-        if UserDefaults.standard.string(forKey: "uid") != nil {
-            self.uid = UserDefaults.standard.string(forKey: "uid")
-            self.firstName = UserDefaults.standard.string(forKey: "firstName")
-            self.lastName = UserDefaults.standard.string(forKey: "lastName")
-            self.email = UserDefaults.standard.string(forKey: "email")
+        self.user.firstName = UserDefaults.standard.string(forKey: "firstName")!
+        self.user.lastName = UserDefaults.standard.string(forKey: "lastName")!
+        self.user.email = UserDefaults.standard.string(forKey: "email")!
+        signedIn = true
+    }
+
+    func checkUserState() {
+        if UserDefaults.standard.string(forKey: "email") != nil {
+            self.user.firstName = UserDefaults.standard.string(forKey: "firstName")!
+            self.user.lastName = UserDefaults.standard.string(forKey: "lastName")!
+            self.user.email = UserDefaults.standard.string(forKey: "email")!
             signedIn = true
         } else {
             signedIn = false
         }
     }
+}
 
-    func setUpNewUserAccount() {
-        self.uid = UserDefaults.standard.string(forKey: "uid")
-        self.firstName = UserDefaults.standard.string(forKey: "firstName")
-        self.lastName = UserDefaults.standard.string(forKey: "lastName")
-        self.email = UserDefaults.standard.string(forKey: "email")
-        signedIn = true
+struct FBUser {
+    var uid: String
+    var firstName: String
+    var lastName: String
+    var email: String
+
+    init(uid: String, firstName: String, lastName: String, email: String) {
+        self.uid = uid
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
     }
 }

@@ -15,32 +15,24 @@ struct FBAuth {
         // Create user
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             // Check for errors
-            if error == nil {
+            if error != nil {
                 completionHandler(.failure(error!))
                 return
             }
             // Add user to FBstore
             let database = Firestore.firestore()
-            database.collection("users").addDocument(
-                data: [
-                    "uid" : result!.user.uid,
-                    "firstName" : firstName,
-                    "lastName" : lastName,
-                    "email" : result!.user.email!
-                ]
+            database.collection("users").document(result!.user.uid).setData([
+                "uid" : result!.user.uid,
+                "firstName" : firstName,
+                "lastName" : lastName,
+                "email" : result!.user.email!
                 // Check for errors
-            ) { (err) in
-                if err == nil {
+            ]) { err in
+                if err != nil {
                     completionHandler(.failure(err!))
                     return
                 }
             }
-
-            // Set UserDefauls
-            UserDefaults.standard.set(result!.user.uid, forKey: "uid")
-            UserDefaults.standard.set(firstName, forKey: "firstName")
-            UserDefaults.standard.set(lastName, forKey: "lastName")
-            UserDefaults.standard.set(email, forKey: "email")
         }
     }
 
@@ -49,7 +41,7 @@ struct FBAuth {
         // Sign User In
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
             // Check for errors
-            if error == nil {
+            if error != nil {
                 completionHandler(.failure(error!))
                 return
             }
