@@ -176,11 +176,10 @@ struct SignUpView: View {
                         firebaseError = error.localizedDescription
                         firebaseErrorOpacity = 1.0
                     case .success(_):
-                        print("Account Succesfully Created")
+                        self.userInfo.updateUserStateToSignedIn()
+                        print("Sign Up Success")
                     }
                 }
-                // Update UserInfo
-                self.userInfo.setUpNewUserAccount(firstName: self.user.firstName, lastName: self.user.lastName, email: self.user.email)
             }
             , label: {
                 Text("Sign Up")

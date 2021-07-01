@@ -12,35 +12,32 @@ class UserInfo: ObservableObject {
     @Published var signedIn: Bool = false
     @Published var user: FBUser = .init(uid: "", firstName: "", lastName: "", email: "")
 
-    func setUpNewUserAccount(firstName: String, lastName: String, email: String) {
-        // Set UserDefauls
-        UserDefaults.standard.set(firstName, forKey: "firstName")
-        UserDefaults.standard.set(lastName, forKey: "lastName")
-        UserDefaults.standard.set(email, forKey: "email")
+    func checkUserState() {
+        if UserDefaults.standard.string(forKey: "firstName") != nil {
+            updateUserStateToSignedIn()
+        } else {
+            signedIn = false
+        }
+    }
 
+    func updateUserStateToSignedIn() {
+        self.user.uid = UserDefaults.standard.string(forKey: "uid")!
         self.user.firstName = UserDefaults.standard.string(forKey: "firstName")!
         self.user.lastName = UserDefaults.standard.string(forKey: "lastName")!
         self.user.email = UserDefaults.standard.string(forKey: "email")!
         signedIn = true
     }
 
-    func checkUserState() {
-        if UserDefaults.standard.string(forKey: "email") != nil {
-            self.user.firstName = UserDefaults.standard.string(forKey: "firstName")!
-            self.user.lastName = UserDefaults.standard.string(forKey: "lastName")!
-            self.user.email = UserDefaults.standard.string(forKey: "email")!
-            signedIn = true
-        } else {
-            signedIn = false
-        }
+    func updateUserStateToSignedOut() {
+
     }
 }
 
 struct FBUser {
-    var uid: String
-    var firstName: String
-    var lastName: String
-    var email: String
+    var uid: String?
+    var firstName: String?
+    var lastName: String?
+    var email: String?
 
     init(uid: String, firstName: String, lastName: String, email: String) {
         self.uid = uid
