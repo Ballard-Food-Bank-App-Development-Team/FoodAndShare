@@ -9,6 +9,7 @@ import Foundation
 import Firebase
 
 struct FBAuth {
+    var userInfo: UserInfo
 
     // MARK: - Sign Up Function
     static func signUpUser(firstName: String, lastName: String, email: String, password: String, completionHandler: @escaping (Result<Bool, Error>) -> Void) {
@@ -32,6 +33,8 @@ struct FBAuth {
                     completionHandler(.failure(err!))
                     return
                 }
+                // Success
+                completionHandler(.success(true))
             }
         }
     }
@@ -46,30 +49,43 @@ struct FBAuth {
                 return
             }
             // Fetch Full Name
-            let fullname = FSFetch.fetchFullName(uid: authResult!.user.uid) { (result) in
-                switch result {
-                case .failure(let err):
-                    completionHandler(.failure(err))
+
+            // Fetch firstName and lastName
+            let database = Firestore.firestore()
+            let docRef = database.collection("users").document(authResult!.user.uid)
+
+            docRef.getDocument { (document, error) in
+                // Check for errors
+                if error != nil {
+                    completionHandler(.failure(error!))
                     return
-                case .success(_):
-                    print("Successfully got full name")
                 }
+
+                let firstName: String? = document!.data()!["firstName"] as? String
+                let lastName: String? = document!.data()!["lastName"] as? String
+
+                // Set UserDefauls
+                UserDefaults.standard.set(firstName, forKey: "firstName")
+                UserDefaults.standard.set(lastName, forKey: "lastName")
+                UserDefaults.standard.set(authResult!.user.uid, forKey: "uid")
+                UserDefaults.standard.set(email, forKey: "email")
+
+                // Success
+                completionHandler(.success(true))
             }
-            // Set UserDefauls
-            UserDefaults.standard.set(authResult!.user.uid, forKey: "uid")
-            UserDefaults.standard.set(fullname[0], forKey: "firstName")
-            UserDefaults.standard.set(fullname[1], forKey: "lastName")
-            UserDefaults.standard.set(email, forKey: "email")
         }
     }
 
     // MARK: - Forgot/Reset Password Function
-    func resetPassword() {
-
+    func resetPassword(email: String, completionHandler: @escaping (Result<Bool, Error>) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            if error != nil {
+                completionHandler(.failure(error!))
+            }
+        }
     }
 
     // MARK: - Logout Function
     func logoutUser() {
-
     }
 }

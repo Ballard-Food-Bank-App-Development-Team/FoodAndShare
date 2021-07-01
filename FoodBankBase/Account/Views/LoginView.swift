@@ -109,14 +109,10 @@ struct LoginView: View {
                         firebaseError = error.localizedDescription
                         firebaseErrorOpacity = 1.0
                     case .success(_):
-                        print("Successfully logged in")
+                        self.userInfo.updateUserStateToSignedIn()
+                        print("Login Success")
                     }
                 }
-
-                // Retrive User's Name
-
-                // Update UserInfo
-                self.userInfo.setUpNewUserAccount(firstName: self.user.firstName, lastName: self.user.lastName, email: self.user.email)
             }, label: {
                 Text("Login")
                     .padding(.all)
@@ -126,6 +122,13 @@ struct LoginView: View {
                     .padding(.top, 20)
             })
             .accentColor(.blue)
+
+            // MARK: - Forgot Password
+            NavigationLink(destination: ForgotPasswordView(),
+                label: {
+                    Text("Forgot Password?")
+                        .foregroundColor(.blue)
+                })
 
             // MARK: - Firebase Error display
             Text(firebaseError)
