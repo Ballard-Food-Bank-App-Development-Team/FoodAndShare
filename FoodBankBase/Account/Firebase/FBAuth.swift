@@ -33,6 +33,13 @@ struct FBAuth {
                     completionHandler(.failure(err!))
                     return
                 }
+                
+                // Set UserDefauls
+                UserDefaults.standard.set(firstName, forKey: "firstName")
+                UserDefaults.standard.set(lastName, forKey: "lastName")
+                UserDefaults.standard.set(result!.user.uid, forKey: "uid")
+                UserDefaults.standard.set(result!.user.email, forKey: "email")
+                
                 // Success
                 completionHandler(.success(true))
             }

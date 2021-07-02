@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		260CADCA268ED2DC00782ABE /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260CADC9268ED2DC00782ABE /* ElegantCalendar.xcassets */; };
 		D30086B72680F5220054514E /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086B62680F5220054514E /* FBAuth.swift */; };
 		D30086BB26811CE40054514E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086BA26811CE40054514E /* UserInfo.swift */; };
 		D30086C126812C900054514E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086C026812C900054514E /* UserViewModel.swift */; };
@@ -19,7 +20,6 @@
 		D3333DEB2675968D00447A3B /* AccountChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DEA2675968D00447A3B /* AccountChoiceView.swift */; };
 		D3333DED267596AB00447A3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DEC267596AB00447A3B /* LoginView.swift */; };
 		D3333DEF267596BD00447A3B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DEE267596BD00447A3B /* SignUpView.swift */; };
-		D3782634268E71FE00C96DB6 /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3782633268E71FE00C96DB6 /* ElegantCalendar.xcassets */; };
 		D3A163A2268BF539003CEA31 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = D3A163A1268BF539003CEA31 /* ElegantCalendar */; };
 		D3A5621D268E6DC2007674DF /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A5621C268E6DC2007674DF /* CalendarView.swift */; };
 		D3C4BDC22678125900731539 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3C4BDC12678125900731539 /* GoogleService-Info.plist */; };
@@ -30,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		260CADC9268ED2DC00782ABE /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = ../../../SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets; sourceTree = BUILT_PRODUCTS_DIR; };
 		3625E3D1B890F58F54CB597B /* Pods-FoodBankBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.debug.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.debug.xcconfig"; sourceTree = "<group>"; };
 		8F396719407A92FFB2C66947 /* Pods_FoodBankBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodBankBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6584F326D1C3EEAB28DB6A /* Pods-FoodBankBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.release.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.release.xcconfig"; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		D3333DEA2675968D00447A3B /* AccountChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountChoiceView.swift; sourceTree = "<group>"; };
 		D3333DEC267596AB00447A3B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D3333DEE267596BD00447A3B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		D3782633268E71FE00C96DB6 /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = "../../../Library/Developer/Xcode/DerivedData/FoodBankBase-gxonjodeykfgjnewgcqfwbtxxnfh/SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets"; sourceTree = "<group>"; };
 		D3A5621C268E6DC2007674DF /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		D3C4BDC12678125900731539 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -76,6 +76,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		260CADCB268ED7C300782ABE /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				D3A5621C268E6DC2007674DF /* CalendarView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		A452C5E351033CFCAC4E6094 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,7 +96,7 @@
 		D3333DCA2675964D00447A3B = {
 			isa = PBXGroup;
 			children = (
-				D3782633268E71FE00C96DB6 /* ElegantCalendar.xcassets */,
+				260CADC9268ED2DC00782ABE /* ElegantCalendar.xcassets */,
 				D3333DD52675964D00447A3B /* FoodBankBase */,
 				D3333DD42675964D00447A3B /* Products */,
 				A452C5E351033CFCAC4E6094 /* Pods */,
@@ -110,6 +118,7 @@
 				D3333DD62675964D00447A3B /* AppDelegate.swift */,
 				D3333DD82675964D00447A3B /* SceneDelegate.swift */,
 				D3333DF0267596C400447A3B /* Main Views */,
+				260CADCB268ED7C300782ABE /* Calendar */,
 				D3333DF1267596DB00447A3B /* Account */,
 				D3333DDC2675964E00447A3B /* Assets.xcassets */,
 				D3333DE12675964E00447A3B /* LaunchScreen.storyboard */,
@@ -164,7 +173,6 @@
 				D3333DEC267596AB00447A3B /* LoginView.swift */,
 				D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */,
 				D3C4BDCE267980D200731539 /* AccountSettingsView.swift */,
-				D3A5621C268E6DC2007674DF /* CalendarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,9 +184,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3333DE72675964E00447A3B /* Build configuration list for PBXNativeTarget "FoodBankBase" */;
 			buildPhases = (
+				398DE41F44C086CE1EC1582B /* [CP] Check Pods Manifest.lock */,
 				D3CDFB41267EA441001A7C4D /* SwiftLint */,
 				D3CDFB42267EBBB1001A7C4D /* SwiftLint Autocorrect */,
-				398DE41F44C086CE1EC1582B /* [CP] Check Pods Manifest.lock */,
 				D3333DCF2675964D00447A3B /* Sources */,
 				D3333DD02675964D00447A3B /* Frameworks */,
 				D3333DD12675964D00447A3B /* Resources */,
@@ -240,7 +248,7 @@
 				D3C4BDC22678125900731539 /* GoogleService-Info.plist in Resources */,
 				D3333DE02675964E00447A3B /* Preview Assets.xcassets in Resources */,
 				D3333DDD2675964E00447A3B /* Assets.xcassets in Resources */,
-				D3782634268E71FE00C96DB6 /* ElegantCalendar.xcassets in Resources */,
+				260CADCA268ED2DC00782ABE /* ElegantCalendar.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
