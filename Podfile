@@ -14,4 +14,8 @@ target 'FoodBankBase' do
     pod 'Firebase/Firestore'
     pod 'FirebaseFirestoreSwift'
     
+    # Date
+    
+    pod 'SwiftDate'
+    
 end
