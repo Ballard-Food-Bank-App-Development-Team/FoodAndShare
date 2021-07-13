@@ -18,7 +18,7 @@ struct HomeView: View {
                     .padding(.all)
 
                 NavigationLink(
-                    destination: CalendarView(),
+                    destination: SelectDateView(),
                     label: {
                         Text("Go To Calendar")
                             .padding(.all)
