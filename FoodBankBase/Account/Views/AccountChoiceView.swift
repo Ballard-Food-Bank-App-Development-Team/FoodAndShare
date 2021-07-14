@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct AccountChoiceView: View {
-    @EnvironmentObject var userInfo: UserInfo
+    @EnvironmentObject var user: FirebaseUserViewModel
 
     var body: some View {
         NavigationView {
-            VStack(spacing: 15) {
+            VStack(spacing: 20) {
                 Spacer()
                 Spacer()
 
@@ -20,22 +20,31 @@ struct AccountChoiceView: View {
                     Text("Sign Up")
                         .padding(.all)
                         .foregroundColor(Color("darkInvert"))
+                        .frame(width: UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 3))
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color("darkInvert"), lineWidth: 2)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .foregroundColor(.green)
+                                )
+                        )
                 }
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color("darkInvert"), lineWidth: 2)
-                        .foregroundColor(.green)
-                )
+
                 NavigationLink(destination: LoginView()) {
                     Text("Login")
                         .padding(.all)
                         .foregroundColor(Color("darkInvert"))
+                        .frame(width: UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 3))
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color("darkInvert"), lineWidth: 2)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .foregroundColor(.blue)
+                                )
+                        )
                 }
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color("darkInvert"), lineWidth: 2)
-                        .foregroundColor(.blue)
-                )
 
                 Spacer()
             }
@@ -48,5 +57,6 @@ struct AccountChoiceView: View {
 struct AccountChoiceView_Previews: PreviewProvider {
     static var previews: some View {
         AccountChoiceView()
+            .environmentObject(FirebaseUserViewModel())
     }
 }
