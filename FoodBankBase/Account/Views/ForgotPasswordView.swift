@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ForgotPasswordView: View {
     @Environment(\.presentationMode) var presentation
+    @EnvironmentObject var user: FirebaseUserViewModel
 
     var body: some View {
         Text("Forgot Password Page")
@@ -18,5 +19,6 @@ struct ForgotPasswordView: View {
 struct ForgotPasswordView_Previews: PreviewProvider {
     static var previews: some View {
         ForgotPasswordView()
+            .environmentObject(FirebaseUserViewModel())
     }
 }

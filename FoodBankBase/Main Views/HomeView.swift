@@ -9,22 +9,25 @@ import SwiftUI
 import Firebase
 
 struct HomeView: View {
-    @EnvironmentObject var userInfo: UserInfo
+    @EnvironmentObject var user: FirebaseUserViewModel
 
     var body: some View {
         NavigationView {
             VStack {
-                Text("Welcome to Food Bank Bank \(self.userInfo.user.firstName! + " " + self.userInfo.user.lastName!)")
+                Text("Welcome to Food Bank Bank \(self.user.userInfo.firstName!) \(self.user.userInfo.lastName!)")
                     .padding(.all)
 
                 NavigationLink(
-                    destination: CalendarView(),
+                    destination: DaySelectView(),
                     label: {
                         Text("Go To Calendar")
                             .padding(.all)
                     })
 
                 Spacer()
+            }
+            .onAppear {
+                self.user.checkUserState()
             }
             .navigationTitle("Food Bank")
             .navigationBarItems(
@@ -36,12 +39,12 @@ struct HomeView: View {
                     }
             )
         }
-        .accentColor(Color("darkInvert"))
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(FirebaseUserViewModel())
     }
 }

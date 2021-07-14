@@ -27,10 +27,6 @@ class UserInfo: ObservableObject {
         self.user.email = UserDefaults.standard.string(forKey: "email")!
         signedIn = true
     }
-
-    func updateUserStateToSignedOut() {
-
-    }
 }
 
 struct FBUser {

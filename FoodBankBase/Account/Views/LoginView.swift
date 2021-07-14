@@ -10,8 +10,7 @@ import FirebaseAuth
 
 struct LoginView: View {
     @Environment(\.presentationMode) var presentation
-    @EnvironmentObject var userInfo: UserInfo
-    @State var user : UserViewModel = UserViewModel()
+    @EnvironmentObject var user: FirebaseUserViewModel
 
     @State private var emailBorder: Color = Color("darkInvert")
     @State private var emailErrorOpacity: Double = 0.0
@@ -38,7 +37,7 @@ struct LoginView: View {
                             .foregroundColor(Color(.systemBackground))
                     )
                     .onChange(of: self.user.email, perform: { _ in
-                        if self.user.isEmpty(self.user.email) {
+                        if self.user.isEmpty(field: self.user.email) {
                             emailBorder = .red
                             emailErrorOpacity = 1.0
                         } else {
@@ -67,7 +66,7 @@ struct LoginView: View {
                     .disableAutocorrection(true)
                     .modifier(PlaceholderStyle(showPlaceHolder: self.user.password.isEmpty, placeholder: "Password"))
                     .onChange(of: self.user.password, perform: { _ in
-                        if self.user.isEmpty(self.user.password) {
+                        if self.user.isEmpty(field: self.user.password) {
                             passwordBorder = .red
                             passwordErrorOpacity = 1.0
                         } else {
@@ -108,9 +107,20 @@ struct LoginView: View {
                     case .failure(let error):
                         firebaseError = error.localizedDescription
                         firebaseErrorOpacity = 1.0
+                        return
                     case .success(_):
-                        self.userInfo.updateUserStateToSignedIn()
-                        print("Login Success")
+                        firebaseErrorOpacity = 1.0
+                        self.user.fetchUserData { (result) in
+                            switch result {
+                            case .failure(let err):
+                                firebaseError = err.localizedDescription
+                                firebaseErrorOpacity = 1.0
+                            case .success(_):
+                                firebaseErrorOpacity = 0.0
+                                self.user.checkUserState()
+                                print("Login Success")
+                            }
+                        }
                     }
                 }
             }, label: {
@@ -156,5 +166,6 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .environmentObject(FirebaseUserViewModel())
     }
 }
