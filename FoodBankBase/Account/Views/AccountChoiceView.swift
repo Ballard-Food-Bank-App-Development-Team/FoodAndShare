@@ -19,30 +19,22 @@ struct AccountChoiceView: View {
                 NavigationLink(destination: SignUpView()) {
                     Text("Sign Up")
                         .padding(.all)
-                        .foregroundColor(Color("darkInvert"))
+                        .foregroundColor(Color(.systemBackground))
                         .frame(width: UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 3))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color("darkInvert"), lineWidth: 2)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .foregroundColor(.green)
-                                )
+                                .foregroundColor(Color("darkInvert"))
                         )
                 }
 
                 NavigationLink(destination: LoginView()) {
                     Text("Login")
                         .padding(.all)
-                        .foregroundColor(Color("darkInvert"))
+                        .foregroundColor(Color(.systemBackground))
                         .frame(width: UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 3))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color("darkInvert"), lineWidth: 2)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .foregroundColor(.blue)
-                                )
+                                .foregroundColor(Color("darkInvert"))
                         )
                 }
 

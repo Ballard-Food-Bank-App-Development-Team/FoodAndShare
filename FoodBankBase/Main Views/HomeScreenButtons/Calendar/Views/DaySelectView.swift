@@ -78,7 +78,7 @@ struct DaySelectView: View {
             , label: {
                 Image(systemName: "arrow.backward")
                     .imageScale(.large)
-                    .accentColor(Color.white)
+                    .accentColor(Color("darkInvert"))
             })
         )
     }
