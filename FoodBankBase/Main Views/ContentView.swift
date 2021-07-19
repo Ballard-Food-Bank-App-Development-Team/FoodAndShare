@@ -13,7 +13,15 @@ struct ContentView: View {
     var body: some View {
         Group {
             if self.user.isUserAuthenticated == .undefined {
-                Text("Loading...")
+                ZStack {
+                    Color("loadingBackground")
+                        .ignoresSafeArea()
+                    VStack {
+                        Image("loadingLogo")
+                            .resizable()
+                            .frame(width: 200, height: 200, alignment: .center)
+                    }
+                }
             } else if self.user.isUserAuthenticated == .signedOut {
                 AccountChoiceView()
             } else {
