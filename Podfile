@@ -17,4 +17,8 @@ target 'FoodBankBase' do
     # Date
     pod 'SwiftDate'
     
+    # Date
+    
+    pod 'SwiftDate'
+    
 end
