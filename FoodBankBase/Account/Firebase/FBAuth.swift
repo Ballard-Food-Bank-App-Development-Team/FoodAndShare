@@ -86,6 +86,12 @@ struct FBAuth {
     }
 
     // MARK: - Logout Function
-    func logoutUser() {
+    func logoutUser(completionHandler: @escaping (Result<Bool, Error>) -> Void) {
+        do {
+            try Auth.auth().signOut()
+        } catch let error {
+            completionHandler(.failure(error))
+            return
+        }
     }
 }
