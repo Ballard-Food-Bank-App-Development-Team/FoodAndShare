@@ -6,23 +6,73 @@
 //
 
 import SwiftUI
+import SwiftDate
 
 struct DaySelectView: View {
     @Environment(\.presentationMode) var presentation
-    @StateObject var currentMonth = CustomCalendarMonth(dateInTheMonth: Date())
+    @StateObject var currentMonth = CustomCalendarMonth(date: Date())
+    
+    private let previousMonth: Date = Date().dateAt(.startOfMonth).addingTimeInterval(-60 * 60 * 24)
+    private let nextMonth: Date = Date().dateAt(.endOfMonth).addingTimeInterval(60 * 60 * 24)
+    
+    @State private var calendarState: Int = 0
 
-    let weekLetters: [String] = ["S", "M", "T", "W", "T", "F", "S"]
+    private let weekLetters: [String] = ["S", "M", "T", "W", "T", "F", "S"]
+    
+    private func changeMonth() {
+        
+        if calendarState < 0 {
+            currentMonth.updateMonth(dateInTheMonth: previousMonth)
+        } else if calendarState > 0 {
+            currentMonth.updateMonth(dateInTheMonth: nextMonth)
+        } else {
+            currentMonth.updateMonth(dateInTheMonth: Date())
+        }
+        
+    }
 
     var body: some View {
         VStack {
+            // MARK: - Calendar Title
             HStack {
-                Text(currentMonth.monthName + " " +  currentMonth.yearName)
+                
+                Button(action: {
+                    calendarState -= 1
+                    if calendarState < 1 {
+                        calendarState = -1
+                    }
+                    changeMonth()
+                }, label: {
+                    Image(systemName: "arrowshape.turn.up.left")
+                        .imageScale(.large)
+                        .foregroundColor(Color("customOrange"))
+                })
+                
+                Spacer()
+                
+                Text(currentMonth.monthName! + " " +  currentMonth.yearName!)
                     .font(.title)
                     .fontWeight(.semibold)
+                    .foregroundColor(Color("customOrange"))
+                
                 Spacer()
+                    
+                Button(action: {
+                    calendarState += 1
+                    if calendarState > 1 {
+                        calendarState = 1
+                    }
+                    changeMonth()
+                }, label: {
+                    Image(systemName: "arrowshape.turn.up.right")
+                        .imageScale(.large)
+                        .foregroundColor(Color("customOrange"))
+                })
+                
             }
-            .padding()
-
+            .padding(.all)
+            
+            // MARK: - Week Letters
             HStack {
                 ForEach(weekLetters, id: \.self) { letter in
                     Text(letter)
@@ -36,28 +86,20 @@ struct DaySelectView: View {
             Divider()
 
             VStack {
-                ForEach(currentMonth.arrayOfWeeksThenDays, id: \.self) { week in
+                ForEach(currentMonth.arrayOfWeeksThenDays!, id: \.self) { week in
                     HStack {
                         ForEach(week, id: \.self) { day in
                             Group {
                                 if day.selectable {
                                     NavigationLink(
-                                        destination: HourSelectView(day: day),
+                                        destination: Text("\(day.dayNum)"),
                                         label: {
-                                            Text("\(day.dayNum)")
-                                                .font(.body)
-                                                .foregroundColor(Color.white)
-                                                .frame(width: UIScreen.main.bounds.width/9, height: UIScreen.main.bounds.width/10, alignment: .center)
-                                                .background(
-                                                    Circle()
-                                                        .fill(Color("navy"))
-                                                )
+                                            CalendarIcon(dayNum: day.dayNum, textColor: Color.white, circleColor: Color("customOrange"))
                                         })
+                                } else if day.shown {
+                                    CalendarIcon(dayNum: day.dayNum, textColor: Color("darkInvert"), circleColor: Color(.systemBackground))
                                 } else {
-                                    Text("\(day.dayNum)")
-                                        .font(.body)
-                                        .foregroundColor(Color.gray)
-                                        .frame(width: UIScreen.main.bounds.width/9, height: UIScreen.main.bounds.width/10, alignment: .center)
+                                    CalendarIcon(dayNum: day.dayNum, textColor: Color.white, circleColor: Color(.systemBackground))
                                 }
                             }
                         }
@@ -66,7 +108,6 @@ struct DaySelectView: View {
                 }
             }
             .padding(.all, 8.0)
-
             Spacer()
         }
         .navigationBarTitleDisplayMode(.inline)
