@@ -11,8 +11,7 @@ import FirebaseFirestore
 
 struct SignUpView: View {
     @Environment(\.presentationMode) var presentation
-    @EnvironmentObject var userInfo: UserInfo
-    @State var user : UserViewModel = UserViewModel()
+    @EnvironmentObject var user: FirebaseUserViewModel
 
     @State private var firstNameBorder: Color = Color("darkInvert")
     @State private var firstNameErrorOpacity: Double = 0.0
@@ -46,7 +45,7 @@ struct SignUpView: View {
                                 .foregroundColor(Color("textFieldBackground"))
                         )
                         .onChange(of: self.user.firstName, perform: { _ in
-                            if self.user.isEmpty(self.user.firstName.trimmingCharacters(in: .whitespacesAndNewlines)) {
+                            if self.user.isEmpty(field: self.user.firstName.trimmingCharacters(in: .whitespacesAndNewlines)) {
                                 firstNameBorder = .red
                                 firstNameErrorOpacity = 1.0
                             } else {
@@ -72,7 +71,7 @@ struct SignUpView: View {
                                 .foregroundColor(Color(.systemBackground))
                         )
                         .onChange(of: self.user.lastName, perform: { _ in
-                            if self.user.isEmpty(self.user.lastName.trimmingCharacters(in: .whitespacesAndNewlines)) {
+                            if self.user.isEmpty(field: self.user.lastName.trimmingCharacters(in: .whitespacesAndNewlines)) {
                             lastNameBorder = .red
                             lastNameErrorOpacity = 1.0
                         } else {
@@ -99,7 +98,7 @@ struct SignUpView: View {
                             .foregroundColor(Color(.systemBackground))
                     )
                     .onChange(of: self.user.email, perform: { _ in
-                        if self.user.isEmailValid(self.user.email.trimmingCharacters(in: .whitespacesAndNewlines)) {
+                        if self.user.isEmailValid(email: self.user.email.trimmingCharacters(in: .whitespacesAndNewlines)) {
                             emailBorder = .red
                             emailErrorOpacity = 1.0
                         } else {
@@ -128,7 +127,7 @@ struct SignUpView: View {
                     .disableAutocorrection(true)
                     .modifier(PlaceholderStyle(showPlaceHolder: self.user.password.isEmpty, placeholder: "Password"))
                     .onChange(of: self.user.password, perform: { _ in
-                        if self.user.isPasswordValid(self.user.password) {
+                        if self.user.isPasswordValid(password: self.user.password) {
                             passwordBorder = .red
                             passwordErrorOpacity = 1.0
                         } else {
@@ -175,9 +174,22 @@ struct SignUpView: View {
                     case .failure(let error):
                         firebaseError = error.localizedDescription
                         firebaseErrorOpacity = 1.0
+                        return
                     case .success(_):
-                        self.userInfo.updateUserStateToSignedIn()
-                        print("Sign Up Success")
+                        firebaseErrorOpacity = 0.0
+                        // Add User to firestore
+                        self.user.addNewUserToFirestore { (result) in
+                            switch result {
+                            case .failure(let err):
+                                firebaseError = err.localizedDescription
+                                firebaseErrorOpacity = 1.0
+                                return
+                            case .success(_):
+                                firebaseErrorOpacity = 0.0
+                                self.user.checkUserState()
+                                print("Sign Up Success")
+                            }
+                        }
                     }
                 }
             }
@@ -234,6 +246,6 @@ public struct PlaceholderStyle: ViewModifier {
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
         SignUpView()
-            .preferredColorScheme(.light)
+            .environmentObject(FirebaseUserViewModel())
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AccountSettingsView: View {
     @Environment(\.presentationMode) var presentation
+    @EnvironmentObject var user: FirebaseUserViewModel
 
     var body: some View {
         VStack {
@@ -25,7 +26,15 @@ struct AccountSettingsView: View {
                     .imageScale(.large)
             }),
             trailing: Button(action: {
-
+                self.user.logoutUser { (result) in
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                    case .success(_):
+                        self.user.checkUserState()
+                        print("Logged Out User")
+                    }
+                }
             }, label: {
                 Text("Log Out")
             })
@@ -36,5 +45,6 @@ struct AccountSettingsView: View {
 struct AccountSettingsView_Previews: PreviewProvider {
     static var previews: some View {
         AccountSettingsView()
+            .environmentObject(FirebaseUserViewModel())
     }
 }

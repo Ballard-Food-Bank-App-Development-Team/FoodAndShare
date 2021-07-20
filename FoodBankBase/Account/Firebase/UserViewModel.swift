@@ -31,24 +31,6 @@ struct UserViewModel {
         return !passwordTest.evaluate(with: password)
     }
 
-    var isSignInComplete: Bool {
-        if  !isEmailValid(email) ||
-                isEmpty(firstName) ||
-                isEmpty(lastName) ||
-                !isPasswordValid(password) {
-            return false
-        }
-        return true
-    }
-
-    var isLogInComplete: Bool {
-        if isEmpty(email) ||
-            isEmpty(password) {
-            return false
-        }
-        return true
-    }
-
     // MARK: - Validation Error Strings
 
     var firstNameErrorText: String = "Enter Your First Name"
