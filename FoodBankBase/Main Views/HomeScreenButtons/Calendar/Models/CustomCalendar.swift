@@ -11,17 +11,16 @@ import SwiftDate
 class CustomCalendarMonth: ObservableObject {
 
     // Variables
-    @Published var arrayOfWeeksThenDays: [[CustomCalendarDay]]
+    @Published var arrayOfWeeksThenDays: [[CustomCalendarDay]]?
+    
+    @Published var monthName: String?
+    @Published var yearName: String?
 
-    // Constants
-    var monthName: String
-    var yearName: String
+    @Published var firstDayOfMonth: Date?
 
-    var firstDayOfMonth: Date
+    @Published var topLeftCornerDay: Date?
 
-    var topLeftCornerDay: Date
-
-    init(dateInTheMonth: Date) {
+    func updateMonth(dateInTheMonth: Date) {
         arrayOfWeeksThenDays = [[CustomCalendarDay]]()
 
         let myCalendar = Calendar(identifier: .gregorian)
@@ -29,12 +28,12 @@ class CustomCalendarMonth: ObservableObject {
         self.firstDayOfMonth = dateInTheMonth.dateAt(.startOfMonth)
         let lastDayOfMonth: Int = myCalendar.component(.day, from: dateInTheMonth.dateAt(.endOfMonth))
 
-        let startingInvalidDays: Double = Double(myCalendar.component(.weekday, from: firstDayOfMonth))
+        let startingInvalidDays: Double = Double(myCalendar.component(.weekday, from: self.firstDayOfMonth!))
 
-        self.topLeftCornerDay = firstDayOfMonth.addingTimeInterval(-60 * 60 * 24 * startingInvalidDays)
+        self.topLeftCornerDay = self.firstDayOfMonth!.addingTimeInterval(-60 * 60 * 24 * startingInvalidDays)
 
-        self.monthName = Calendar.current.monthSymbols[myCalendar.component(.month, from: firstDayOfMonth) - 1]
-        self.yearName = String(myCalendar.component(.year, from: firstDayOfMonth))
+        self.monthName = Calendar.current.monthSymbols[myCalendar.component(.month, from: self.firstDayOfMonth!) - 1]
+        self.yearName = String(myCalendar.component(.year, from: self.firstDayOfMonth!))
 
         /*print()
         print("firstDayOfMonth:     \(firstDayOfMonth.toString())")
@@ -44,7 +43,6 @@ class CustomCalendarMonth: ObservableObject {
         print()*/
 
         // Create the calendar grid
-
         var gridIndex: Int = 0
 
         for weekOn in 1...6 {
@@ -54,16 +52,21 @@ class CustomCalendarMonth: ObservableObject {
                 let numDaysToAdd: Double = Double(((weekOn - 1) * 7) + dayOn - 1)
 
                 if gridIndex < (Int(startingInvalidDays) + 2) {
-                    singleWeek.append(CustomCalendarDay(dateOfDay: topLeftCornerDay.addingTimeInterval(60 * 60 * 24 * numDaysToAdd), selectable: false))
+                    singleWeek.append(CustomCalendarDay(dateOfDay: self.topLeftCornerDay!.addingTimeInterval(60 * 60 * 24 * numDaysToAdd), selectable: false, shown: false))
                 } else if gridIndex > (lastDayOfMonth + (Int(startingInvalidDays) + 1)) {
-                    singleWeek.append(CustomCalendarDay(dateOfDay: topLeftCornerDay.addingTimeInterval(60 * 60 * 24 * numDaysToAdd), selectable: false))
+                    singleWeek.append(CustomCalendarDay(dateOfDay: self.topLeftCornerDay!.addingTimeInterval(60 * 60 * 24 * numDaysToAdd), selectable: false, shown: false))
+                } else if dayOn == 1 || dayOn == 6 || dayOn == 7 {
+                    singleWeek.append(CustomCalendarDay(dateOfDay: self.topLeftCornerDay!.addingTimeInterval(60 * 60 * 24 * numDaysToAdd), selectable: false, shown: true))
                 } else {
-                    singleWeek.append(CustomCalendarDay(dateOfDay: topLeftCornerDay.addingTimeInterval(60 * 60 * 24 * numDaysToAdd), selectable: true))
+                    singleWeek.append(CustomCalendarDay(dateOfDay: self.topLeftCornerDay!.addingTimeInterval(60 * 60 * 24 * numDaysToAdd), selectable: true, shown: false))
                 }
             }
-            arrayOfWeeksThenDays.append(singleWeek)
+            arrayOfWeeksThenDays!.append(singleWeek)
         }
 
     }
-
+    
+    init(date: Date) {
+        updateMonth(dateInTheMonth: date)
+    }
 }

@@ -9,16 +9,22 @@ import Foundation
 
 struct CustomCalendarDay: Hashable {
     var date: Date
-    var dayNum: Int
+    var dayNum: String
     var dayOfWeek: Int
     var selectable: Bool
+    var shown: Bool
 
-    init(dateOfDay: Date, selectable: Bool) {
+    init(dateOfDay: Date, selectable: Bool, shown: Bool) {
         self.date = dateOfDay
         self.selectable = selectable
+        self.shown = shown
 
         let myCalendar = Calendar(identifier: .gregorian)
-        self.dayNum = myCalendar.component(.day , from: dateOfDay)
+        if shown || selectable {
+            self.dayNum = String(myCalendar.component(.day , from: dateOfDay))
+        } else {
+            dayNum = ""
+        }
         self.dayOfWeek = myCalendar.component(.weekday, from: dateOfDay)
 
         // print("\(date.toString()) Successfully Created, DayOfWeek: \(self.dayOfWeek), selectable: \(self.selectable)")
