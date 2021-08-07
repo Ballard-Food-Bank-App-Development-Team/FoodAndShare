@@ -30,6 +30,10 @@ struct DaySelectView: View {
         }
         
     }
+    
+    private func updateHours(dayOfWeek: Int) {
+        
+    }
 
     var body: some View {
         VStack {
@@ -38,7 +42,7 @@ struct DaySelectView: View {
                 
                 Button(action: {
                     calendarState -= 1
-                    if calendarState < 1 {
+                    if calendarState < 0 {
                         calendarState = -1
                     }
                     changeMonth()
@@ -91,11 +95,12 @@ struct DaySelectView: View {
                         ForEach(week, id: \.self) { day in
                             Group {
                                 if day.selectable {
-                                    NavigationLink(
-                                        destination: Text("\(day.dayNum)"),
-                                        label: {
-                                            CalendarIcon(dayNum: day.dayNum, textColor: Color.white, circleColor: Color("customOrange"))
-                                        })
+                                    Button(action: {
+                                        currentMonth.arrayOfWeeksThenDays!.remove(at: week)
+                                        updateHours(day: day.dayOfWeek)
+                                    }, label: {
+                                        CalendarIcon(dayNum: day.dayNum, textColor: Color.white, circleColor: Color("customOrange"))
+                                    })
                                 } else if day.shown {
                                     CalendarIcon(dayNum: day.dayNum, textColor: Color("darkInvert"), circleColor: Color(.systemBackground))
                                 } else {
