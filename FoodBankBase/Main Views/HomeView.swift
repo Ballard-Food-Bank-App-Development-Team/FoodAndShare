@@ -13,26 +13,11 @@ struct HomeView: View {
 
     var body: some View {
         NavigationView {
-            ZStack {
-                Color("greyBackground")
-                    .ignoresSafeArea()
-                
-                VStack {
-                    // MARK: - Logo
+            VStack {
+                // MARK: - Logo
+                HStack {
+                    Spacer()
                     
-                    VStack {
-                        Image("foodbankMain")
-                            .resizable()
-                            .frame(width: 350, height: 350, alignment: .center)
-                            .clipShape(RoundedRectangle(cornerRadius: 25.0))
-                        HStack {
-                            Spacer()
-                            Text("Created by Ian and Ben")
-                                .font(.caption)
-                                .padding(.trailing)
-                        }
-                    }
-                    // MARK: - Calendar Button
                     NavigationLink(
                         destination: DaySelectView(),
                         label: {
@@ -40,144 +25,202 @@ struct HomeView: View {
                                 Image("calendarIcon")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: 50, height: 50,   alignment: .topLeading)
-                                    .frame(width: 50, height: 50)
-                                    .clipShape(Circle())
-                                    .overlay(Circle().stroke(Color("customOrange"), lineWidth: 3))
-                                VStack(alignment: .leading) {
-                                    Text("Calendar")
-                                        .font(.custom("Headine", size: 24))
-                                    
-                                    Text("Volunteer Times ")
-                                        .font(.custom("Headine", size: 14))
-                                }
-                                    
-                                }
-                                .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width/5, height: 80, alignment: .center)
-                                .accentColor(.black)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .foregroundColor(.white)
-                                )
-                            })
-                        
-                    // MARK: - Map Button
-                    NavigationLink(
-                        destination: FoodBankMapView(),
-                        label: {
-                            HStack {
-                                Image("mapIcon")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 25, height: 22,   alignment: .topLeading)
-                                    .frame(width: 50, height: 50)
-                                    .clipShape(Circle())
-                                    .overlay(Circle().stroke(Color("customOrange"), lineWidth: 3))
-                                VStack(alignment: .leading) {
-                                    Text("Map")
-                                        .font(.custom("Headine", size: 24))
-                                    
-                                    Text("Locate resources")
-                                        .font(.custom("Headine", size: 14))
-                                }
-                                
+                                    .frame(width: 40, height: 40,   alignment: .topLeading)
+                                    .frame(width: 40, height: 40)
+                                    .background(Color("spaceGrey"))
+                                    .clipShape(Rectangle())
+                                Text("Calendar")
+                                    .foregroundColor(Color("navyBlue"))
+                                    .font(.custom("HelveticaNeue-Medium", size: 20))
                             }
-                            .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width/5, height: 80, alignment: .center)
                             .accentColor(.black)
+                            .padding(.all, 12)
                             .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .foregroundColor(.white)
-                            )
-                        })
-                    // MARK: - Info Button
-                    NavigationLink(
-                        destination: Text("Information Page"),
-                        label: {
-                            HStack {
-                                Image("informationIcon")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 25, height: 25,   alignment: .topLeading)
-                                    .frame(width: 50, height: 50)
-                                    .clipShape(Circle())
-                                    .overlay(Circle().stroke(Color("customOrange"), lineWidth: 3))
-                                VStack(alignment: .leading) {
-                                    Text("Info")
-                                        .font(.custom("Headine", size: 24))
-                                    
-                                    Text("Learn more info ")
-                                        .font(.custom("Headine", size: 14))
-                                }
-                                
-                            }
-                            .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width/5, height: 80, alignment: .center)
-                            .accentColor(.black)
-                            .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .foregroundColor(.white)
-                            )
-                        })
-                    // MARK: - News Button
-                    NavigationLink(
-                        destination: Text("News"),
-                        label: {
-                            HStack {
-                                Image("newsIcon")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 22, height: 22,   alignment: .topLeading)
-                                    .frame(width: 50, height: 50)
-                                    .clipShape(Circle())
-                                    .overlay(Circle().stroke(Color("customOrange"), lineWidth: 3))
-                                VStack(alignment: .leading) {
-                                    Text("News")
-                                        .font(.custom("Headine", size: 24))
-                                    
-                                    Text("Foodbank news ")
-                                        .font(.custom("Headine", size: 14))
-                                }
-                                
-                            }
-                            .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width/5, height: 80, alignment: .center)
-                            .accentColor(.black)
-                            .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .foregroundColor(.white)
+                                Capsule()
+                                    .foregroundColor(Color("spaceGrey"))
+                                    .shadow(color: Color("customOrange"), radius: 5, y: 1)
                             )
                         })
                     
-                    // MARK: - Account
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    
                     NavigationLink(
                         destination: AccountSettingsView(),
                         label: {
-                            HStack {
-                                Image(systemName: "person")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30, height: 30)
-                                    .frame(width: 50, height: 50)
-                                    .clipShape(Circle())
-                                    .overlay(Circle().stroke(Color("customOrange"), lineWidth: 3))
-                                VStack(alignment: .leading) {
-                                    Text("Account")
-                                        .font(.custom("Headine", size: 24))
-                                    
-                                    Text("Account settings")
-                                        .font(.custom("Headine", size: 14))
-                                }
+                            ZStack {
+                                Circle()
+                                    .frame(width: 60, height: 60,   alignment: .center)
+                                    .foregroundColor(Color("spaceGrey"))
+                                    .shadow(color: Color("customOrange"), radius: 5, y: 1)
                                 
+                                LinearGradient(gradient: Gradient(colors: [.red, .purple]), startPoint: .bottomLeading, endPoint: .topTrailing)
+                                    .frame(width: 29, height: 29,   alignment: .center)
+                                    .mask(
+                                        Image(systemName: "person.fill")
+                                            .resizable()
+                                            .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
+                                    )
+                                    
                             }
-                            .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width/5, height: 80, alignment: .center)
-                            .accentColor(.black)
-                            .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .foregroundColor(.white)
-                            )
-                        })
+                        }
+                    )
+                    
                     Spacer()
                 }
-            }
-            .onAppear {
+                
+                /*
+                Image("foodbankHome")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 400, height: 180,   alignment: .center)
+                    .frame(width: 360, height: 140)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                .padding()
+                */
+                
+                Image("foodbankMain")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 300, height: 160,   alignment: .center)
+                    
+                    
+                
+                // MARK: - Info Button
+                NavigationLink(
+                    destination: Text("info"),
+                    label: {
+                        HStack {
+                            Spacer()
+                            Spacer()
+                            Image("infoIcon")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 70, height: 70,   alignment: .topLeading)
+                                .frame(width: 50, height: 50)
+                                .background(Color.white)
+                                .clipShape(Circle())
+                                //.overlay(Circle().stroke(Color("customOrange"), lineWidth: 2))
+                            VStack(alignment: .leading) {
+                                Text("Info")
+                                    .foregroundColor(Color("navyBlue"))
+                                    .font(.custom("HelveticaNeue-Medium", size: 24))
+                                
+                                Text("Click to learn more")//19
+                                    .foregroundColor(Color("textGrey"))
+                                    .font(.custom("HelveticaNeue-Medium", size: 16))
+                            }
+                            Spacer()
+                            Spacer()
+                            Image("orangePlus")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30,   alignment: .center)
+                                .frame(width: 50, height: 50)
+                                .background(Color("spaceGrey"))
+                            Spacer()
+                            
+
+                            
+                        }
+                        .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width/4, height: 100, alignment: .center)
+                        .accentColor(.black)
+                        .background(
+                            RoundedRectangle(cornerRadius: 25)
+                                .foregroundColor(Color("spaceGrey"))
+                                .shadow(color: Color("customOrange"), radius: 5, y: 1)
+                        )
+                    })
+                Spacer()
+                // MARK: - Info Button
+                NavigationLink(
+                    destination: FoodBankMapView(),
+                    label: {
+                        HStack {
+                            Spacer()
+                            Image("mapIcon")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 100, height: 100,   alignment: .center)
+                                .frame(width: 50, height: 50)
+                                .background(Color.white)
+                                .clipShape(Circle())
+                                //.overlay(Circle().stroke(Color("customOrange"), lineWidth: 2))
+                            VStack(alignment: .leading) {
+                                Text("Map")
+                                    .foregroundColor(Color("navyBlue"))
+                                    .font(.custom("HelveticaNeue-Medium", size: 24))
+                                
+                        Text("Find help near you ")//19
+                                    .foregroundColor(Color("textGrey"))
+                                    .font(.custom("HelveticaNeue-Medium", size: 16))
+                            }
+                            Spacer()
+                            Image("orangePlus")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30,   alignment: .center)
+                                .frame(width: 50, height: 50)
+                                .background(Color("spaceGrey"))
+                            Spacer()
+                        }
+                        .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width/4, height: 100, alignment: .center)
+                        .accentColor(.black)
+                        .background(
+                            RoundedRectangle(cornerRadius: 25)
+                                .foregroundColor(Color("spaceGrey"))
+                                .shadow(color: Color("customOrange"), radius: 5, y: 1)
+                        )
+                    })
+                Spacer()
+                // MARK: - News Button
+                NavigationLink(
+                    destination: Text("News"),
+                    label: {
+                        HStack {
+                            Spacer()
+                            Image("newsIcon")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 100, height: 100,   alignment: .center)
+                                .frame(width: 50, height: 50)
+                                .background(Color.white)
+                                .clipShape(Circle())
+                                //.overlay(Circle().stroke(Color("navyBlue"), lineWidth: 2))
+                            VStack(alignment: .leading) {
+                                Text("News")
+                                    .foregroundColor(Color("navyBlue"))
+                                    .font(.custom("HelveticaNeue-Medium", size: 24))
+                                
+                                Text("Our latest updates ") //19
+                                    .foregroundColor(Color("textGrey"))
+                                    .font(.custom("HelveticaNeue-Medium", size: 16))
+                            }
+                            Spacer()
+                            Image("orangePlus")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30,   alignment: .center)
+                                .frame(width: 50, height: 50)
+                                .background(Color("spaceGrey"))
+                            Spacer()
+                            
+
+                            
+                        }
+                        .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width/4, height: 100, alignment: .center)
+                        .accentColor(.black)
+                        .background(
+                            RoundedRectangle(cornerRadius: 25)
+                                .foregroundColor(Color("spaceGrey"))
+                                .shadow(color: Color("customOrange"), radius: 5, y: 1)
+                        )
+                    })
+                Spacer()
+                Spacer()
+                Spacer()
+        }            .onAppear {
                 self.user.checkUserState()
             }
             .navigationBarHidden(true)

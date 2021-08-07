@@ -13,11 +13,14 @@ struct CustomCalendarDay: Hashable {
     var dayOfWeek: Int
     var selectable: Bool
     var shown: Bool
+    
+    var choosen: Bool
 
     init(dateOfDay: Date, selectable: Bool, shown: Bool) {
         self.date = dateOfDay
         self.selectable = selectable
         self.shown = shown
+        self.choosen = false
 
         let myCalendar = Calendar(identifier: .gregorian)
         if shown || selectable {
