@@ -13,7 +13,7 @@ struct FoodBankMapView: View {
 
     var body: some View {
         Map(coordinateRegion: $region)
-            .frame(width: 400, height: 300)
+            .ignoresSafeArea()
     }
 }
 

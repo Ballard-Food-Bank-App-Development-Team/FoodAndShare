@@ -14,10 +14,10 @@ struct ContentView: View {
         Group {
             if self.user.isUserAuthenticated == .undefined {
                 ZStack {
-                    Color("loadingBackground")
+                    Color("LoadingBackground")
                         .ignoresSafeArea()
                     VStack {
-                        Image("loadingLogo")
+                        Image("LoadingLogo")
                             .resizable()
                             .frame(width: 200, height: 200, alignment: .center)
                     }
