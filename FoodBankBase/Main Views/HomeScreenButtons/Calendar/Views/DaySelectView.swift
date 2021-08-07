@@ -96,8 +96,8 @@ struct DaySelectView: View {
                             Group {
                                 if day.selectable {
                                     Button(action: {
-                                        currentMonth.arrayOfWeeksThenDays!.remove(at: week)
-                                        updateHours(day: day.dayOfWeek)
+                                       /* currentMonth.arrayOfWeeksThenDays!.remove(at: week)
+                                        updateHours(day: day.dayOfWeek)*/
                                     }, label: {
                                         CalendarIcon(dayNum: day.dayNum, textColor: Color.white, circleColor: Color("customOrange"))
                                     })

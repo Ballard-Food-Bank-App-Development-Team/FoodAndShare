@@ -89,7 +89,7 @@ struct HomeView: View {
                 
                 // MARK: - Info Button
                 NavigationLink(
-                    destination: Text("info"),
+                    destination: InfoView(),
                     label: {
                         HStack {
                             Spacer()
