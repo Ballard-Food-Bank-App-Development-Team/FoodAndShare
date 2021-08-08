@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		268A585E26A6A2F00069A74A /* CalendarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A585D26A6A2F00069A74A /* CalendarIcon.swift */; };
+		26F73E7F26BEE6D800223EF5 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F73E7E26BEE6D800223EF5 /* InfoView.swift */; };
+		26F73E8326C035D600223EF5 /* NewsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F73E8226C035D600223EF5 /* NewsUIView.swift */; };
 		D30086B72680F5220054514E /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086B62680F5220054514E /* FBAuth.swift */; };
 		D30086BB26811CE40054514E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086BA26811CE40054514E /* UserInfo.swift */; };
 		D30086C126812C900054514E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086C026812C900054514E /* UserViewModel.swift */; };
@@ -29,7 +31,6 @@
 		D3C4BDCF267980D200731539 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCE267980D200731539 /* AccountSettingsView.swift */; };
 		D3D46606267C2BAD0006F9A3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D46605267C2BAD0006F9A3 /* HomeView.swift */; };
 		D3E79D0E2691379E00A389E6 /* FoodBankListChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E79D0D2691379E00A389E6 /* FoodBankListChoiceView.swift */; };
-		D3E79D13269137FC00A389E6 /* FoodBankDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E79D12269137FC00A389E6 /* FoodBankDataView.swift */; };
 		D3E79D162691382200A389E6 /* FoodBankMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E79D152691382200A389E6 /* FoodBankMapView.swift */; };
 		D3F47B8E269233CA009E73E8 /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F47B8D269233CA009E73E8 /* FirebaseUser.swift */; };
 		D3F47B9026923533009E73E8 /* FirebaseUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F47B8F26923533009E73E8 /* FirebaseUserViewModel.swift */; };
@@ -39,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		268A585D26A6A2F00069A74A /* CalendarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarIcon.swift; sourceTree = "<group>"; };
+		26F73E7E26BEE6D800223EF5 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		26F73E8226C035D600223EF5 /* NewsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsUIView.swift; sourceTree = "<group>"; };
 		3625E3D1B890F58F54CB597B /* Pods-FoodBankBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.debug.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.debug.xcconfig"; sourceTree = "<group>"; };
 		8F396719407A92FFB2C66947 /* Pods_FoodBankBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodBankBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6584F326D1C3EEAB28DB6A /* Pods-FoodBankBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.release.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,7 +68,6 @@
 		D3C4BDCE267980D200731539 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 		D3D46605267C2BAD0006F9A3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D3E79D0D2691379E00A389E6 /* FoodBankListChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBankListChoiceView.swift; sourceTree = "<group>"; };
-		D3E79D12269137FC00A389E6 /* FoodBankDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBankDataView.swift; sourceTree = "<group>"; };
 		D3E79D152691382200A389E6 /* FoodBankMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBankMapView.swift; sourceTree = "<group>"; };
 		D3F47B8D269233CA009E73E8 /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
 		D3F47B8F26923533009E73E8 /* FirebaseUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserViewModel.swift; sourceTree = "<group>"; };
@@ -90,6 +92,22 @@
 				8F396719407A92FFB2C66947 /* Pods_FoodBankBase.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26F73E8026C035B000223EF5 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				26F73E8126C035BC00223EF5 /* Views */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		26F73E8126C035BC00223EF5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				26F73E8226C035D600223EF5 /* NewsUIView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A452C5E351033CFCAC4E6094 /* Pods */ = {
@@ -201,7 +219,7 @@
 		D3A60FC726915D1A00C1C268 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D3E79D12269137FC00A389E6 /* FoodBankDataView.swift */,
+				26F73E7E26BEE6D800223EF5 /* InfoView.swift */,
 				D3E79D0D2691379E00A389E6 /* FoodBankListChoiceView.swift */,
 			);
 			path = Views;
@@ -258,6 +276,7 @@
 		D3E79D1726913AA200A389E6 /* HomeScreenButtons */ = {
 			isa = PBXGroup;
 			children = (
+				26F73E8026C035B000223EF5 /* News */,
 				D3E79D0B2691376A00A389E6 /* Map */,
 				D3E79D0F269137AE00A389E6 /* FoodBankInfo */,
 				D3E79D0A269136B200A389E6 /* Calendar */,
@@ -453,7 +472,8 @@
 				268A585E26A6A2F00069A74A /* CalendarIcon.swift in Sources */,
 				D35E184326BF418B00274EF9 /* Location.swift in Sources */,
 				D3333DD92675964D00447A3B /* SceneDelegate.swift in Sources */,
-				D3E79D13269137FC00A389E6 /* FoodBankDataView.swift in Sources */,
+				26F73E7F26BEE6D800223EF5 /* InfoView.swift in Sources */,
+				26F73E8326C035D600223EF5 /* NewsUIView.swift in Sources */,
 				D3C4BDCF267980D200731539 /* AccountSettingsView.swift in Sources */,
 				D3333DED267596AB00447A3B /* LoginView.swift in Sources */,
 				D30086B72680F5220054514E /* FBAuth.swift in Sources */,
