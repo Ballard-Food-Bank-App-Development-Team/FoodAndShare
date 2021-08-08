@@ -17,7 +17,7 @@ struct HomeView: View {
                 // MARK: - Logo
                 HStack {
                     Spacer()
-                    
+
                     NavigationLink(
                         destination: DaySelectView(),
                         label: {
@@ -33,19 +33,19 @@ struct HomeView: View {
                                     .foregroundColor(Color("navyBlue"))
                                     .font(.custom("HelveticaNeue-Medium", size: 20))
                             }
+                            .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width/4, height: 50, alignment: .center)
                             .accentColor(.black)
-                            .padding(.all, 12)
                             .background(
                                 Capsule()
                                     .foregroundColor(Color("spaceGrey"))
                                     .shadow(color: Color("customOrange"), radius: 5, y: 1)
                             )
                         })
-                    
+
                     Spacer()
                     Spacer()
                     Spacer()
-                    
+
                     NavigationLink(
                         destination: AccountSettingsView(),
                         label: {
@@ -54,7 +54,7 @@ struct HomeView: View {
                                     .frame(width: 60, height: 60,   alignment: .center)
                                     .foregroundColor(Color("spaceGrey"))
                                     .shadow(color: Color("customOrange"), radius: 5, y: 1)
-                                
+
                                 LinearGradient(gradient: Gradient(colors: [.red, .purple]), startPoint: .bottomLeading, endPoint: .topTrailing)
                                     .frame(width: 29, height: 29,   alignment: .center)
                                     .mask(
@@ -62,14 +62,14 @@ struct HomeView: View {
                                             .resizable()
                                             .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
                                     )
-                                    
+
                             }
                         }
                     )
-                    
+
                     Spacer()
                 }
-                
+
                 /*
                 Image("foodbankHome")
                     .resizable()
@@ -79,14 +79,12 @@ struct HomeView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding()
                 */
-                
+
                 Image("foodbankMain")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 300, height: 160,   alignment: .center)
-                    
-                    
-                
+
                 // MARK: - Info Button
                 NavigationLink(
                     destination: InfoView(),
@@ -101,13 +99,13 @@ struct HomeView: View {
                                 .frame(width: 50, height: 50)
                                 .background(Color.white)
                                 .clipShape(Circle())
-                                //.overlay(Circle().stroke(Color("customOrange"), lineWidth: 2))
+                                // .overlay(Circle().stroke(Color("customOrange"), lineWidth: 2))
                             VStack(alignment: .leading) {
                                 Text("Info")
                                     .foregroundColor(Color("navyBlue"))
                                     .font(.custom("HelveticaNeue-Medium", size: 24))
-                                
-                                Text("Click to learn more")//19
+
+                                Text("Click to learn more")// 19
                                     .foregroundColor(Color("textGrey"))
                                     .font(.custom("HelveticaNeue-Medium", size: 16))
                             }
@@ -120,9 +118,7 @@ struct HomeView: View {
                                 .frame(width: 50, height: 50)
                                 .background(Color("spaceGrey"))
                             Spacer()
-                            
 
-                            
                         }
                         .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width/4, height: 100, alignment: .center)
                         .accentColor(.black)
@@ -146,13 +142,13 @@ struct HomeView: View {
                                 .frame(width: 50, height: 50)
                                 .background(Color.white)
                                 .clipShape(Circle())
-                                //.overlay(Circle().stroke(Color("customOrange"), lineWidth: 2))
+                                // .overlay(Circle().stroke(Color("customOrange"), lineWidth: 2))
                             VStack(alignment: .leading) {
                                 Text("Map")
                                     .foregroundColor(Color("navyBlue"))
                                     .font(.custom("HelveticaNeue-Medium", size: 24))
-                                
-                        Text("Find help near you ")//19
+
+                        Text("Find help near you ")// 19
                                     .foregroundColor(Color("textGrey"))
                                     .font(.custom("HelveticaNeue-Medium", size: 16))
                             }
@@ -187,13 +183,13 @@ struct HomeView: View {
                                 .frame(width: 50, height: 50)
                                 .background(Color.white)
                                 .clipShape(Circle())
-                                //.overlay(Circle().stroke(Color("navyBlue"), lineWidth: 2))
+                                // .overlay(Circle().stroke(Color("navyBlue"), lineWidth: 2))
                             VStack(alignment: .leading) {
                                 Text("News")
                                     .foregroundColor(Color("navyBlue"))
                                     .font(.custom("HelveticaNeue-Medium", size: 24))
-                                
-                                Text("Our latest updates ") //19
+
+                                Text("Our latest updates ") // 19
                                     .foregroundColor(Color("textGrey"))
                                     .font(.custom("HelveticaNeue-Medium", size: 16))
                             }
@@ -205,9 +201,7 @@ struct HomeView: View {
                                 .frame(width: 50, height: 50)
                                 .background(Color("spaceGrey"))
                             Spacer()
-                            
 
-                            
                         }
                         .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width/4, height: 100, alignment: .center)
                         .accentColor(.black)
