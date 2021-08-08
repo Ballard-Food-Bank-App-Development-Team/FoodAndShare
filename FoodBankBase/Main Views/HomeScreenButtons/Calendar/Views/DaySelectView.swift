@@ -32,26 +32,24 @@ struct DaySelectView: View {
     }
 
     private func updateHours() {
-        for dayOn in 1...currentMonth.lastDayOfMonth! {
-            if currentMonth.mutableArray![dayOn - 1].choosen {
-                switch currentMonth.mutableArray![dayOn - 1].dayOfWeek + 1 {
-                case 1:
-                    foodBankState = "Closed"
-                case 2:
-                    foodBankState = "2pm - 6pm"
-                case 3:
-                    foodBankState = "11am - 4pm"
-                case 4:
-                    foodBankState = "12pm - 4pm"
-                case 5:
-                    foodBankState = "2pm - 6pm"
-                case 6:
-                    foodBankState = "Closed"
-                case 7:
-                    foodBankState = "Closed"
-                default:
-                    foodBankState = "Closed"
-                }
+        for dayOn in 1...currentMonth.lastDayOfMonth! where currentMonth.mutableArray![dayOn - 1].choosen {
+            switch currentMonth.mutableArray![dayOn - 1].dayOfWeek + 1 {
+            case 1:
+                foodBankState = "Closed"
+            case 2:
+                foodBankState = "2pm - 6pm"
+            case 3:
+                foodBankState = "11am - 4pm"
+            case 4:
+                foodBankState = "12pm - 4pm"
+            case 5:
+                foodBankState = "2pm - 6pm"
+            case 6:
+                foodBankState = "Closed"
+            case 7:
+                foodBankState = "Closed"
+            default:
+                foodBankState = "Closed"
             }
         }
     }
@@ -127,17 +125,32 @@ struct DaySelectView: View {
                                         currentMonth.refreshDaySelect(newDate: day)
                                         updateHours()
                                     }, label: {
-                                        CalendarIcon(dayNum: day.dayNum, textColor: Color.white, circleColor: Color("customOrange"), outlineColor: selected ? Color("darkInvert") : Color.clear)
+                                        CalendarIcon(
+                                            dayNum: day.dayNum,
+                                            textColor: Color.white,
+                                            circleColor: Color("customOrange"),
+                                            outlineColor: selected ? Color("darkInvert") : Color.clear
+                                        )
                                     })
                                 } else if day.shown {
                                     Button(action: {
                                         currentMonth.refreshDaySelect(newDate: day)
                                         updateHours()
                                     }, label: {
-                                        CalendarIcon(dayNum: day.dayNum, textColor: Color("darkInvert"), circleColor: Color(.systemBackground), outlineColor: selected ? Color("darkInvert") : Color.clear)
+                                        CalendarIcon(
+                                            dayNum: day.dayNum,
+                                            textColor: Color("darkInvert"),
+                                            circleColor: Color(.systemBackground),
+                                            outlineColor: selected ? Color("darkInvert") : Color.clear
+                                        )
                                     })
                                 } else {
-                                    CalendarIcon(dayNum: day.dayNum, textColor: Color.white, circleColor: Color(.systemBackground), outlineColor: Color.clear)
+                                    CalendarIcon(
+                                        dayNum: day.dayNum,
+                                        textColor: Color.white,
+                                        circleColor: Color(.systemBackground),
+                                        outlineColor: Color.clear
+                                    )
                                 }
                             }
                         }

@@ -22,6 +22,7 @@
 		D3333DED267596AB00447A3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DEC267596AB00447A3B /* LoginView.swift */; };
 		D3333DEF267596BD00447A3B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DEE267596BD00447A3B /* SignUpView.swift */; };
 		D3455C6F269E260700E19233 /* CustomCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3455C6E269E260700E19233 /* CustomCalendar.swift */; };
+		D35E184326BF418B00274EF9 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35E184226BF418B00274EF9 /* Location.swift */; };
 		D398667C269A4E9400AD313A /* DaySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D398667B269A4E9400AD313A /* DaySelectView.swift */; };
 		D3C4BDC22678125900731539 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3C4BDC12678125900731539 /* GoogleService-Info.plist */; };
 		D3C4BDCB2679803F00731539 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */; };
@@ -57,6 +58,7 @@
 		D3333DEC267596AB00447A3B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D3333DEE267596BD00447A3B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D3455C6E269E260700E19233 /* CustomCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendar.swift; sourceTree = "<group>"; };
+		D35E184226BF418B00274EF9 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		D398667B269A4E9400AD313A /* DaySelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelectView.swift; sourceTree = "<group>"; };
 		D3C4BDC12678125900731539 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -180,6 +182,20 @@
 			path = Account;
 			sourceTree = "<group>";
 		};
+		D35E184426BF424C00274EF9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D35E184526BF425D00274EF9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D3A60FC726915D1A00C1C268 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,7 +239,10 @@
 		D3E79D0B2691376A00A389E6 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				D35E184526BF425D00274EF9 /* Models */,
+				D35E184426BF424C00274EF9 /* Views */,
 				D3E79D152691382200A389E6 /* FoodBankMapView.swift */,
+				D35E184226BF418B00274EF9 /* Location.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -432,6 +451,7 @@
 				D3E79D0E2691379E00A389E6 /* FoodBankListChoiceView.swift in Sources */,
 				D398667C269A4E9400AD313A /* DaySelectView.swift in Sources */,
 				268A585E26A6A2F00069A74A /* CalendarIcon.swift in Sources */,
+				D35E184326BF418B00274EF9 /* Location.swift in Sources */,
 				D3333DD92675964D00447A3B /* SceneDelegate.swift in Sources */,
 				D3E79D13269137FC00A389E6 /* FoodBankDataView.swift in Sources */,
 				D3C4BDCF267980D200731539 /* AccountSettingsView.swift in Sources */,
