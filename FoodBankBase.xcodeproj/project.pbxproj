@@ -185,6 +185,7 @@
 		D35E184426BF424C00274EF9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D3E79D152691382200A389E6 /* FoodBankMapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +193,7 @@
 		D35E184526BF425D00274EF9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D35E184226BF418B00274EF9 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,8 +243,6 @@
 			children = (
 				D35E184526BF425D00274EF9 /* Models */,
 				D35E184426BF424C00274EF9 /* Views */,
-				D3E79D152691382200A389E6 /* FoodBankMapView.swift */,
-				D35E184226BF418B00274EF9 /* Location.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
