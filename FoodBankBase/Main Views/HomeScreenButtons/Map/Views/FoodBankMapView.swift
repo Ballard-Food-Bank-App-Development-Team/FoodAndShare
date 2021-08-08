@@ -19,6 +19,8 @@ struct FoodBankMapView: View {
             longitudeDelta: 0.05
         )
     )
+    
+    @Environment(\.presentationMode) var presentation
 
     let locations: [Location] = [
         Location(
@@ -54,6 +56,18 @@ struct FoodBankMapView: View {
 
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Map")
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(
+            leading: Button(action: { presentation.wrappedValue.dismiss()
+            }
+            , label: {
+                Image(systemName: "arrow.backward")
+                    .imageScale(.large)
+                    .accentColor(Color("darkInvert"))
+            })
+        )
     }
 }
 

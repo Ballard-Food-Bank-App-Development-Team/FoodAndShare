@@ -172,7 +172,7 @@ struct HomeView: View {
                 Spacer()
                 // MARK: - News Button
                 NavigationLink(
-                    destination: Text("News"),
+                    destination: NewsUIView(),
                     label: {
                         HStack {
                             Spacer()
