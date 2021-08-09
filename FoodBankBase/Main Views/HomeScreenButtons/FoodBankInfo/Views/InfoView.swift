@@ -10,7 +10,7 @@ import SwiftUI
 struct InfoView: View {
     @Environment(\.presentationMode) var presentation
     var body: some View {
-        VStack() {
+        VStack {
             Image("foodbankInfo")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -32,8 +32,7 @@ struct InfoView: View {
                 .font(.custom("HelveticaNeue-Medium", size: 18))
                 .padding(.horizontal)
                 .padding()
-                
-            
+
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Info Page")

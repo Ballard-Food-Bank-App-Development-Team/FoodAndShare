@@ -33,7 +33,7 @@ struct DaySelectView: View {
 
     private func updateHours() {
         for dayOn in 1...currentMonth.lastDayOfMonth! where currentMonth.mutableArray![dayOn - 1].choosen {
-            switch currentMonth.mutableArray![dayOn - 1].dayOfWeek + 1 {
+            switch currentMonth.mutableArray![dayOn - 1].dayOfWeek {
             case 1:
                 foodBankState = "Closed"
             case 2:
@@ -187,6 +187,5 @@ struct DaySelectView: View {
 struct DaySelectView_Previews: PreviewProvider {
     static var previews: some View {
         DaySelectView()
-
     }
 }

@@ -71,14 +71,14 @@ struct HomeView: View {
                 }
 
                 /*
-                Image("foodbankHome")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 400, height: 180,   alignment: .center)
-                    .frame(width: 360, height: 140)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                .padding()
-                */
+                 Image("foodbankHome")
+                 .resizable()
+                 .aspectRatio(contentMode: .fit)
+                 .frame(width: 400, height: 180,   alignment: .center)
+                 .frame(width: 360, height: 140)
+                 .clipShape(RoundedRectangle(cornerRadius: 10))
+                 .padding()
+                 */
 
                 Image("foodbankMain")
                     .resizable()
@@ -99,7 +99,7 @@ struct HomeView: View {
                                 .frame(width: 50, height: 50)
                                 .background(Color.white)
                                 .clipShape(Circle())
-                                // .overlay(Circle().stroke(Color("customOrange"), lineWidth: 2))
+                            // .overlay(Circle().stroke(Color("customOrange"), lineWidth: 2))
                             VStack(alignment: .leading) {
                                 Text("Info")
                                     .foregroundColor(Color("navyBlue"))
@@ -142,13 +142,13 @@ struct HomeView: View {
                                 .frame(width: 50, height: 50)
                                 .background(Color.white)
                                 .clipShape(Circle())
-                                // .overlay(Circle().stroke(Color("customOrange"), lineWidth: 2))
+                            // .overlay(Circle().stroke(Color("customOrange"), lineWidth: 2))
                             VStack(alignment: .leading) {
                                 Text("Map")
                                     .foregroundColor(Color("navyBlue"))
                                     .font(.custom("HelveticaNeue-Medium", size: 24))
 
-                        Text("Find help near you ")// 19
+                                Text("Find help near you ")// 19
                                     .foregroundColor(Color("textGrey"))
                                     .font(.custom("HelveticaNeue-Medium", size: 16))
                             }
@@ -183,7 +183,7 @@ struct HomeView: View {
                                 .frame(width: 50, height: 50)
                                 .background(Color.white)
                                 .clipShape(Circle())
-                                // .overlay(Circle().stroke(Color("navyBlue"), lineWidth: 2))
+                            // .overlay(Circle().stroke(Color("navyBlue"), lineWidth: 2))
                             VStack(alignment: .leading) {
                                 Text("News")
                                     .foregroundColor(Color("navyBlue"))
@@ -214,19 +214,20 @@ struct HomeView: View {
                 Spacer()
                 Spacer()
                 Spacer()
-        }            .onAppear {
+            }
+            .onAppear {
                 self.user.checkUserState()
             }
             .navigationBarHidden(true)
             /*.navigationTitle("Food Bank")
-            .navigationBarItems(
-                trailing:
-                    NavigationLink(destination: AccountSettingsView()) {
-                        Image(systemName: "person.crop.circle.fill")
-                            .font(.title)
-                            .padding(.all)
-                    }
-            )*/
+             .navigationBarItems(
+             trailing:
+             NavigationLink(destination: AccountSettingsView()) {
+             Image(systemName: "person.crop.circle.fill")
+             .font(.title)
+             .padding(.all)
+             }
+             )*/
         }
     }
 }

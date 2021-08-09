@@ -19,7 +19,7 @@ struct FoodBankMapView: View {
             longitudeDelta: 0.05
         )
     )
-    
+
     @Environment(\.presentationMode) var presentation
 
     let locations: [Location] = [

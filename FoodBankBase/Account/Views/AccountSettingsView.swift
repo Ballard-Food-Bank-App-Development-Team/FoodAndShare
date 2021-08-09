@@ -13,7 +13,9 @@ struct AccountSettingsView: View {
 
     var body: some View {
         VStack {
-            Text("Account Settings")
+            Form {
+                Text("Name: \(self.user.firstName) \(self.user.lastName)")
+            }
         }
         .navigationBarTitleDisplayMode(.large)
         .navigationTitle("Account Settings")

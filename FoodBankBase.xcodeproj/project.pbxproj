@@ -30,6 +30,8 @@
 		D3C4BDCB2679803F00731539 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */; };
 		D3C4BDCF267980D200731539 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCE267980D200731539 /* AccountSettingsView.swift */; };
 		D3D46606267C2BAD0006F9A3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D46605267C2BAD0006F9A3 /* HomeView.swift */; };
+		D3E4514026C041E500624C3A /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4513F26C041E500624C3A /* FeedbackView.swift */; };
+		D3E4514326C0439200624C3A /* EmailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4514226C0439200624C3A /* EmailHelper.swift */; };
 		D3E79D0E2691379E00A389E6 /* FoodBankListChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E79D0D2691379E00A389E6 /* FoodBankListChoiceView.swift */; };
 		D3E79D162691382200A389E6 /* FoodBankMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E79D152691382200A389E6 /* FoodBankMapView.swift */; };
 		D3F47B8E269233CA009E73E8 /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F47B8D269233CA009E73E8 /* FirebaseUser.swift */; };
@@ -67,6 +69,8 @@
 		D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		D3C4BDCE267980D200731539 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 		D3D46605267C2BAD0006F9A3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D3E4513F26C041E500624C3A /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
+		D3E4514226C0439200624C3A /* EmailHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailHelper.swift; sourceTree = "<group>"; };
 		D3E79D0D2691379E00A389E6 /* FoodBankListChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBankListChoiceView.swift; sourceTree = "<group>"; };
 		D3E79D152691382200A389E6 /* FoodBankMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBankMapView.swift; sourceTree = "<group>"; };
 		D3F47B8D269233CA009E73E8 /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
@@ -247,6 +251,31 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D3E4513B26C0417100624C3A /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				D3E4514126C0438000624C3A /* Helpers */,
+				D3E4513D26C0418600624C3A /* Views */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		D3E4513D26C0418600624C3A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D3E4513F26C041E500624C3A /* FeedbackView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D3E4514126C0438000624C3A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D3E4514226C0439200624C3A /* EmailHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		D3E79D0A269136B200A389E6 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +305,7 @@
 		D3E79D1726913AA200A389E6 /* HomeScreenButtons */ = {
 			isa = PBXGroup;
 			children = (
+				D3E4513B26C0417100624C3A /* Feedback */,
 				26F73E8026C035B000223EF5 /* News */,
 				D3E79D0B2691376A00A389E6 /* Map */,
 				D3E79D0F269137AE00A389E6 /* FoodBankInfo */,
@@ -460,6 +490,7 @@
 				D3F47B8E269233CA009E73E8 /* FirebaseUser.swift in Sources */,
 				D3F47B9026923533009E73E8 /* FirebaseUserViewModel.swift in Sources */,
 				D3333DEB2675968D00447A3B /* AccountChoiceView.swift in Sources */,
+				D3E4514326C0439200624C3A /* EmailHelper.swift in Sources */,
 				D3455C6F269E260700E19233 /* CustomCalendar.swift in Sources */,
 				D3D46606267C2BAD0006F9A3 /* HomeView.swift in Sources */,
 				D30086BB26811CE40054514E /* UserInfo.swift in Sources */,
@@ -472,6 +503,7 @@
 				268A585E26A6A2F00069A74A /* CalendarIcon.swift in Sources */,
 				D35E184326BF418B00274EF9 /* Location.swift in Sources */,
 				D3333DD92675964D00447A3B /* SceneDelegate.swift in Sources */,
+				D3E4514026C041E500624C3A /* FeedbackView.swift in Sources */,
 				26F73E7F26BEE6D800223EF5 /* InfoView.swift in Sources */,
 				26F73E8326C035D600223EF5 /* NewsUIView.swift in Sources */,
 				D3C4BDCF267980D200731539 /* AccountSettingsView.swift in Sources */,
@@ -551,7 +583,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

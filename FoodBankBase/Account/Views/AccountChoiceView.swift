@@ -37,7 +37,20 @@ struct AccountChoiceView: View {
                                 .foregroundColor(Color("darkInvert"))
                         )
                 }
-
+                /*
+                Button(action: {
+                    
+                }, label: {
+                    Text("Continue as Guest")
+                        .padding(.all)
+                        .foregroundColor(Color(.systemBackground))
+                        .frame(width: UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 3))
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(Color("darkInvert"))
+                        )
+                })
+                */
                 Spacer()
             }
             .navigationTitle("Account Setup")
