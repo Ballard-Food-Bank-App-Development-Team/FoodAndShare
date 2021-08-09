@@ -27,7 +27,7 @@ struct NewsUIView: View {
 
             Spacer()
 
-            Text("The new design nearly doubles the size and capacity of the existing operation. Fundamental to the organization’s mission is the market, which is designed as a large supermarket style space. An enlarged and efficient warehouse and outdoor storage yard serves the market and the Food Bank’s delivery programs, while a new office space offers staff a safe and attractive place to work.")
+            Text("The new design nearly doubles the size and capacity of the existing operation. Fundamental to the organization’s mission is the market, which is designed as a large supermarket style space.")
                 .foregroundColor(Color("navyBlue"))
                 .font(.custom("HelveticaNeue-Medium", size: 16))
                 .padding(.horizontal)

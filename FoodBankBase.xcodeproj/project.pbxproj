@@ -10,6 +10,7 @@
 		268A585E26A6A2F00069A74A /* CalendarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A585D26A6A2F00069A74A /* CalendarIcon.swift */; };
 		26F73E7F26BEE6D800223EF5 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F73E7E26BEE6D800223EF5 /* InfoView.swift */; };
 		26F73E8326C035D600223EF5 /* NewsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F73E8226C035D600223EF5 /* NewsUIView.swift */; };
+		26F73E8E26C0F78400223EF5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F73E8D26C0F78400223EF5 /* MainView.swift */; };
 		C79AB86A912E76C7D7183A1E /* Pods_FoodBankBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA74145D2760BA1922B87A8 /* Pods_FoodBankBase.framework */; };
 		D30086B72680F5220054514E /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086B62680F5220054514E /* FBAuth.swift */; };
 		D30086BB26811CE40054514E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086BA26811CE40054514E /* UserInfo.swift */; };
@@ -44,6 +45,7 @@
 		268A585D26A6A2F00069A74A /* CalendarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarIcon.swift; sourceTree = "<group>"; };
 		26F73E7E26BEE6D800223EF5 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		26F73E8226C035D600223EF5 /* NewsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsUIView.swift; sourceTree = "<group>"; };
+		26F73E8D26C0F78400223EF5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4B9A5D093AA0F3E757FFE20D /* Pods-FoodBankBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.release.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.release.xcconfig"; sourceTree = "<group>"; };
 		5DA74145D2760BA1922B87A8 /* Pods_FoodBankBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodBankBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE3C65D22A815C9E6E2BA559 /* Pods-FoodBankBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.debug.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				D3333DDA2675964D00447A3B /* ContentView.swift */,
 				D3D46605267C2BAD0006F9A3 /* HomeView.swift */,
+				26F73E8D26C0F78400223EF5 /* MainView.swift */,
 				D3E79D1726913AA200A389E6 /* HomeScreenButtons */,
 			);
 			path = "Main Views";
@@ -505,6 +508,7 @@
 				D3333DD92675964D00447A3B /* SceneDelegate.swift in Sources */,
 				D3E4514026C041E500624C3A /* FeedbackView.swift in Sources */,
 				26F73E7F26BEE6D800223EF5 /* InfoView.swift in Sources */,
+				26F73E8E26C0F78400223EF5 /* MainView.swift in Sources */,
 				26F73E8326C035D600223EF5 /* NewsUIView.swift in Sources */,
 				D3C4BDCF267980D200731539 /* AccountSettingsView.swift in Sources */,
 				D3333DED267596AB00447A3B /* LoginView.swift in Sources */,

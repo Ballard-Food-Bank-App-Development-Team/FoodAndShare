@@ -17,6 +17,9 @@ struct AccountSettingsView: View {
                 Text("Name: \(self.user.firstName) \(self.user.lastName)")
             }
         }
+        .onAppear {
+            self.user.checkUserState()
+        }
         .navigationBarTitleDisplayMode(.large)
         .navigationTitle("Account Settings")
         .navigationBarBackButtonHidden(true)
