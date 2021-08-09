@@ -10,6 +10,7 @@
 		268A585E26A6A2F00069A74A /* CalendarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A585D26A6A2F00069A74A /* CalendarIcon.swift */; };
 		26F73E7F26BEE6D800223EF5 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F73E7E26BEE6D800223EF5 /* InfoView.swift */; };
 		26F73E8326C035D600223EF5 /* NewsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F73E8226C035D600223EF5 /* NewsUIView.swift */; };
+		C79AB86A912E76C7D7183A1E /* Pods_FoodBankBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA74145D2760BA1922B87A8 /* Pods_FoodBankBase.framework */; };
 		D30086B72680F5220054514E /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086B62680F5220054514E /* FBAuth.swift */; };
 		D30086BB26811CE40054514E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086BA26811CE40054514E /* UserInfo.swift */; };
 		D30086C126812C900054514E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086C026812C900054514E /* UserViewModel.swift */; };
@@ -37,16 +38,15 @@
 		D3F47B8E269233CA009E73E8 /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F47B8D269233CA009E73E8 /* FirebaseUser.swift */; };
 		D3F47B9026923533009E73E8 /* FirebaseUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F47B8F26923533009E73E8 /* FirebaseUserViewModel.swift */; };
 		D3F47B92269268F6009E73E8 /* FirebaseUserErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F47B91269268F6009E73E8 /* FirebaseUserErrors.swift */; };
-		EE11511B4EB9D84FC2267333 /* Pods_FoodBankBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F396719407A92FFB2C66947 /* Pods_FoodBankBase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		268A585D26A6A2F00069A74A /* CalendarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarIcon.swift; sourceTree = "<group>"; };
 		26F73E7E26BEE6D800223EF5 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		26F73E8226C035D600223EF5 /* NewsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsUIView.swift; sourceTree = "<group>"; };
-		3625E3D1B890F58F54CB597B /* Pods-FoodBankBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.debug.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.debug.xcconfig"; sourceTree = "<group>"; };
-		8F396719407A92FFB2C66947 /* Pods_FoodBankBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodBankBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE6584F326D1C3EEAB28DB6A /* Pods-FoodBankBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.release.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.release.xcconfig"; sourceTree = "<group>"; };
+		4B9A5D093AA0F3E757FFE20D /* Pods-FoodBankBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.release.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.release.xcconfig"; sourceTree = "<group>"; };
+		5DA74145D2760BA1922B87A8 /* Pods_FoodBankBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodBankBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE3C65D22A815C9E6E2BA559 /* Pods-FoodBankBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.debug.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.debug.xcconfig"; sourceTree = "<group>"; };
 		D30086B62680F5220054514E /* FBAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAuth.swift; sourceTree = "<group>"; };
 		D30086BA26811CE40054514E /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		D30086C026812C900054514E /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -83,21 +83,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE11511B4EB9D84FC2267333 /* Pods_FoodBankBase.framework in Frameworks */,
+				C79AB86A912E76C7D7183A1E /* Pods_FoodBankBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D7F2742E430BC67AF5448DC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8F396719407A92FFB2C66947 /* Pods_FoodBankBase.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		26F73E8026C035B000223EF5 /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,11 +106,19 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9ACE3BAA7B3622735441D71C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DA74145D2760BA1922B87A8 /* Pods_FoodBankBase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A452C5E351033CFCAC4E6094 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3625E3D1B890F58F54CB597B /* Pods-FoodBankBase.debug.xcconfig */,
-				CE6584F326D1C3EEAB28DB6A /* Pods-FoodBankBase.release.xcconfig */,
+				BE3C65D22A815C9E6E2BA559 /* Pods-FoodBankBase.debug.xcconfig */,
+				4B9A5D093AA0F3E757FFE20D /* Pods-FoodBankBase.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -147,7 +147,7 @@
 				D3333DD52675964D00447A3B /* FoodBankBase */,
 				D3333DD42675964D00447A3B /* Products */,
 				A452C5E351033CFCAC4E6094 /* Pods */,
-				1D7F2742E430BC67AF5448DC /* Frameworks */,
+				9ACE3BAA7B3622735441D71C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -338,13 +338,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3333DE72675964E00447A3B /* Build configuration list for PBXNativeTarget "FoodBankBase" */;
 			buildPhases = (
-				398DE41F44C086CE1EC1582B /* [CP] Check Pods Manifest.lock */,
+				D4C60ACCCBF1FCEE617E2959 /* [CP] Check Pods Manifest.lock */,
 				D3CDFB41267EA441001A7C4D /* SwiftLint */,
 				D3CDFB42267EBBB1001A7C4D /* SwiftLint Autocorrect */,
 				D3333DCF2675964D00447A3B /* Sources */,
 				D3333DD02675964D00447A3B /* Frameworks */,
 				D3333DD12675964D00447A3B /* Resources */,
-				74256114C9371A9C14AC664B /* [CP] Embed Pods Frameworks */,
+				12D929837C7F64D2AB6DC508 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -402,29 +402,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		398DE41F44C086CE1EC1582B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FoodBankBase-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		74256114C9371A9C14AC664B /* [CP] Embed Pods Frameworks */ = {
+		12D929837C7F64D2AB6DC508 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -478,6 +456,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		D4C60ACCCBF1FCEE617E2959 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodBankBase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -583,6 +583,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -646,7 +647,7 @@
 		};
 		D3333DE82675964E00447A3B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3625E3D1B890F58F54CB597B /* Pods-FoodBankBase.debug.xcconfig */;
+			baseConfigurationReference = BE3C65D22A815C9E6E2BA559 /* Pods-FoodBankBase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -668,7 +669,7 @@
 		};
 		D3333DE92675964E00447A3B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE6584F326D1C3EEAB28DB6A /* Pods-FoodBankBase.release.xcconfig */;
+			baseConfigurationReference = 4B9A5D093AA0F3E757FFE20D /* Pods-FoodBankBase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
