@@ -14,7 +14,7 @@ struct AccountSettingsView: View {
     var body: some View {
         VStack {
             Form {
-                Text("Name: \(self.user.firstName) \(self.user.lastName)")
+                Text("Name: \(self.user.userInfo.firstName!) \(self.user.userInfo.lastName!)")
             }
         }
         .onAppear {

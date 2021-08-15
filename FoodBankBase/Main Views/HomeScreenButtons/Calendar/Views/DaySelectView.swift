@@ -10,30 +10,15 @@ import SwiftDate
 
 struct DaySelectView: View {
     @Environment(\.presentationMode) var presentation
-    @StateObject var currentMonth = CustomCalendarMonth(date: Date())
-
-    private let previousMonth: Date = Date().dateAt(.startOfMonth).addingTimeInterval(-60 * 60 * 24)
-    private let nextMonth: Date = Date().dateAt(.endOfMonth).addingTimeInterval(60 * 60 * 24)
-
-    @State private var calendarState: Int = 0
-
-    @State private var foodBankState: String = ""
+    @StateObject var calendar = CustomCalendarYearViewModel()
 
     private let weekLetters: [String] = ["S", "M", "T", "W", "T", "F", "S"]
 
-    private func changeMonth() {
-        if calendarState < 0 {
-            currentMonth.updateMonth(dateInTheMonth: previousMonth)
-        } else if calendarState > 0 {
-            currentMonth.updateMonth(dateInTheMonth: nextMonth)
-        } else {
-            currentMonth.updateMonth(dateInTheMonth: Date())
-        }
-    }
-
+    // TODO: Change FoodBankStateCode to its own model
+    @State private var foodBankState: String = ""
     private func updateHours() {
-        for dayOn in 1...currentMonth.lastDayOfMonth! where currentMonth.mutableArray![dayOn - 1].choosen {
-            switch currentMonth.mutableArray![dayOn - 1].dayOfWeek {
+        for dayOn in 1...calendar.currentYear.activeMonth.lastDayOfMonth where calendar.currentYear.activeMonth.mutableArray[dayOn - 1].choosen {
+            switch calendar.currentYear.activeMonth.mutableArray[dayOn - 1].dayOfWeek {
             case 1:
                 foodBankState = "Closed"
             case 2:
@@ -60,11 +45,11 @@ struct DaySelectView: View {
             HStack {
 
                 Button(action: {
-                    calendarState -= 1
-                    if calendarState < 0 {
-                        calendarState = -1
+                    calendar.monthState -= 1
+                    if calendar.monthState < 0 {
+                        calendar.monthState = -1
                     }
-                    changeMonth()
+                    calendar.changeActiveMonth()
                     foodBankState = ""
                     updateHours()
                 }, label: {
@@ -75,7 +60,7 @@ struct DaySelectView: View {
 
                 Spacer()
 
-                Text(currentMonth.monthName! + " " +  currentMonth.yearName!)
+                Text(calendar.currentYear.activeMonth.monthName + " " +  calendar.currentYear.activeMonth.yearName)
                     .font(.title)
                     .fontWeight(.semibold)
                     .foregroundColor(Color("customOrange"))
@@ -83,11 +68,11 @@ struct DaySelectView: View {
                 Spacer()
 
                 Button(action: {
-                    calendarState += 1
-                    if calendarState > 1 {
-                        calendarState = 1
+                    calendar.monthState += 1
+                    if calendar.monthState > 1 {
+                        calendar.monthState = 1
                     }
-                    changeMonth()
+                    calendar.changeActiveMonth()
                     foodBankState = ""
                     updateHours()
                 }, label: {
@@ -113,16 +98,16 @@ struct DaySelectView: View {
             Divider()
 
             VStack {
-                ForEach(currentMonth.arrayOfWeeksThenDays!, id: \.self) { week in
+                ForEach(calendar.currentYear.activeMonth.arrayOfWeeksThenDays, id: \.self) { week in
                     HStack {
                         ForEach(week, id: \.self) { day in
                             Group {
                                 let dayOn = Calendar(identifier: .gregorian).component(.day , from: day.date) - 1
-                                let selected: Bool = !(currentMonth.mutableArray!.count - 1 < dayOn) ? currentMonth.mutableArray![dayOn].choosen : false
+                                let selected: Bool = !(calendar.currentYear.activeMonth.mutableArray.count - 1 < dayOn) ? calendar.currentYear.activeMonth.mutableArray[dayOn].choosen : false
 
                                 if day.selectable {
                                     Button(action: {
-                                        currentMonth.refreshDaySelect(newDate: day)
+                                        calendar.refreshDaySelect(newDate: day)
                                         updateHours()
                                     }, label: {
                                         CalendarIcon(
@@ -134,7 +119,7 @@ struct DaySelectView: View {
                                     })
                                 } else if day.shown {
                                     Button(action: {
-                                        currentMonth.refreshDaySelect(newDate: day)
+                                        calendar.refreshDaySelect(newDate: day)
                                         updateHours()
                                     }, label: {
                                         CalendarIcon(

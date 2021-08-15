@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct FeedbackView: View {
-    
+
     @State private var subject: String = ""
     @State private var bodyText: String = ""
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -24,7 +24,7 @@ struct FeedbackView: View {
                             .foregroundColor(Color("textFieldBackground"))
                     )
                     .padding()
-                
+
                 TextEditor(text: $bodyText)
                     .padding(.all)
                     .background(
@@ -33,7 +33,7 @@ struct FeedbackView: View {
                             .foregroundColor(Color("textFieldBackground"))
                     )
                     .padding()
-                
+
                 Button(action: {
                     EmailHelper.shared.sendEmail(subject: subject, body: bodyText, sendTo: "ian.m.holloway@gmail.com")
                 }, label: {
@@ -41,7 +41,7 @@ struct FeedbackView: View {
                         .padding()
                 })
                 .padding()
-                
+
                 Spacer()
                 Spacer()
             }

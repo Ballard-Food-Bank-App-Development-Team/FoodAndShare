@@ -10,8 +10,8 @@ import SwiftUI
 struct NewsUIView: View {
     @Environment(\.presentationMode) var presentation
     var body: some View {
+        // TODO: Connect to Ballard Food Bank Blog Page
         VStack {
-
             Image("newFoodBank")
                 .resizable()
                 .aspectRatio(contentMode: .fit)

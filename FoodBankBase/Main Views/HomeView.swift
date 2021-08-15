@@ -11,22 +11,22 @@ import Firebase
 struct HomeView: View {
     @EnvironmentObject var user: FirebaseUserViewModel
     @State var selectedIndex = 1
-    
+
     var body: some View {
         ZStack {
             switch selectedIndex {
-             case 0:
-             DaySelectView()
-             case 1:
-             MainView()
-             case 2:
-             FeedbackView()
-             default:
-             MainView()
-             }
+            case 0:
+                DaySelectView()
+            case 1:
+                MainView()
+            case 2:
+                FeedbackView()
+            default:
+                MainView()
+            }
             VStack {
                 Spacer()
-                
+
                 HStack {
                     Spacer()
                     Button(action: {
