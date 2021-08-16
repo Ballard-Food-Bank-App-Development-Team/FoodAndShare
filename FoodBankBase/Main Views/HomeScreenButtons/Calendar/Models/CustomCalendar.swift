@@ -8,15 +8,13 @@
 import Foundation
 import SwiftDate
 
-class CustomCalendarMonth {
+struct CustomCalendarMonth {
 
     // Variables
-    var arrayOfWeeksThenDays: [[CustomCalendarDay]]
+    var arrayOfMonthDays: [CustomCalendarDay]
 
-    var mutableArray: [CustomCalendarDay]
-
-    var monthName: String
-    var yearName: String
+    let monthName: String
+    let yearName: String
 
     let firstDayOfMonth: Date
     let lastDayOfMonth: Int
@@ -27,21 +25,26 @@ class CustomCalendarMonth {
     init(dateInTheMonth: Date) {
         let myCalendar = Calendar(identifier: .gregorian)
 
-        self.arrayOfWeeksThenDays = [[CustomCalendarDay]]()
-        self.mutableArray = [CustomCalendarDay]()
+        self.arrayOfMonthDays = [CustomCalendarDay]()
 
         self.firstDayOfMonth = dateInTheMonth.dateAt(.startOfMonth)
         self.lastDayOfMonth = myCalendar.component(.day, from: dateInTheMonth.dateAt(.endOfMonth))
 
-        self.startingInvalidDays = Double(myCalendar.component(.weekday, from: self.firstDayOfMonth) - 1)
+        let startingInvalidDaysTemp = myCalendar.component(.weekday, from: self.firstDayOfMonth) + 1
+        self.startingInvalidDays = Double(startingInvalidDaysTemp == 8 ? 1 : startingInvalidDaysTemp) - 1.0
+
         self.topLeftCornerDay = self.firstDayOfMonth.addingTimeInterval(-60 * 60 * 24 * startingInvalidDays)
 
         self.monthName = Calendar.current.monthSymbols[myCalendar.component(.month, from: firstDayOfMonth)]
         self.yearName = String(myCalendar.component(.year, from: firstDayOfMonth))
 
-        var gridIndex: Int = 0
+        for dayOn in 0...30 where dayOn < self.lastDayOfMonth {
+                let date = self.firstDayOfMonth.addingTimeInterval(60 * 60 * 24 * Double(dayOn))
 
-        for weekOn in 1...6 {
+                self.arrayOfMonthDays.append(CustomCalendarDay(dateOfDay: date))
+            }
+
+        /*for weekOn in 1...6 {
             var singleWeek = [CustomCalendarDay]()
             var firstAdded: Bool = false
             for dayOn in 1...7 {
@@ -54,11 +57,11 @@ class CustomCalendarMonth {
                 let todayDay: Int = myCalendar.component(.day, from: Date())
                 let todayMonth: Int = myCalendar.component(.month, from: Date())
 
-                if gridIndex < (Int(startingInvalidDays) + 2) {
+                if gridIndex < (Int(startingInvalidDays) + 1) {
 
                     singleWeek.append(CustomCalendarDay(dateOfDay: curDate, selectable: false, shown: false))
 
-                } else if gridIndex > (lastDayOfMonth + (Int(startingInvalidDays) + 1)) {
+                } else if gridIndex > (lastDayOfMonth + (Int(startingInvalidDays))) {
 
                     singleWeek.append(CustomCalendarDay(dateOfDay: curDate, selectable: false, shown: false))
 
@@ -84,6 +87,6 @@ class CustomCalendarMonth {
                 }
             }
             arrayOfWeeksThenDays.append(singleWeek)
-        }
+        }*/
     }
 }

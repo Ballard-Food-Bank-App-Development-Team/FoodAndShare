@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SurveyView: View {
     @Environment(\.presentationMode) var presentation
-    @StateObject var survey = SurveyViewModel(questions: [Question(ask: "Do you Like Ballard Food Bank?", responses: ["Yes", "No"])])
+    @StateObject var survey = SurveyViewModel(questions: [Question(ask: "Do you Like Ballard Food Bank?", responses: ["Yes", "No"]), Question(ask: "", responses: ["", "" , ""])])
 
     var body: some View {
         VStack {

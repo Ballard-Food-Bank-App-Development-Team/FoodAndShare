@@ -17,22 +17,8 @@ struct MainView: View {
                     NavigationLink(
                         destination: AccountSettingsView(),
                         label: {
-                            LinearGradient(gradient: Gradient(colors: [.red, .purple]), startPoint: .bottomLeading, endPoint: .topTrailing)
-                                .frame(width: 29, height: 29,   alignment: .center)
-                                .mask(
-                                    Image(systemName: "person.fill")
-                                        .resizable()
-                                        .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
-                                )
-                                .background(
-                                    Circle()
-                                        .foregroundColor(Color("spaceGrey"))
-                                        .shadow(color: Color("customOrange"), radius: 5, y: 1)
-                                )
-                                .padding(.trailing)
-                                .padding(.trailing)
-                        }
-                    )
+                            ProfileIconView()
+                        })
                 }
 
                 // MARK: - Logo
@@ -70,7 +56,6 @@ struct MainView: View {
                                 .frame(width: 50, height: 50)
                                 .background(Color("spaceGrey"))
                             Spacer()
-
                         }
                         .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width/4, height: 100, alignment: .center)
                         .accentColor(.black)
@@ -97,7 +82,6 @@ struct MainView: View {
                                 Text("Map")
                                     .foregroundColor(Color("navyBlue"))
                                     .font(.custom("HelveticaNeue-Medium", size: 24))
-
                                 Text("Find help near you ")// 19
                                     .foregroundColor(Color("textGrey"))
                                     .font(.custom("HelveticaNeue-Medium", size: 16))
@@ -137,7 +121,6 @@ struct MainView: View {
                                 Text("News")
                                     .foregroundColor(Color("navyBlue"))
                                     .font(.custom("HelveticaNeue-Medium", size: 24))
-
                                 Text("Our latest updates ") // 19
                                     .foregroundColor(Color("textGrey"))
                                     .font(.custom("HelveticaNeue-Medium", size: 16))
@@ -150,7 +133,6 @@ struct MainView: View {
                                 .frame(width: 50, height: 50)
                                 .background(Color("spaceGrey"))
                             Spacer()
-
                         }
                         .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width/4, height: 100, alignment: .center)
                         .accentColor(.black)

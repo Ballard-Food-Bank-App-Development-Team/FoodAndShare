@@ -10,15 +10,15 @@ import SwiftDate
 
 struct DaySelectView: View {
     @Environment(\.presentationMode) var presentation
-    @StateObject var calendar = CustomCalendarYearViewModel()
+    @StateObject var calendar = CustomCalendarViewModel()
 
     private let weekLetters: [String] = ["S", "M", "T", "W", "T", "F", "S"]
 
     // TODO: Change FoodBankStateCode to its own model
     @State private var foodBankState: String = ""
     private func updateHours() {
-        for dayOn in 1...calendar.currentYear.activeMonth.lastDayOfMonth where calendar.currentYear.activeMonth.mutableArray[dayOn - 1].choosen {
-            switch calendar.currentYear.activeMonth.mutableArray[dayOn - 1].dayOfWeek {
+        for dayOn in 1...self.calendar.activeMonth.arrayOfMonthDays.count where self.calendar.activeMonth.arrayOfMonthDays[dayOn - 1].choosen == true {
+            switch self.calendar.activeMonth.arrayOfMonthDays[dayOn - 1].dayOfWeek {
             case 1:
                 foodBankState = "Closed"
             case 2:
@@ -45,9 +45,8 @@ struct DaySelectView: View {
             HStack {
 
                 Button(action: {
-                    calendar.monthState -= 1
-                    if calendar.monthState < 0 {
-                        calendar.monthState = -1
+                    if calendar.monthState == 0 || calendar.monthState == 1 {
+                        calendar.monthState -= 1
                     }
                     calendar.changeActiveMonth()
                     foodBankState = ""
@@ -60,7 +59,7 @@ struct DaySelectView: View {
 
                 Spacer()
 
-                Text(calendar.currentYear.activeMonth.monthName + " " +  calendar.currentYear.activeMonth.yearName)
+                Text("\(calendar.activeMonth.monthName) \(calendar.activeMonth.yearName)")
                     .font(.title)
                     .fontWeight(.semibold)
                     .foregroundColor(Color("customOrange"))
@@ -98,45 +97,43 @@ struct DaySelectView: View {
             Divider()
 
             VStack {
-                ForEach(calendar.currentYear.activeMonth.arrayOfWeeksThenDays, id: \.self) { week in
+                ForEach([1, 2, 3, 4, 5, 6], id: \.self) { weekOn in
                     HStack {
-                        ForEach(week, id: \.self) { day in
-                            Group {
-                                let dayOn = Calendar(identifier: .gregorian).component(.day , from: day.date) - 1
-                                let selected: Bool = !(calendar.currentYear.activeMonth.mutableArray.count - 1 < dayOn) ? calendar.currentYear.activeMonth.mutableArray[dayOn].choosen : false
+                        ForEach([1, 2, 3, 4, 5, 6, 7], id: \.self) { dayOn in
+                            let gridIndex: Int = ((weekOn - 1) * 7) + dayOn - 1
+                            let invalidDays: Int = Int(self.calendar.activeMonth.startingInvalidDays)
 
-                                if day.selectable {
-                                    Button(action: {
-                                        calendar.refreshDaySelect(newDate: day)
-                                        updateHours()
-                                    }, label: {
-                                        CalendarIcon(
-                                            dayNum: day.dayNum,
-                                            textColor: Color.white,
-                                            circleColor: Color("customOrange"),
-                                            outlineColor: selected ? Color("darkInvert") : Color.clear
-                                        )
-                                    })
-                                } else if day.shown {
-                                    Button(action: {
-                                        calendar.refreshDaySelect(newDate: day)
-                                        updateHours()
-                                    }, label: {
-                                        CalendarIcon(
-                                            dayNum: day.dayNum,
-                                            textColor: Color("darkInvert"),
-                                            circleColor: Color(.systemBackground),
-                                            outlineColor: selected ? Color("darkInvert") : Color.clear
-                                        )
-                                    })
-                                } else {
+                            if gridIndex < invalidDays || (gridIndex - invalidDays) >= self.calendar.activeMonth.lastDayOfMonth {
+                                CalendarIcon(
+                                    dayNum: "",
+                                    textColor: Color.white,
+                                    circleColor: Color(.systemBackground),
+                                    outlineColor: Color.clear
+                                )
+                            } else if dayOn == 1 || dayOn == 6 || dayOn == 7 {
+                                Button(action: {
+                                    calendar.refreshDaySelect(dayNum: gridIndex - invalidDays)
+                                    updateHours()
+                                }, label: {
                                     CalendarIcon(
-                                        dayNum: day.dayNum,
-                                        textColor: Color.white,
+                                        dayNum: String(gridIndex - invalidDays + 1),
+                                        textColor: Color("darkInvert"),
                                         circleColor: Color(.systemBackground),
-                                        outlineColor: Color.clear
+                                        outlineColor: self.calendar.activeMonth.arrayOfMonthDays[gridIndex - invalidDays].choosen ? Color("darkInvert") : Color.clear
                                     )
-                                }
+                                })
+                            } else {
+                                Button(action: {
+                                    calendar.refreshDaySelect(dayNum: gridIndex - invalidDays)
+                                    updateHours()
+                                }, label: {
+                                    CalendarIcon(
+                                        dayNum: String(gridIndex - invalidDays + 1),
+                                        textColor: Color.white,
+                                        circleColor: Color("customOrange"),
+                                        outlineColor: self.calendar.activeMonth.arrayOfMonthDays[gridIndex - invalidDays].choosen ? Color("darkInvert") : Color.clear
+                                    )
+                                })
                             }
                         }
                     }
