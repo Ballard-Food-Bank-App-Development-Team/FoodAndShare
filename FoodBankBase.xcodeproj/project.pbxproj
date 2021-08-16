@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		268A585E26A6A2F00069A74A /* CalendarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A585D26A6A2F00069A74A /* CalendarIcon.swift */; };
+		26E5486D26CA23A000AFE242 /* BigButtonHomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5486C26CA23A000AFE242 /* BigButtonHomeScreenView.swift */; };
 		26F73E7F26BEE6D800223EF5 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F73E7E26BEE6D800223EF5 /* InfoView.swift */; };
 		26F73E8326C035D600223EF5 /* NewsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F73E8226C035D600223EF5 /* NewsUIView.swift */; };
 		26F73E8E26C0F78400223EF5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F73E8D26C0F78400223EF5 /* MainView.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		268A585D26A6A2F00069A74A /* CalendarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarIcon.swift; sourceTree = "<group>"; };
+		26E5486C26CA23A000AFE242 /* BigButtonHomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButtonHomeScreenView.swift; sourceTree = "<group>"; };
 		26F73E7E26BEE6D800223EF5 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		26F73E8226C035D600223EF5 /* NewsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsUIView.swift; sourceTree = "<group>"; };
 		26F73E8D26C0F78400223EF5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26E5486E26CA289D00AFE242 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				26E5486C26CA23A000AFE242 /* BigButtonHomeScreenView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		26F73E8026C035B000223EF5 /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +201,7 @@
 				D3333DDA2675964D00447A3B /* ContentView.swift */,
 				D3D46605267C2BAD0006F9A3 /* HomeView.swift */,
 				26F73E8D26C0F78400223EF5 /* MainView.swift */,
+				26E5486E26CA289D00AFE242 /* Helpers */,
 				D3E79D1726913AA200A389E6 /* HomeScreenButtons */,
 			);
 			path = "Main Views";
@@ -499,6 +510,7 @@
 				D30086BB26811CE40054514E /* UserInfo.swift in Sources */,
 				D3F47B92269268F6009E73E8 /* FirebaseUserErrors.swift in Sources */,
 				D30086C126812C900054514E /* UserViewModel.swift in Sources */,
+				26E5486D26CA23A000AFE242 /* BigButtonHomeScreenView.swift in Sources */,
 				D3C4BDCB2679803F00731539 /* ForgotPasswordView.swift in Sources */,
 				D313BAD026A502C600903F6E /* CustomCalendarDay.swift in Sources */,
 				D3E79D0E2691379E00A389E6 /* FoodBankListChoiceView.swift in Sources */,
@@ -657,14 +669,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodBankBase/Preview Content\"";
-				DEVELOPMENT_TEAM = FNVA75PS53;
+				DEVELOPMENT_TEAM = Z634RQK5UK;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FoodBankBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Ian-Holloway.FoodBankBase";
+				PRODUCT_BUNDLE_IDENTIFIER = "Ben-Roberts.FoodBankBase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -679,14 +691,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodBankBase/Preview Content\"";
-				DEVELOPMENT_TEAM = FNVA75PS53;
+				DEVELOPMENT_TEAM = Z634RQK5UK;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FoodBankBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Ian-Holloway.FoodBankBase";
+				PRODUCT_BUNDLE_IDENTIFIER = "Ben-Roberts.FoodBankBase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

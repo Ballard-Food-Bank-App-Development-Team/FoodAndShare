@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @EnvironmentObject var user: FirebaseUserViewModel
 
     var body: some View {
