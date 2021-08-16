@@ -34,7 +34,6 @@
 		D3C4BDC22678125900731539 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3C4BDC12678125900731539 /* GoogleService-Info.plist */; };
 		D3C4BDCB2679803F00731539 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */; };
 		D3C4BDCF267980D200731539 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCE267980D200731539 /* AccountSettingsView.swift */; };
-		D3CFAF9826C9D834003BB421 /* ProfileIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CFAF9726C9D834003BB421 /* ProfileIconView.swift */; };
 		D3CFAF9A26C9E048003BB421 /* CustomCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CFAF9926C9E048003BB421 /* CustomCalendarViewModel.swift */; };
 		D3D46606267C2BAD0006F9A3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D46605267C2BAD0006F9A3 /* HomeView.swift */; };
 		D3E4514026C041E500624C3A /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4513F26C041E500624C3A /* FeedbackView.swift */; };
@@ -78,7 +77,6 @@
 		D3C4BDC12678125900731539 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		D3C4BDCE267980D200731539 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
-		D3CFAF9726C9D834003BB421 /* ProfileIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileIconView.swift; sourceTree = "<group>"; };
 		D3CFAF9926C9E048003BB421 /* CustomCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarViewModel.swift; sourceTree = "<group>"; };
 		D3D46605267C2BAD0006F9A3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D3E4513F26C041E500624C3A /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
@@ -292,14 +290,6 @@
 				D3E79D0D2691379E00A389E6 /* FoodBankListChoiceView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		D3CFAF9626C9D817003BB421 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				D3CFAF9726C9D834003BB421 /* ProfileIconView.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D3D46601267BF9D00006F9A3 /* Views */ = {
@@ -555,7 +545,6 @@
 				D3333DD72675964D00447A3B /* AppDelegate.swift in Sources */,
 				D3F47B8E269233CA009E73E8 /* FirebaseUser.swift in Sources */,
 				D34C4C3426C86E33005519FD /* Answer.swift in Sources */,
-				D3CFAF9826C9D834003BB421 /* ProfileIconView.swift in Sources */,
 				D3F47B9026923533009E73E8 /* FirebaseUserViewModel.swift in Sources */,
 				D34C4C4126C8979D005519FD /* SurveyViewModel.swift in Sources */,
 				D3333DEB2675968D00447A3B /* AccountChoiceView.swift in Sources */,
