@@ -10,30 +10,15 @@ import SwiftDate
 
 struct DaySelectView: View {
     @Environment(\.presentationMode) var presentation
-    @StateObject var currentMonth = CustomCalendarMonth(date: Date())
-
-    private let previousMonth: Date = Date().dateAt(.startOfMonth).addingTimeInterval(-60 * 60 * 24)
-    private let nextMonth: Date = Date().dateAt(.endOfMonth).addingTimeInterval(60 * 60 * 24)
-
-    @State private var calendarState: Int = 0
-
-    @State private var foodBankState: String = ""
+    @StateObject var calendar = CustomCalendarViewModel()
 
     private let weekLetters: [String] = ["S", "M", "T", "W", "T", "F", "S"]
 
-    private func changeMonth() {
-        if calendarState < 0 {
-            currentMonth.updateMonth(dateInTheMonth: previousMonth)
-        } else if calendarState > 0 {
-            currentMonth.updateMonth(dateInTheMonth: nextMonth)
-        } else {
-            currentMonth.updateMonth(dateInTheMonth: Date())
-        }
-    }
-
+    // TODO: Change FoodBankStateCode to its own model
+    @State private var foodBankState: String = ""
     private func updateHours() {
-        for dayOn in 1...currentMonth.lastDayOfMonth! where currentMonth.mutableArray![dayOn - 1].choosen {
-            switch currentMonth.mutableArray![dayOn - 1].dayOfWeek {
+        for dayOn in 1...self.calendar.activeMonth.arrayOfMonthDays.count where self.calendar.activeMonth.arrayOfMonthDays[dayOn - 1].choosen == true {
+            switch self.calendar.activeMonth.arrayOfMonthDays[dayOn - 1].dayOfWeek {
             case 1:
                 foodBankState = "Closed"
             case 2:
@@ -60,11 +45,10 @@ struct DaySelectView: View {
             HStack {
 
                 Button(action: {
-                    calendarState -= 1
-                    if calendarState < 0 {
-                        calendarState = -1
+                    if calendar.monthState == 0 || calendar.monthState == 1 {
+                        calendar.monthState -= 1
                     }
-                    changeMonth()
+                    calendar.changeActiveMonth()
                     foodBankState = ""
                     updateHours()
                 }, label: {
@@ -75,7 +59,7 @@ struct DaySelectView: View {
 
                 Spacer()
 
-                Text(currentMonth.monthName! + " " +  currentMonth.yearName!)
+                Text("\(calendar.activeMonth.monthName) \(calendar.activeMonth.yearName)")
                     .font(.title)
                     .fontWeight(.semibold)
                     .foregroundColor(Color("customOrange"))
@@ -83,11 +67,11 @@ struct DaySelectView: View {
                 Spacer()
 
                 Button(action: {
-                    calendarState += 1
-                    if calendarState > 1 {
-                        calendarState = 1
+                    calendar.monthState += 1
+                    if calendar.monthState > 1 {
+                        calendar.monthState = 1
                     }
-                    changeMonth()
+                    calendar.changeActiveMonth()
                     foodBankState = ""
                     updateHours()
                 }, label: {
@@ -113,45 +97,43 @@ struct DaySelectView: View {
             Divider()
 
             VStack {
-                ForEach(currentMonth.arrayOfWeeksThenDays!, id: \.self) { week in
+                ForEach([1, 2, 3, 4, 5, 6], id: \.self) { weekOn in
                     HStack {
-                        ForEach(week, id: \.self) { day in
-                            Group {
-                                let dayOn = Calendar(identifier: .gregorian).component(.day , from: day.date) - 1
-                                let selected: Bool = !(currentMonth.mutableArray!.count - 1 < dayOn) ? currentMonth.mutableArray![dayOn].choosen : false
+                        ForEach([1, 2, 3, 4, 5, 6, 7], id: \.self) { dayOn in
+                            let gridIndex: Int = ((weekOn - 1) * 7) + dayOn - 1
+                            let invalidDays: Int = Int(self.calendar.activeMonth.startingInvalidDays)
 
-                                if day.selectable {
-                                    Button(action: {
-                                        currentMonth.refreshDaySelect(newDate: day)
-                                        updateHours()
-                                    }, label: {
-                                        CalendarIcon(
-                                            dayNum: day.dayNum,
-                                            textColor: Color.white,
-                                            circleColor: Color("customOrange"),
-                                            outlineColor: selected ? Color("darkInvert") : Color.clear
-                                        )
-                                    })
-                                } else if day.shown {
-                                    Button(action: {
-                                        currentMonth.refreshDaySelect(newDate: day)
-                                        updateHours()
-                                    }, label: {
-                                        CalendarIcon(
-                                            dayNum: day.dayNum,
-                                            textColor: Color("darkInvert"),
-                                            circleColor: Color(.systemBackground),
-                                            outlineColor: selected ? Color("darkInvert") : Color.clear
-                                        )
-                                    })
-                                } else {
+                            if gridIndex < invalidDays || (gridIndex - invalidDays) >= self.calendar.activeMonth.lastDayOfMonth {
+                                CalendarIcon(
+                                    dayNum: "",
+                                    textColor: Color.white,
+                                    circleColor: Color(.systemBackground),
+                                    outlineColor: Color.clear
+                                )
+                            } else if dayOn == 1 || dayOn == 6 || dayOn == 7 {
+                                Button(action: {
+                                    calendar.refreshDaySelect(dayNum: gridIndex - invalidDays)
+                                    updateHours()
+                                }, label: {
                                     CalendarIcon(
-                                        dayNum: day.dayNum,
-                                        textColor: Color.white,
+                                        dayNum: String(gridIndex - invalidDays + 1),
+                                        textColor: Color("darkInvert"),
                                         circleColor: Color(.systemBackground),
-                                        outlineColor: Color.clear
+                                        outlineColor: self.calendar.activeMonth.arrayOfMonthDays[gridIndex - invalidDays].choosen ? Color("darkInvert") : Color.clear
                                     )
-                                }
+                                })
+                            } else {
+                                Button(action: {
+                                    calendar.refreshDaySelect(dayNum: gridIndex - invalidDays)
+                                    updateHours()
+                                }, label: {
+                                    CalendarIcon(
+                                        dayNum: String(gridIndex - invalidDays + 1),
+                                        textColor: Color.white,
+                                        circleColor: Color("customOrange"),
+                                        outlineColor: self.calendar.activeMonth.arrayOfMonthDays[gridIndex - invalidDays].choosen ? Color("darkInvert") : Color.clear
+                                    )
+                                })
                             }
                         }
                     }

@@ -164,7 +164,7 @@ struct SignUpView: View {
                 }
 
                 // Sign Up User
-                FBAuth.signUpUser(
+                user.signUpUser(
                     firstName: self.user.firstName.trimmingCharacters(in: .whitespacesAndNewlines),
                     lastName: self.user.lastName.trimmingCharacters(in: .whitespacesAndNewlines),
                     email: self.user.email.trimmingCharacters(in: .whitespacesAndNewlines),

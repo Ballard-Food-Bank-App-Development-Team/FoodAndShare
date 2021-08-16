@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
+        // TODO: Create a seprate view for the big buttons as they are very simular
         NavigationView {
             VStack {
                 Spacer()

@@ -15,7 +15,7 @@ struct AccountSettingsView: View {
     var body: some View {
         VStack {
             Form {
-                Text("Name: \(self.user.firstName) \(self.user.lastName)")
+                Text("Name: \(self.user.userInfo.firstName!) \(self.user.userInfo.lastName!)")
                 Button("Request Permission") {
                     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                         if success {

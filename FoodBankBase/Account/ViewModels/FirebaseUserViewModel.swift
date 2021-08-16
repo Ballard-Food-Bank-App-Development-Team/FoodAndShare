@@ -66,30 +66,65 @@ class FirebaseUserViewModel: ObservableObject {
 
     // MARK: - Firebase Auth
     func signUpUser(firstName: String, lastName: String, email: String, password: String, completionHandler: @escaping (Result<Bool, Error>) -> Void) {
-
         // Create user
-        Auth.auth().createUser(withEmail: email, password: password) { (_, error) in
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             // Check for errors
             if error != nil {
                 completionHandler(.failure(error!))
                 return
             }
-
-            // Success
-            completionHandler(.success(true))
+            // Add user to FBstore
+            let database = Firestore.firestore()
+            database.collection("users").document(result!.user.uid).setData([
+                "uid" : result!.user.uid,
+                "firstName" : firstName,
+                "lastName" : lastName,
+                "email" : result!.user.email!
+                // Check for errors
+            ]) { err in
+                if err != nil {
+                    completionHandler(.failure(err!))
+                    return
+                }
+                // Success
+                completionHandler(.success(true))
+            }
         }
     }
 
     func loginUser(email: String, password: String, completionHandler: @escaping (Result<Bool, Error>) -> Void) {
         // Sign User In
-        Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
+        Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
             // Check for errors
             if error != nil {
                 completionHandler(.failure(error!))
                 return
             }
-            // Success
-            completionHandler(.success(true))
+            // Fetch Full Name
+
+            // Fetch firstName and lastName
+            let database = Firestore.firestore()
+            let docRef = database.collection("users").document(authResult!.user.uid)
+
+            docRef.getDocument { (document, error) in
+                // Check for errors
+                if error != nil {
+                    completionHandler(.failure(error!))
+                    return
+                }
+
+                let firstName: String? = document!.data()!["firstName"] as? String
+                let lastName: String? = document!.data()!["lastName"] as? String
+
+                // Set UserDefauls
+                UserDefaults.standard.set(firstName, forKey: "firstName")
+                UserDefaults.standard.set(lastName, forKey: "lastName")
+                UserDefaults.standard.set(authResult!.user.uid, forKey: "uid")
+                UserDefaults.standard.set(email, forKey: "email")
+
+                // Success
+                completionHandler(.success(true))
+            }
         }
     }
 

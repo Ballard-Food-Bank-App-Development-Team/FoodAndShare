@@ -102,7 +102,7 @@ struct LoginView: View {
                     return
                 }
 
-                FBAuth.loginUser(email: self.user.email.trimmingCharacters(in: .whitespacesAndNewlines), password: self.user.password.trimmingCharacters(in: .whitespacesAndNewlines)) { (result) in
+                user.loginUser(email: self.user.email.trimmingCharacters(in: .whitespacesAndNewlines), password: self.user.password.trimmingCharacters(in: .whitespacesAndNewlines)) { (result) in
                     switch result {
                     case .failure(let error):
                         firebaseError = error.localizedDescription
