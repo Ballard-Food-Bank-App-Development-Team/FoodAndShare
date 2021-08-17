@@ -9,16 +9,19 @@ import Foundation
 
 class SurveyViewModel: ObservableObject {
 
-    @Published var surveyInfo: Survey
+    @Published var questions: [Question]
 
     func select(question: Int, answer: Int) {
-        for answers in 0...(self.surveyInfo.questions[question].responses.count - 1) {
-            self.surveyInfo.questions[question].responses[answers].chosen = false
+        for answers in 0...(self.questions[question].responses.count - 1) {
+            self.questions[question].responses[answers].chosen = false
         }
-        self.surveyInfo.questions[question].responses[answer].chosen = true
+        self.questions[question].responses[answer].chosen = true
     }
 
     init(questions: [Question]) {
-        self.surveyInfo = Survey(questions: questions)
+        self.questions = questions
+        for question in 0...(questions.count - 1) {
+            self.questions[question].index = question
+        }
     }
 }

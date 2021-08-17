@@ -10,12 +10,14 @@ import Foundation
 struct Question: Hashable {
     var ask: String
     var responses: [Answer]
+    var index: Int = 0
 
     init(ask: String, responses: [String]) {
         self.ask = ask
         self.responses = [Answer]()
-        for response in responses {
-            self.responses.append(Answer(text: response))
+        for response in 0...(responses.count - 1) {
+            self.responses.append(Answer(text: responses[response]))
+            self.responses[response].index = response
         }
     }
 }

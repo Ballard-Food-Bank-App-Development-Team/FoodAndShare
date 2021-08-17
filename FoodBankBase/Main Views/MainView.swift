@@ -12,15 +12,6 @@ struct MainView: View {
         // TODO: Create a seprate view for the big buttons as they are very simular
         NavigationView {
             VStack {
-                // MARK: - Account Settings
-                HStack {
-                    NavigationLink(
-                        destination: AccountSettingsView(),
-                        label: {
-                            ProfileIconView()
-                        })
-                }
-
                 // MARK: - Logo
                 Image("foodbankMain")
                     .resizable()

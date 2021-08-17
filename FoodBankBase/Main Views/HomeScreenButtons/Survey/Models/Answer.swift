@@ -10,6 +10,7 @@ import Foundation
 struct Answer: Hashable {
     var text: String
     var chosen: Bool = false
+    var index: Int = 0
 
     init(text: String) {
         self.text = text

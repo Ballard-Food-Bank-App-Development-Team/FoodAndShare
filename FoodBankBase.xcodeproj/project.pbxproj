@@ -27,13 +27,11 @@
 		D34C4C3226C86DCB005519FD /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C4C3126C86DCB005519FD /* Question.swift */; };
 		D34C4C3426C86E33005519FD /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C4C3326C86E33005519FD /* Answer.swift */; };
 		D34C4C4126C8979D005519FD /* SurveyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C4C4026C8979D005519FD /* SurveyViewModel.swift */; };
-		D34C4C4326C8981B005519FD /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C4C4226C8981B005519FD /* Survey.swift */; };
 		D35E184326BF418B00274EF9 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35E184226BF418B00274EF9 /* Location.swift */; };
 		D398667C269A4E9400AD313A /* DaySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D398667B269A4E9400AD313A /* DaySelectView.swift */; };
 		D3C4BDC22678125900731539 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3C4BDC12678125900731539 /* GoogleService-Info.plist */; };
 		D3C4BDCB2679803F00731539 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */; };
 		D3C4BDCF267980D200731539 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCE267980D200731539 /* AccountSettingsView.swift */; };
-		D3CFAF9826C9D834003BB421 /* ProfileIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CFAF9726C9D834003BB421 /* ProfileIconView.swift */; };
 		D3CFAF9A26C9E048003BB421 /* CustomCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CFAF9926C9E048003BB421 /* CustomCalendarViewModel.swift */; };
 		D3D46606267C2BAD0006F9A3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D46605267C2BAD0006F9A3 /* HomeView.swift */; };
 		D3E4514026C041E500624C3A /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4513F26C041E500624C3A /* FeedbackView.swift */; };
@@ -70,13 +68,11 @@
 		D34C4C3126C86DCB005519FD /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		D34C4C3326C86E33005519FD /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		D34C4C4026C8979D005519FD /* SurveyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewModel.swift; sourceTree = "<group>"; };
-		D34C4C4226C8981B005519FD /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		D35E184226BF418B00274EF9 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		D398667B269A4E9400AD313A /* DaySelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelectView.swift; sourceTree = "<group>"; };
 		D3C4BDC12678125900731539 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		D3C4BDCE267980D200731539 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
-		D3CFAF9726C9D834003BB421 /* ProfileIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileIconView.swift; sourceTree = "<group>"; };
 		D3CFAF9926C9E048003BB421 /* CustomCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarViewModel.swift; sourceTree = "<group>"; };
 		D3D46605267C2BAD0006F9A3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D3E4513F26C041E500624C3A /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
@@ -199,7 +195,6 @@
 				D3333DDA2675964D00447A3B /* ContentView.swift */,
 				D3D46605267C2BAD0006F9A3 /* HomeView.swift */,
 				26F73E8D26C0F78400223EF5 /* MainView.swift */,
-				D3CFAF9626C9D817003BB421 /* Helpers */,
 				D3E79D1726913AA200A389E6 /* HomeScreenButtons */,
 			);
 			path = "Main Views";
@@ -236,7 +231,6 @@
 		D34C4C3026C86DB5005519FD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D34C4C4226C8981B005519FD /* Survey.swift */,
 				D34C4C3126C86DCB005519FD /* Question.swift */,
 				D34C4C3326C86E33005519FD /* Answer.swift */,
 			);
@@ -282,14 +276,6 @@
 				D3E79D0D2691379E00A389E6 /* FoodBankListChoiceView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		D3CFAF9626C9D817003BB421 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				D3CFAF9726C9D834003BB421 /* ProfileIconView.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D3D46601267BF9D00006F9A3 /* Views */ = {
@@ -545,7 +531,6 @@
 				D3333DD72675964D00447A3B /* AppDelegate.swift in Sources */,
 				D3F47B8E269233CA009E73E8 /* FirebaseUser.swift in Sources */,
 				D34C4C3426C86E33005519FD /* Answer.swift in Sources */,
-				D3CFAF9826C9D834003BB421 /* ProfileIconView.swift in Sources */,
 				D3F47B9026923533009E73E8 /* FirebaseUserViewModel.swift in Sources */,
 				D34C4C4126C8979D005519FD /* SurveyViewModel.swift in Sources */,
 				D3333DEB2675968D00447A3B /* AccountChoiceView.swift in Sources */,
@@ -559,7 +544,6 @@
 				D398667C269A4E9400AD313A /* DaySelectView.swift in Sources */,
 				268A585E26A6A2F00069A74A /* CalendarIcon.swift in Sources */,
 				D35E184326BF418B00274EF9 /* Location.swift in Sources */,
-				D34C4C4326C8981B005519FD /* Survey.swift in Sources */,
 				D3333DD92675964D00447A3B /* SceneDelegate.swift in Sources */,
 				D3E4514026C041E500624C3A /* FeedbackView.swift in Sources */,
 				26F73E7F26BEE6D800223EF5 /* InfoView.swift in Sources */,
