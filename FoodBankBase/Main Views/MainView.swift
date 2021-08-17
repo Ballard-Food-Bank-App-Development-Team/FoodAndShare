@@ -67,6 +67,7 @@ struct MainView: View {
                         )
                     })
                 Spacer()
+                Spacer()
             }
             .navigationBarHidden(true)
         }
