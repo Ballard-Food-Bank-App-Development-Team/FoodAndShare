@@ -12,18 +12,20 @@ struct HomeView: View {
     @State var selectedIndex = 1
 
     var body: some View {
-        ZStack {
+        VStack {
             switch selectedIndex {
-            case 0:
+             case 0:
                 DaySelectView()
-            case 1:
+             case 1:
                 MainView()
-            case 2:
+             case 2:
                 FeedbackView()
-            default:
+             case 3:
+                AccountSettingsView()
+             default:
                 MainView()
-            }
-            VStack {
+             }
+            
                 Spacer()
 
                 HStack {
@@ -37,6 +39,11 @@ struct HomeView: View {
                                 Image(systemName: "calendar.badge.clock")
                                     .font(.title)
                             )
+                        .background(
+                                Circle()
+                                    .foregroundColor(selectedIndex == 0 ? Color.white : Color.black)
+                                    .frame(width: 50, height: 50)
+                        )
                     })
                     Spacer()
                     Button(action: {
@@ -46,7 +53,7 @@ struct HomeView: View {
                             .frame(width: 50, height: 50, alignment: .center)
                             .mask(
                                 Image(systemName: "house.fill")
-                                    .font(.largeTitle)
+                                    .font(.title)
                             )
                     })
                     Spacer()
@@ -61,8 +68,22 @@ struct HomeView: View {
                             )
                     })
                     Spacer()
+                    Button(action: {
+                        selectedIndex = 3
+                    }, label: {
+                        LinearGradient(gradient: Gradient(colors: [.red, .purple]), startPoint: .bottomLeading, endPoint: .topTrailing)
+                            .frame(width: 50, height: 50, alignment: .center)
+                            .mask(
+                                Image(systemName: "gearshape.fill")
+                                    .font(.title)
+                            )
+                    })
+                    Spacer()
                 }
-            }
+                .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width/16, height: 75, alignment: .center)
+                .background(
+                    RoundedRectangle(cornerRadius: 15)
+                )
         }
         .navigationBarHidden(true)
     }
