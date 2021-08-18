@@ -47,9 +47,9 @@ struct BigButtonHomeScreenView: View {
         .background(
             RoundedRectangle(cornerRadius: 25)
                 .foregroundColor(Color("spaceGrey"))
-                .shadow(color: Color("customOrange"), radius: 5, y: 1)
+                .shadow(color: Color("customOrange"), radius: 3)
         )
-        .padding(.all, 5)
+        .padding(.all, 10)
     }
 }
 
