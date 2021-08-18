@@ -34,27 +34,31 @@ struct FoodBankMapView: View {
     ]
 
     var body: some View {
-        Map(coordinateRegion: $region, annotationItems: locations) { location in
-            MapAnnotation(coordinate: location.coordinate, anchorPoint: CGPoint(x: 1, y: 1)) {
-                Circle()
-                    .fill()
-                    .foregroundColor(.red)
-                    .frame(width: 50, height: 50, alignment: .center)
-                    .background(
-                        Rectangle()
-                            .rotation(Angle(degrees: 45))
-                            .foregroundColor(.red)
-                            .clipShape(
-                                Rectangle()
-                                    .offset(x: 10, y: 10.0)
-                            )
-                            .clipShape(
-                                Rectangle()
-                                    .offset(x: -10, y: 10.0)
-                            )
-                    )
-
+        VStack {
+            Map(coordinateRegion: $region, annotationItems: locations) { location in
+                MapAnnotation(coordinate: location.coordinate, anchorPoint: CGPoint(x: 1, y: 1)) {
+                    Circle()
+                        .fill()
+                        .foregroundColor(.red)
+                        .frame(width: 50, height: 50, alignment: .center)
+                        .background(
+                            Rectangle()
+                                .rotation(Angle(degrees: 45))
+                                .foregroundColor(.red)
+                                .clipShape(
+                                    Rectangle()
+                                        .offset(x: 10, y: 10.0)
+                                )
+                                .clipShape(
+                                    Rectangle()
+                                        .offset(x: -10, y: 10.0)
+                                )
+                        )
+                }
+                
             }
+            Text("5130 LEARY AVE NW, SEATTLE, WA 98107")
+                .foregroundColor(Color("customOrange"))
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Map")
