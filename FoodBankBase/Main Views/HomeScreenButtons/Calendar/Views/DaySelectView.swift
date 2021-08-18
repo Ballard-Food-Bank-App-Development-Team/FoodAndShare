@@ -38,6 +38,30 @@ struct DaySelectView: View {
             }
         }
     }
+    @State private var eventList: String = ""
+    let masterList = ["Drive Through", "Mail", "No Cook Bags", "Sandwiches at Door", "ID Assistance (12 PM - 4 PM)", "Home Delivery"]
+    private func updateEvents() {
+        for dayOn in 1...self.calendar.activeMonth.arrayOfMonthDays.count where self.calendar.activeMonth.arrayOfMonthDays[dayOn - 1].choosen == true {
+            switch self.calendar.activeMonth.arrayOfMonthDays[dayOn - 1].dayOfWeek {
+            case 1:
+                eventList = ""
+            case 2:
+                eventList = masterList[0] + "\n" + masterList[1] + "\n" + masterList[2] + "\n" + masterList[3]
+            case 3:
+                eventList = masterList[1] + "\n" + masterList[2] + "\n" + masterList[3] + "\n" + masterList[4] + "\n" + masterList[5]
+            case 4:
+                eventList = masterList[0] + "\n" + masterList[1] + "\n" + masterList[2] + "\n" + masterList[3] + "\n" + masterList[5]
+            case 5:
+                eventList = masterList[0] + "\n" + masterList[1] + "\n" + masterList[2] + "\n" + masterList[3] + "\n" + masterList[5]
+            case 6:
+                eventList = ""
+            case 7:
+                eventList = ""
+            default:
+                eventList = ""
+            }
+        }
+    }
 
     var body: some View {
         VStack {
@@ -50,7 +74,9 @@ struct DaySelectView: View {
                     }
                     calendar.changeActiveMonth()
                     foodBankState = ""
+                    eventList = ""
                     updateHours()
+                    updateEvents()
                 }, label: {
                     Image(systemName: "arrowshape.turn.up.left")
                         .imageScale(.large)
@@ -73,7 +99,9 @@ struct DaySelectView: View {
                     }
                     calendar.changeActiveMonth()
                     foodBankState = ""
+                    eventList = ""
                     updateHours()
+                    updateEvents()
                 }, label: {
                     Image(systemName: "arrowshape.turn.up.right")
                         .imageScale(.large)
@@ -114,6 +142,7 @@ struct DaySelectView: View {
                                 Button(action: {
                                     calendar.refreshDaySelect(dayNum: gridIndex - invalidDays)
                                     updateHours()
+                                    updateEvents()
                                 }, label: {
                                     CalendarIcon(
                                         dayNum: String(gridIndex - invalidDays + 1),
@@ -126,6 +155,7 @@ struct DaySelectView: View {
                                 Button(action: {
                                     calendar.refreshDaySelect(dayNum: gridIndex - invalidDays)
                                     updateHours()
+                                    updateEvents()
                                 }, label: {
                                     CalendarIcon(
                                         dayNum: String(gridIndex - invalidDays + 1),
@@ -140,16 +170,22 @@ struct DaySelectView: View {
                     .padding(.all, 0.5)
                 }
             }
-            .padding(.all, 8.0)
-            Spacer()
-
-            Text(foodBankState)
-                .font(.largeTitle)
-
-            Spacer()
+            VStack(alignment: .center) {
+                Text(foodBankState)
+                    .font(.largeTitle)
+                Text(eventList)
+                    .font(.headline)
+                    .foregroundColor(Color("textGrey"))
+                    .font(.system(size: 20))
+                    .fontWeight(.medium)
+                    .lineSpacing(20)
+                    .padding(.all, 10)
+                Spacer()
+            }
         }
         .onAppear {
             updateHours()
+            updateEvents()
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Calendar")
