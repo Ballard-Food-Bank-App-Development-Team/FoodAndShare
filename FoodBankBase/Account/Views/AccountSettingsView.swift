@@ -41,10 +41,21 @@ struct AccountSettingsView: View {
                     // add our notification request
                     UNUserNotificationCenter.current().add(request)
                 }
+
+                Button(action: {
+                    self.user.logoutUser { (result) in
+                        switch result {
+                        case .failure(let error):
+                            print(error)
+                        case .success(_):
+                            print("Logged User Out")
+                        }
+                    }
+                }, label: {
+                    Text("Log Out")
+                })
+                .accentColor(.red)
             }
-        }
-        .onAppear {
-            self.user.checkUserState()
         }
         .navigationBarTitleDisplayMode(.large)
         .navigationTitle("Account Settings")
@@ -62,7 +73,6 @@ struct AccountSettingsView: View {
                     case .failure(let error):
                         print(error)
                     case .success(_):
-                        self.user.checkUserState()
                         print("Logged Out User")
                     }
                 }

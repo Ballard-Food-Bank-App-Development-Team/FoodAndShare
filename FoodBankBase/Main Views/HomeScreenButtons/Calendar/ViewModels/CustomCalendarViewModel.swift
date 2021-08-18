@@ -17,7 +17,7 @@ class CustomCalendarViewModel: ObservableObject {
 
     func refreshDaySelect(dayNum: Int) {
         for dayOn in 0...30 where dayOn < self.activeMonth.lastDayOfMonth {
-                self.activeMonth.arrayOfMonthDays[dayOn].choosen = false
+            self.activeMonth.arrayOfMonthDays[dayOn].choosen = false
         }
         self.activeMonth.arrayOfMonthDays[dayNum].choosen = true
     }

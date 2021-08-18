@@ -59,7 +59,7 @@ struct NewsUIView: View {
                         .imageScale(.large)
                         .accentColor(Color("darkInvert"))
                 })
-        )
+            )
         }
     }
 }

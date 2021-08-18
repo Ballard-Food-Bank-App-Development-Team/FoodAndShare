@@ -10,6 +10,9 @@ import SwiftUI
 struct AccountChoiceView: View {
     @EnvironmentObject var user: FirebaseUserViewModel
 
+    @State private var showAlert: Bool = false
+    @State private var error: String = ""
+
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
@@ -37,9 +40,17 @@ struct AccountChoiceView: View {
                                 .foregroundColor(Color("darkInvert"))
                         )
                 }
-                /*
+
                 Button(action: {
-                    
+                    self.user.loginUser(email: "anonymous@anonymous.anonymous", password: "An0nym0us!") { (result) in
+                        switch result {
+                        case .failure(let err):
+                            self.error = err.localizedDescription
+                            self.showAlert = true
+                        case .success(_):
+                            print("Guest Login Success")
+                        }
+                    }
                 }, label: {
                     Text("Continue as Guest")
                         .padding(.all)
@@ -49,8 +60,12 @@ struct AccountChoiceView: View {
                             RoundedRectangle(cornerRadius: 10)
                                 .foregroundColor(Color("darkInvert"))
                         )
+
                 })
-                */
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Error Try Again"), message: Text(self.error), dismissButton: .default(Text("OK")))
+                }
+
                 Spacer()
             }
             .navigationTitle("Account Setup")

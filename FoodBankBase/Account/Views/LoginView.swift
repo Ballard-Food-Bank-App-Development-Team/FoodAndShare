@@ -109,18 +109,8 @@ struct LoginView: View {
                         firebaseErrorOpacity = 1.0
                         return
                     case .success(_):
-                        firebaseErrorOpacity = 1.0
-                        self.user.fetchUserData { (result) in
-                            switch result {
-                            case .failure(let err):
-                                firebaseError = err.localizedDescription
-                                firebaseErrorOpacity = 1.0
-                            case .success(_):
-                                firebaseErrorOpacity = 0.0
-                                self.user.checkUserState()
-                                print("Login Success")
-                            }
-                        }
+                        firebaseErrorOpacity = 0.0
+                        print("Login Success")
                     }
                 }
             }, label: {
@@ -135,10 +125,10 @@ struct LoginView: View {
 
             // MARK: - Forgot Password
             NavigationLink(destination: ForgotPasswordView(),
-                label: {
-                    Text("Forgot Password?")
-                        .foregroundColor(.blue)
-                })
+                           label: {
+                            Text("Forgot Password?")
+                                .foregroundColor(.blue)
+                           })
 
             // MARK: - Firebase Error display
             Text(firebaseError)

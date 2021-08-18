@@ -42,13 +42,13 @@ struct CustomCalendarMonth {
             let date = self.firstDayOfMonth.addingTimeInterval(60 * 60 * 24 * Double(dayOn))
 
             self.arrayOfMonthDays.append(CustomCalendarDay(dateOfDay: date))
-            
+
             let dateDay = myCalendar.component(.day, from: date)
             let dateMonth = myCalendar.component(.month, from: date)
-            
+
             let curDay = myCalendar.component(.day, from: Date())
             let curMonth = myCalendar.component(.month, from: Date())
-            
+
             if dateDay == curDay && dateMonth == curMonth {
                 self.arrayOfMonthDays[dayOn].choosen = true
             }

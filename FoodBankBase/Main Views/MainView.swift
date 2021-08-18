@@ -54,10 +54,10 @@ struct MainView: View {
                             frame: 100
                         )
                     })
-                
+
                 // MARK: - Survey Button
                 NavigationLink(
-                    destination: Text("Survey"),
+                    destination: SurveyView(),
                     label: {
                         BigButtonHomeScreenView(
                             name: "Surveys",

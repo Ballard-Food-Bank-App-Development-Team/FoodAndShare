@@ -54,9 +54,9 @@ struct SignUpView: View {
                             }
                         })
                     Text(self.user.firstNameErrorText)
-                            .padding(.leading, 16.0)
-                            .foregroundColor(.red.opacity(firstNameErrorOpacity))
-                            .font(.system(size: 11.0))
+                        .padding(.leading, 16.0)
+                        .foregroundColor(.red.opacity(firstNameErrorOpacity))
+                        .font(.system(size: 11.0))
                 }
 
                 // MARK: - Last Name TextField
@@ -72,17 +72,17 @@ struct SignUpView: View {
                         )
                         .onChange(of: self.user.lastName, perform: { _ in
                             if self.user.isEmpty(field: self.user.lastName.trimmingCharacters(in: .whitespacesAndNewlines)) {
-                            lastNameBorder = .red
-                            lastNameErrorOpacity = 1.0
-                        } else {
-                            lastNameBorder = .green
-                            lastNameErrorOpacity = 0.0
-                        }
+                                lastNameBorder = .red
+                                lastNameErrorOpacity = 1.0
+                            } else {
+                                lastNameBorder = .green
+                                lastNameErrorOpacity = 0.0
+                            }
                         })
                     Text(self.user.lastNameErrorText)
-                            .padding(.leading, 16.0)
-                            .foregroundColor(.red.opacity(lastNameErrorOpacity))
-                            .font(.system(size: 11.0))
+                        .padding(.leading, 16.0)
+                        .foregroundColor(.red.opacity(lastNameErrorOpacity))
+                        .font(.system(size: 11.0))
                 }
             }
             // MARK: - Email TextField
@@ -106,10 +106,10 @@ struct SignUpView: View {
                             emailErrorOpacity = 0.0
                         }
                     })
-                    Text(user.emailErrorText)
-                        .padding(.leading, 16.0)
-                        .foregroundColor(.red.opacity(emailErrorOpacity))
-                        .font(.system(size: 11.0))
+                Text(user.emailErrorText)
+                    .padding(.leading, 16.0)
+                    .foregroundColor(.red.opacity(emailErrorOpacity))
+                    .font(.system(size: 11.0))
             }
 
             // MARK: - Password TextField
@@ -151,9 +151,9 @@ struct SignUpView: View {
                         .foregroundColor(Color(.systemBackground))
                 )
                 Text(self.user.passwordErrorText)
-                        .padding(.leading, 16.0)
-                        .foregroundColor(.red.opacity(passwordErrorOpacity))
-                        .font(.system(size: 11.0))
+                    .padding(.leading, 16.0)
+                    .foregroundColor(.red.opacity(passwordErrorOpacity))
+                    .font(.system(size: 11.0))
             }
 
             // MARK: - Sign Up Button
@@ -177,19 +177,7 @@ struct SignUpView: View {
                         return
                     case .success(_):
                         firebaseErrorOpacity = 0.0
-                        // Add User to firestore
-                        self.user.addNewUserToFirestore { (result) in
-                            switch result {
-                            case .failure(let err):
-                                firebaseError = err.localizedDescription
-                                firebaseErrorOpacity = 1.0
-                                return
-                            case .success(_):
-                                firebaseErrorOpacity = 0.0
-                                self.user.checkUserState()
-                                print("Sign Up Success")
-                            }
-                        }
+                        print("Sign Up Success")
                     }
                 }
             }

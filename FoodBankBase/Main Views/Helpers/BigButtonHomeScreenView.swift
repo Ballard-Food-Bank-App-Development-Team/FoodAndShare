@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct BigButtonHomeScreenView: View {
-    
+
     var name: String
     var description: String
     var imageName: String
     var frame: CGFloat
-    
+
     var body: some View {
         HStack {
             Spacer()
@@ -40,7 +40,7 @@ struct BigButtonHomeScreenView: View {
                 .frame(width: 50, height: 50)
                 .background(Color("spaceGrey"))
             Spacer()
-            
+
         }
         .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width/4, height: 100, alignment: .center)
         .accentColor(.black)
