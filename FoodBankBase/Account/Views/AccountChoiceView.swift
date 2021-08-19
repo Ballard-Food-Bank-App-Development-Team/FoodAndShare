@@ -42,7 +42,7 @@ struct AccountChoiceView: View {
                 }
 
                 Button(action: {
-                    self.user.loginUser(email: "anonymous@anonymous.anonymous", password: "An0nym0us!") { (result) in
+                    self.user.signInAnonymously { (result) in
                         switch result {
                         case .failure(let err):
                             self.error = err.localizedDescription
@@ -52,7 +52,7 @@ struct AccountChoiceView: View {
                         }
                     }
                 }, label: {
-                    Text("Continue as Guest")
+                    Text("Anonymous Login")
                         .padding(.all)
                         .foregroundColor(Color(.systemBackground))
                         .frame(width: UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 3))
