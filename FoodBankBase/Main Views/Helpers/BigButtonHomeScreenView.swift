@@ -49,7 +49,7 @@ struct BigButtonHomeScreenView: View {
                 .foregroundColor(Color("spaceGrey"))
                 .shadow(color: Color("customOrange"), radius: 3)
         )
-        .padding(.all, 10)
+        .padding(.all, 5)
     }
 }
 

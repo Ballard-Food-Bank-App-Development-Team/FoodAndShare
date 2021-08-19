@@ -54,7 +54,7 @@ struct MainView: View {
                             frame: 100
                         )
                     })
-                /*
+                
                 // MARK: - Survey Button
                 NavigationLink(
                     destination: SurveyView(),
@@ -66,7 +66,7 @@ struct MainView: View {
                             frame: 50
                         )
                     })
-                */
+                
                 Spacer()
             }
             .navigationBarHidden(true)
