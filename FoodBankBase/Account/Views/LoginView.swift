@@ -22,6 +22,8 @@ struct LoginView: View {
     @State private var firebaseError: String = "No Errors"
     @State private var firebaseErrorOpacity: Double = 0.0
 
+    @State private var loginSelected: Bool = false
+
     var body: some View {
         VStack {
             // MARK: - Email TextField
@@ -97,21 +99,27 @@ struct LoginView: View {
 
             // MARK: - Login Button
             Button(action: {
-                // Validate all Fields
-                if emailBorder == .red || passwordBorder == .red {
-                    return
-                }
-
-                user.loginUser(email: self.user.email.trimmingCharacters(in: .whitespacesAndNewlines), password: self.user.password.trimmingCharacters(in: .whitespacesAndNewlines)) { (result) in
-                    switch result {
-                    case .failure(let error):
-                        firebaseError = error.localizedDescription
-                        firebaseErrorOpacity = 1.0
+                if loginSelected == false {
+                    self.loginSelected = true
+                    // Validate all Fields
+                    if emailBorder == .red || passwordBorder == .red {
                         return
-                    case .success(_):
-                        firebaseErrorOpacity = 0.0
-                        print("Login Success")
                     }
+
+                    user.loginUser(email: self.user.email.trimmingCharacters(in: .whitespacesAndNewlines), password: self.user.password.trimmingCharacters(in: .whitespacesAndNewlines)) { (result) in
+                        switch result {
+                        case .failure(let error):
+                            self.loginSelected = false
+                            firebaseError = error.localizedDescription
+                            firebaseErrorOpacity = 1.0
+                            return
+                        case .success(_):
+                            firebaseErrorOpacity = 0.0
+                            print("Login Success")
+                        }
+                    }
+                } else {
+                    print("Don't Spam Button")
                 }
             }, label: {
                 Text("Login")

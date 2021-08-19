@@ -16,7 +16,7 @@ struct SurveyView: View {
         questions: [
             // Question #1
             Question(
-                ask: "Wold you recommend the Ballard Foodbank?",
+                ask: "Would you recommend the Ballard Foodbank?",
                 responses: [
                     "Yes",
                     "No"
@@ -48,7 +48,6 @@ struct SurveyView: View {
                     "It's Good"
                 ])
         ])
-
     var body: some View {
         ScrollView {
             VStack {
@@ -93,6 +92,8 @@ struct SurveyView: View {
                 .padding(.all, 20)
 
                 Button(action: {
+                    self.survey.surveyBitSend()
+                    print("FinalAnswer: \(self.survey.bit)")
                     showAlert = true
                     presentation.wrappedValue.dismiss()
                 }, label: {

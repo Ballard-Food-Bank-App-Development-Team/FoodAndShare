@@ -13,6 +13,8 @@ struct AccountChoiceView: View {
     @State private var showAlert: Bool = false
     @State private var error: String = ""
 
+    @State private var anonymousLoginSelected: Bool = false
+
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
@@ -42,17 +44,23 @@ struct AccountChoiceView: View {
                 }
 
                 Button(action: {
-                    self.user.signInAnonymously { (result) in
-                        switch result {
-                        case .failure(let err):
-                            self.error = err.localizedDescription
-                            self.showAlert = true
-                        case .success(_):
-                            print("Guest Login Success")
+                    if self.anonymousLoginSelected == false {
+                        self.anonymousLoginSelected = true
+                        self.user.signInAnonymously { (result) in
+                            switch result {
+                            case .failure(let err):
+                                self.anonymousLoginSelected = false
+                                self.error = err.localizedDescription
+                                self.showAlert = true
+                            case .success(_):
+                                print("Guest Login Success")
+                            }
                         }
+                    } else {
+                        print("Don't Spam Button")
                     }
                 }, label: {
-                    Text("Anonymous Login")
+                    Text("Guest Login")
                         .padding(.all)
                         .foregroundColor(Color(.systemBackground))
                         .frame(width: UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 3))

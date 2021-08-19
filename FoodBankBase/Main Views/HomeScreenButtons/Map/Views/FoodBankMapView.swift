@@ -55,7 +55,7 @@ struct FoodBankMapView: View {
                                 )
                         )
                 }
-                
+
             }
             Text("5130 LEARY AVE NW, SEATTLE, WA 98107")
                 .foregroundColor(Color("customOrange"))

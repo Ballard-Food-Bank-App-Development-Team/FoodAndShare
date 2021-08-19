@@ -13,10 +13,12 @@ struct FirebaseUser: Identifiable, Codable {
     var firstName: String?
     var lastName: String?
     var email: String?
+    var role: String?
 
     enum CodingKeys: String, CodingKey {
         case firstName
         case lastName
         case email
+        case role
     }
 }

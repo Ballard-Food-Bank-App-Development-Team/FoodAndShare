@@ -87,6 +87,7 @@ class FirebaseUserViewModel: ObservableObject {
             self.userInfo.firstName = firstName
             self.userInfo.lastName = lastName
             self.userInfo.email = email
+            self.userInfo.role = "User"
 
             do {
                 _ = try self.database.collection("users").document(result!.user.uid).setData(from: self.userInfo)
@@ -124,6 +125,7 @@ class FirebaseUserViewModel: ObservableObject {
             self.userInfo.firstName = "Anonymous"
             self.userInfo.lastName = "User"
             self.userInfo.email = ""
+            self.userInfo.role = "User"
 
             do {
                 _ = try self.database.collection("users").document(result!.user.uid).setData(from: self.userInfo)

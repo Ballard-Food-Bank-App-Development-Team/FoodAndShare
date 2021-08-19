@@ -29,6 +29,8 @@ struct SignUpView: View {
     @State private var firebaseError: String = "No Errors"
     @State private var firebaseErrorOpacity: Double = 0.0
 
+    @State private var signUpSelected: Bool = false
+
     var body: some View {
 
         VStack(alignment: .center, spacing: 5) {
@@ -158,27 +160,32 @@ struct SignUpView: View {
 
             // MARK: - Sign Up Button
             Button(action: {
-                // Validate all Feilds
-                if firstNameBorder == .red || lastNameBorder == .red || emailBorder == .red || passwordBorder == .red {
-                    return
-                }
-
-                // Sign Up User
-                user.signUpUser(
-                    firstName: self.user.firstName.trimmingCharacters(in: .whitespacesAndNewlines),
-                    lastName: self.user.lastName.trimmingCharacters(in: .whitespacesAndNewlines),
-                    email: self.user.email.trimmingCharacters(in: .whitespacesAndNewlines),
-                    password: self.user.password.trimmingCharacters(in: .whitespacesAndNewlines)
-                ) { (result) in
-                    switch result {
-                    case .failure(let error):
-                        firebaseError = error.localizedDescription
-                        firebaseErrorOpacity = 1.0
+                if signUpSelected == false {
+                    self.signUpSelected = true                    // Validate all Feilds
+                    if firstNameBorder == .red || lastNameBorder == .red || emailBorder == .red || passwordBorder == .red {
                         return
-                    case .success(_):
-                        firebaseErrorOpacity = 0.0
-                        print("Sign Up Success")
                     }
+
+                    // Sign Up User
+                    user.signUpUser(
+                        firstName: self.user.firstName.trimmingCharacters(in: .whitespacesAndNewlines),
+                        lastName: self.user.lastName.trimmingCharacters(in: .whitespacesAndNewlines),
+                        email: self.user.email.trimmingCharacters(in: .whitespacesAndNewlines),
+                        password: self.user.password.trimmingCharacters(in: .whitespacesAndNewlines)
+                    ) { (result) in
+                        switch result {
+                        case .failure(let error):
+                            self.signUpSelected = false
+                            firebaseError = error.localizedDescription
+                            firebaseErrorOpacity = 1.0
+                            return
+                        case .success(_):
+                            firebaseErrorOpacity = 0.0
+                            print("Sign Up Success")
+                        }
+                    }
+                } else {
+                    print("Don't Spam Button")
                 }
             }
             , label: {

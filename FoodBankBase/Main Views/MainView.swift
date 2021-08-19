@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        // TODO: Create a seprate view for the big buttons as they are very simular
         NavigationView {
             VStack {
                 Spacer()
@@ -54,7 +53,7 @@ struct MainView: View {
                             frame: 100
                         )
                     })
-                
+
                 // MARK: - Survey Button
                 NavigationLink(
                     destination: SurveyView(),
@@ -66,7 +65,7 @@ struct MainView: View {
                             frame: 50
                         )
                     })
-                
+
                 Spacer()
             }
             .navigationBarHidden(true)

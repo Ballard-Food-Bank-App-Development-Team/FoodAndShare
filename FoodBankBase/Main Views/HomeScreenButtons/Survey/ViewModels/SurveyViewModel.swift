@@ -6,16 +6,47 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseAuth
 
 class SurveyViewModel: ObservableObject {
 
     @Published var questions: [Question]
 
+    @Published var bit: Int = 0
+
+    private var database = Firestore.firestore()
+
     func select(question: Int, answer: Int) {
-        for answers in 0...(self.questions[question].responses.count - 1) {
-            self.questions[question].responses[answers].chosen = false
+        for answer in 0...(self.questions[question].responses.count - 1) {
+            self.questions[question].responses[answer].chosen = false
         }
         self.questions[question].responses[answer].chosen = true
+    }
+
+    func surveyBitSend() {
+        var index: Int = 1
+
+        for question in self.questions {
+            for response in question.responses {
+                if response.chosen {
+                    bit += (response.index + 1) * index
+                    index *= 10
+                    break
+                }
+                if response.index == question.responses.count - 1 {
+                    index *= 10
+                }
+            }
+        }
+
+        let uid: String = Auth.auth().currentUser!.uid
+
+        database.collection("surveyData").document("survey1Answers").setData(["\(uid)" : self.bit], merge: true)
+    }
+
+    func surveyBitRecieve() {
+
     }
 
     init(questions: [Question]) {
