@@ -25,6 +25,8 @@ class FirebaseUserViewModel: ObservableObject {
 
     var handle: AuthStateDidChangeListenerHandle?
 
+    private var database = Firestore.firestore()
+
     func checkUserState() {
         self.handle = Auth.auth().addStateDidChangeListener { (_, user) in
             if user == nil {
@@ -82,21 +84,19 @@ class FirebaseUserViewModel: ObservableObject {
                 return
             }
             // Add user to Firestore
-            let database = Firestore.firestore()
-            database.collection("users").document(result!.user.uid).setData([
-                "firstName" : firstName,
-                "lastName" : lastName,
-                "email" : result!.user.email!
-                // Check for errors
-            ]) { err in
-                if err != nil {
-                    completionHandler(.failure(err!))
-                    return
-                }
+            self.userInfo.firstName = firstName
+            self.userInfo.lastName = lastName
+            self.userInfo.email = email
 
-                self.checkUserState()
-                completionHandler(.success(true))
+            do {
+                _ = try self.database.collection("users").document(result!.user.uid).setData(from: self.userInfo)
+            } catch let err {
+                completionHandler(.failure(err))
+                return
             }
+
+            self.checkUserState()
+            completionHandler(.success(true))
         }
     }
 
@@ -106,6 +106,29 @@ class FirebaseUserViewModel: ObservableObject {
             // Check for errors
             if error != nil {
                 completionHandler(.failure(error!))
+                return
+            }
+
+            self.checkUserState()
+            completionHandler(.success(true))
+        }
+    }
+
+    func signInAnonymously(completionHandler: @escaping (Result<Bool, Error>) -> Void) {
+        Auth.auth().signInAnonymously { (result, error) in
+            if error != nil {
+                completionHandler(.failure(error!))
+                return
+            }
+
+            self.userInfo.firstName = "Anonymous"
+            self.userInfo.lastName = "User"
+            self.userInfo.email = ""
+
+            do {
+                _ = try self.database.collection("users").document(result!.user.uid).setData(from: self.userInfo)
+            } catch let err {
+                completionHandler(.failure(err))
                 return
             }
 
@@ -132,8 +155,6 @@ class FirebaseUserViewModel: ObservableObject {
     }
 
     // MARK: - Firestore
-    private var database = Firestore.firestore()
-
     func fetchUserData(completionHandler: @escaping (Result<Bool, Error>) -> Void) {
         // Check if the current user is for some reason not signed in
         if Auth.auth().currentUser == nil {
