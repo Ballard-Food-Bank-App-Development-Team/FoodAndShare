@@ -16,7 +16,7 @@ struct SurveyView: View {
         questions: [
             // Question #1
             Question(
-                ask: "Do you Like Ballard Food Bank?",
+                ask: "Wold you recommend the Ballard Foodbank?",
                 responses: [
                     "Yes",
                     "No"
@@ -27,12 +27,12 @@ struct SurveyView: View {
                 responses: [
                     "Dry foods",
                     "Produce",
-                    "Frozen meals",
-                    "Same foods"
+                    "Frozen Food",
+                    "Dairy"
                 ]),
             // Question #3
             Question(
-                ask: "Do you need more food from Ballard Food Bank?",
+                ask: "Do you get enough food?",
                 responses: [
                     "I barely have enough",
                     "Sometimes I get enough",
@@ -40,12 +40,12 @@ struct SurveyView: View {
                 ]),
             // Question #4
             Question(
-                ask: "Is the Ballard Food Bank open at the right times?",
+                ask: "What times do you want the foodbank open?",
                 responses: [
-                    "It needs to open earlier",
-                    "It needs to open later",
-                    "It needs to open earlier & later",
-                    "The current times are good"
+                    "Earlier",
+                    "Later",
+                    "Earlier & Later",
+                    "It's Good"
                 ])
         ])
 
@@ -61,13 +61,6 @@ struct SurveyView: View {
                                     .font(.title3)
                                 Spacer()
                             }
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
-                            .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .foregroundColor(Color(.systemBackground))
-                                    .shadow(color: Color("customOrange"), radius: 3)
-                            )
                             VStack {
                                 ForEach(question.responses, id: \.self) { response in
                                     Button(action: {
@@ -75,20 +68,19 @@ struct SurveyView: View {
                                     }, label: {
                                         HStack {
                                             Circle()
-                                                .foregroundColor(response.chosen ? .orange : .gray)
-                                                .frame(width: 10, height: 10, alignment: .center)
+                                                .strokeBorder(Color(.black), lineWidth: 1)
+                                                .background(Circle().foregroundColor(response.chosen ? .blue : .white))
+                                                .frame(width: 20, height: 20, alignment: .center)
                                                 .padding(.horizontal, 10)
                                             Text(response.text)
                                                 .foregroundColor(.black)
                                                 .font(.body)
-
                                             Spacer()
                                         }
                                         .padding(.all, 2)
                                         .background(
                                             RoundedRectangle(cornerRadius: 10)
                                                 .foregroundColor(response.chosen ? Color.gray.opacity(0.2) : Color(.systemBackground))
-                                                .shadow(radius: 1)
                                         )
                                         .padding(.horizontal, 10)
                                         .padding(.all, 5)

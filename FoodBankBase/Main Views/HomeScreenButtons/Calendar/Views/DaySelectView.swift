@@ -39,7 +39,7 @@ struct DaySelectView: View {
         }
     }
     @State private var eventList: String = ""
-    let masterList = ["Drive Through", "Mail", "No Cook Bags", "Sandwiches at Door", "ID Assistance (12 PM - 4 PM)", "Home Delivery"]
+    let masterList = ["Drive Through (2 - 6)", "Mail", "No Cook Bags", "Sandwiches at Door", "ID Assistance (12 - 4)", "Home Delivery", "Drive Through (12 - 4)"]
     private func updateEvents() {
         for dayOn in 1...self.calendar.activeMonth.arrayOfMonthDays.count where self.calendar.activeMonth.arrayOfMonthDays[dayOn - 1].choosen == true {
             switch self.calendar.activeMonth.arrayOfMonthDays[dayOn - 1].dayOfWeek {
@@ -50,7 +50,7 @@ struct DaySelectView: View {
             case 3:
                 eventList = masterList[1] + "\n" + masterList[2] + "\n" + masterList[3] + "\n" + masterList[4] + "\n" + masterList[5]
             case 4:
-                eventList = masterList[0] + "\n" + masterList[1] + "\n" + masterList[2] + "\n" + masterList[3] + "\n" + masterList[5]
+                eventList = masterList[6] + "\n" + masterList[1] + "\n" + masterList[2] + "\n" + masterList[3] + "\n" + masterList[5]
             case 5:
                 eventList = masterList[0] + "\n" + masterList[1] + "\n" + masterList[2] + "\n" + masterList[3] + "\n" + masterList[5]
             case 6:
@@ -173,6 +173,7 @@ struct DaySelectView: View {
             VStack(alignment: .center) {
                 Text(foodBankState)
                     .font(.largeTitle)
+                Divider()
                 Text(eventList)
                     .font(.headline)
                     .foregroundColor(Color("textGrey"))
