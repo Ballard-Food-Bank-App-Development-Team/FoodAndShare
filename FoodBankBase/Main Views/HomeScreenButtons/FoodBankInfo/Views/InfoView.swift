@@ -12,10 +12,12 @@ struct InfoView: View {
     var body: some View {
         ScrollView {
             VStack {
+                Spacer()
+                Spacer()
                 Image("foodbankInfo")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 260, height: 240,   alignment: .center)
+                    .frame(width: 260, height: 240, alignment: .center)
                     .frame(width: 340, height: 240)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .shadow(color: Color("customOrange"), radius: 5, y: 1)
@@ -26,14 +28,11 @@ struct InfoView: View {
                 Text("Ballard Food Bank’s mission is to bring food and hope to our neighbors because there can be enough for everyone.")
                     .foregroundColor(Color("navyBlue"))
                     .font(.custom("HelveticaNeue-Medium", size: 18))
-                    .padding(.horizontal)
                     .padding()
                 Text("We provide access to nutritious food through our food bank, home delivery, and Weekend Food for Kids program. We also provide housing, medical care, and veterans’ benefits and access to utility assistance, identification vouchers, and our mail program. ")
                     .foregroundColor(Color("navyBlue"))
                     .font(.custom("HelveticaNeue-Medium", size: 18))
                     .padding(.horizontal)
-                    .padding()
-
             }
         }
         .navigationBarTitleDisplayMode(.inline)
@@ -41,13 +40,11 @@ struct InfoView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading: Button(action: { presentation.wrappedValue.dismiss()
-            }
-            , label: {
+            }, label: {
                 Image(systemName: "arrow.backward")
                     .imageScale(.large)
             })
         )
-
     }
 }
 

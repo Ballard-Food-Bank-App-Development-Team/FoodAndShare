@@ -64,7 +64,7 @@ class FirebaseUserViewModel: ObservableObject {
     }
 
     func isPasswordValid(password: String) -> Bool {
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@","^(?!=[.* ])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])([a-zA-Z0-9@$!%*?&]{8,})$")
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?!=[.* ])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])([a-zA-Z0-9@$!%*?&]{8,})$")
         return !passwordTest.evaluate(with: password)
     }
 

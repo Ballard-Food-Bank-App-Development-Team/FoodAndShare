@@ -107,7 +107,6 @@ struct DaySelectView: View {
                         .imageScale(.large)
                         .foregroundColor(Color("customOrange"))
                 })
-
             }
             .padding(.all)
 
@@ -118,7 +117,7 @@ struct DaySelectView: View {
                         .font(.headline)
                         .fontWeight(.medium)
                         .foregroundColor(Color.gray)
-                        .frame(width: UIScreen.main.bounds.width/9, alignment: .center)
+                        .frame(width: UIScreen.main.bounds.width / 9, alignment: .center)
                 }
             }
 
@@ -193,8 +192,7 @@ struct DaySelectView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading: Button(action: { presentation.wrappedValue.dismiss()
-            }
-            , label: {
+            }, label: {
                 Image(systemName: "arrow.backward")
                     .imageScale(.large)
                     .accentColor(Color("darkInvert"))

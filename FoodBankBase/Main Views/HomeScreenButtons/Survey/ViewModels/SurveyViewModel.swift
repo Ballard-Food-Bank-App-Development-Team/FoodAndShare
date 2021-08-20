@@ -42,11 +42,10 @@ class SurveyViewModel: ObservableObject {
 
         let uid: String = Auth.auth().currentUser!.uid
 
-        database.collection("surveyData").document("survey1Answers").setData(["\(uid)" : self.bit], merge: true)
+        database.collection("surveyData").document("survey1Answers").setData(["\(uid)": self.bit], merge: true)
     }
 
     func surveyBitRecieve() {
-
     }
 
     init(questions: [Question]) {

@@ -118,8 +118,7 @@ struct SurveyView: View {
         .navigationBarItems(
             leading: Button(
                 action: { presentation.wrappedValue.dismiss()
-                }
-                , label: {
+                }, label: {
                     Image(systemName: "arrow.backward")
                         .imageScale(.large)
                 })

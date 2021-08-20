@@ -68,7 +68,6 @@ struct AccountChoiceView: View {
                             RoundedRectangle(cornerRadius: 10)
                                 .foregroundColor(Color("darkInvert"))
                         )
-
                 })
                 .alert(isPresented: $showAlert) {
                     Alert(title: Text("Error Try Again"), message: Text(self.error), dismissButton: .default(Text("OK")))
