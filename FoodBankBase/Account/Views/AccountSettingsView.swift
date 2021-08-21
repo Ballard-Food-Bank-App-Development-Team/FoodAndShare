@@ -15,7 +15,7 @@ struct AccountSettingsView: View {
     var body: some View {
         VStack {
             Form {
-                Text("Name: \(self.user.userInfo.firstName!) \(self.user.userInfo.lastName!)")
+                Text("Name: \(self.user.userInfo.firstName) \(self.user.userInfo.lastName)")
                 Button("Request Permission") {
                     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                         if success {
@@ -62,8 +62,7 @@ struct AccountSettingsView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading: Button(action: { presentation.wrappedValue.dismiss()
-            }
-            , label: {
+            }, label: {
                 Image(systemName: "arrow.backward")
                     .imageScale(.large)
             }),

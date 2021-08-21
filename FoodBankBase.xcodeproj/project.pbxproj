@@ -43,6 +43,7 @@
 		D3F47B8E269233CA009E73E8 /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F47B8D269233CA009E73E8 /* FirebaseUser.swift */; };
 		D3F47B9026923533009E73E8 /* FirebaseUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F47B8F26923533009E73E8 /* FirebaseUserViewModel.swift */; };
 		D3F47B92269268F6009E73E8 /* FirebaseUserErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F47B91269268F6009E73E8 /* FirebaseUserErrors.swift */; };
+		D3F5A05A26D0851C004BA872 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F5A05926D0851C004BA872 /* Survey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		D3F47B8D269233CA009E73E8 /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
 		D3F47B8F26923533009E73E8 /* FirebaseUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserViewModel.swift; sourceTree = "<group>"; };
 		D3F47B91269268F6009E73E8 /* FirebaseUserErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserErrors.swift; sourceTree = "<group>"; };
+		D3F5A05926D0851C004BA872 /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 		D34C4C3026C86DB5005519FD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D3F5A05926D0851C004BA872 /* Survey.swift */,
 				D34C4C3126C86DCB005519FD /* Question.swift */,
 				D34C4C3326C86E33005519FD /* Answer.swift */,
 			);
@@ -418,6 +421,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					D3333DD22675964D00447A3B = {
 						CreatedOnToolsVersion = 12.5;
@@ -562,6 +566,7 @@
 				D35E184326BF418B00274EF9 /* Location.swift in Sources */,
 				D3333DD92675964D00447A3B /* SceneDelegate.swift in Sources */,
 				D3E4514026C041E500624C3A /* FeedbackView.swift in Sources */,
+				D3F5A05A26D0851C004BA872 /* Survey.swift in Sources */,
 				26F73E7F26BEE6D800223EF5 /* InfoView.swift in Sources */,
 				26F73E8E26C0F78400223EF5 /* MainView.swift in Sources */,
 				26F73E8326C035D600223EF5 /* NewsUIView.swift in Sources */,
@@ -720,7 +725,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Ben-Roberts.FoodBankBase";
+				PRODUCT_BUNDLE_IDENTIFIER = "Ian-Holloway.FoodBankBase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -735,14 +740,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodBankBase/Preview Content\"";
-				DEVELOPMENT_TEAM = Z634RQK5UK;
+				DEVELOPMENT_TEAM = FNVA75PS53;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FoodBankBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Ben-Roberts.FoodBankBase";
+				PRODUCT_BUNDLE_IDENTIFIER = "Ian-Holloway.FoodBankBase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

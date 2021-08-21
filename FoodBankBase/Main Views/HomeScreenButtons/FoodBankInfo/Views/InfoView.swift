@@ -15,7 +15,7 @@ struct InfoView: View {
                 Image("foodbankInfo")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 260, height: 240,   alignment: .center)
+                    .frame(width: 260, height: 240, alignment: .center)
                     .frame(width: 340, height: 240)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .shadow(color: Color("customOrange"), radius: 5, y: 1)
@@ -33,7 +33,6 @@ struct InfoView: View {
                     .font(.custom("HelveticaNeue-Medium", size: 18))
                     .padding(.horizontal)
                     .padding()
-
             }
         }
         .navigationBarTitleDisplayMode(.inline)
@@ -41,13 +40,11 @@ struct InfoView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading: Button(action: { presentation.wrappedValue.dismiss()
-            }
-            , label: {
+            }, label: {
                 Image(systemName: "arrow.backward")
                     .imageScale(.large)
             })
         )
-
     }
 }
 

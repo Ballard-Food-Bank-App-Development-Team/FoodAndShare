@@ -20,7 +20,7 @@ struct BigButtonHomeScreenView: View {
             Image(imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: frame, height: frame,   alignment: .center)
+                .frame(width: frame, height: frame, alignment: .center)
                 .frame(width: 50, height: 50)
                 .background(Color.white)
                 .clipShape(Circle())
@@ -36,13 +36,12 @@ struct BigButtonHomeScreenView: View {
             Image("orangePlus")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 30, height: 30,   alignment: .center)
+                .frame(width: 30, height: 30, alignment: .center)
                 .frame(width: 50, height: 50)
                 .background(Color("spaceGrey"))
             Spacer()
-
         }
-        .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width/4, height: 100, alignment: .center)
+        .frame(width: UIScreen.main.bounds.width - UIScreen.main.bounds.width / 4, height: 100, alignment: .center)
         .accentColor(.black)
         .background(
             RoundedRectangle(cornerRadius: 25)

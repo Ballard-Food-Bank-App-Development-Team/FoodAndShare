@@ -39,20 +39,20 @@ struct DaySelectView: View {
         }
     }
     @State private var eventList: String = ""
-    let masterList = ["Drive Through (2 - 6)", "Mail", "No Cook Bags", "Sandwiches at Door", "ID Assistance (12 - 4)", "Home Delivery", "Drive Through (12 - 4)"]
+    let mainList = ["Drive Through (2 - 6)", "Mail", "No Cook Bags", "Sandwiches at Door", "ID Assistance (12 - 4)", "Home Delivery", "Drive Through (12 - 4)"]
     private func updateEvents() {
         for dayOn in 1...self.calendar.activeMonth.arrayOfMonthDays.count where self.calendar.activeMonth.arrayOfMonthDays[dayOn - 1].choosen == true {
             switch self.calendar.activeMonth.arrayOfMonthDays[dayOn - 1].dayOfWeek {
             case 1:
                 eventList = ""
             case 2:
-                eventList = masterList[0] + "\n" + masterList[1] + "\n" + masterList[2] + "\n" + masterList[3]
+                eventList = mainList[0] + "\n" + mainList[1] + "\n" + mainList[2] + "\n" + mainList[3]
             case 3:
-                eventList = masterList[1] + "\n" + masterList[2] + "\n" + masterList[3] + "\n" + masterList[4] + "\n" + masterList[5]
+                eventList = mainList[1] + "\n" + mainList[2] + "\n" + mainList[3] + "\n" + mainList[4] + "\n" + mainList[5]
             case 4:
-                eventList = masterList[6] + "\n" + masterList[1] + "\n" + masterList[2] + "\n" + masterList[3] + "\n" + masterList[5]
+                eventList = mainList[6] + "\n" + mainList[1] + "\n" + mainList[2] + "\n" + mainList[3] + "\n" + mainList[5]
             case 5:
-                eventList = masterList[0] + "\n" + masterList[1] + "\n" + masterList[2] + "\n" + masterList[3] + "\n" + masterList[5]
+                eventList = mainList[0] + "\n" + mainList[1] + "\n" + mainList[2] + "\n" + mainList[3] + "\n" + mainList[5]
             case 6:
                 eventList = ""
             case 7:
@@ -107,7 +107,6 @@ struct DaySelectView: View {
                         .imageScale(.large)
                         .foregroundColor(Color("customOrange"))
                 })
-
             }
             .padding(.all)
 
@@ -118,7 +117,7 @@ struct DaySelectView: View {
                         .font(.headline)
                         .fontWeight(.medium)
                         .foregroundColor(Color.gray)
-                        .frame(width: UIScreen.main.bounds.width/9, alignment: .center)
+                        .frame(width: UIScreen.main.bounds.width / 9, alignment: .center)
                 }
             }
 
@@ -193,8 +192,7 @@ struct DaySelectView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading: Button(action: { presentation.wrappedValue.dismiss()
-            }
-            , label: {
+            }, label: {
                 Image(systemName: "arrow.backward")
                     .imageScale(.large)
                     .accentColor(Color("darkInvert"))

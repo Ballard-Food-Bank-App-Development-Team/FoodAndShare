@@ -19,7 +19,7 @@ struct CustomCalendarDay: Hashable {
         self.choosen = false
 
         let myCalendar = Calendar(identifier: .gregorian)
-        self.dayNum = String(myCalendar.component(.day , from: dateOfDay.addingTimeInterval(60 * 60 * 24)))
+        self.dayNum = String(myCalendar.component(.day, from: dateOfDay.addingTimeInterval(60 * 60 * 24)))
         let dayOfWeekTemp = myCalendar.component(.weekday, from: dateOfDay) + 1
         self.dayOfWeek = (dayOfWeekTemp == 8) ? 1 : dayOfWeekTemp
 

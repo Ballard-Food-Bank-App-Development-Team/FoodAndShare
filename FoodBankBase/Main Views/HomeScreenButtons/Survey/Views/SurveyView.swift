@@ -12,6 +12,8 @@ struct SurveyView: View {
 
     @State private var showAlert: Bool = false
 
+    @State private var error: String = ""
+
     @StateObject var survey = SurveyViewModel(
         questions: [
             // Question #1
@@ -94,7 +96,7 @@ struct SurveyView: View {
                 Button(action: {
                     self.survey.surveyBitSend()
                     print("FinalAnswer: \(self.survey.bit)")
-                    showAlert = true
+                    self.showAlert = true
                     presentation.wrappedValue.dismiss()
                 }, label: {
                     Text("Submit")
@@ -102,6 +104,28 @@ struct SurveyView: View {
                 .alert(isPresented: $showAlert) {
                     Alert(title: Text("Survey Sumbited Successfully"), message: Text("Your responses have been recorded"), dismissButton: .default(Text("OK")))
                 }
+                .padding()
+                .foregroundColor(Color(.systemBackground))
+                .frame(width: UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 2))
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(.blue)
+                )
+                .padding()
+
+                Button(action: {
+                    self.survey.uploadSurvey { (result) in
+                        switch result {
+                        case .failure(let err):
+                            self.error = err.localizedDescription
+                        case .success(_):
+                            print("Uploaded Survey")
+                        }
+                    }
+                    presentation.wrappedValue.dismiss()
+                }, label: {
+                    Text("Upload Survey")
+                })
                 .padding()
                 .foregroundColor(Color(.systemBackground))
                 .frame(width: UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 2))
@@ -118,8 +142,7 @@ struct SurveyView: View {
         .navigationBarItems(
             leading: Button(
                 action: { presentation.wrappedValue.dismiss()
-                }
-                , label: {
+                }, label: {
                     Image(systemName: "arrow.backward")
                         .imageScale(.large)
                 })

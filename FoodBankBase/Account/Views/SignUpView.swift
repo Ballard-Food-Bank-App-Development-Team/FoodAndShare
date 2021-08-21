@@ -187,8 +187,7 @@ struct SignUpView: View {
                 } else {
                     print("Don't Spam Button")
                 }
-            }
-            , label: {
+            }, label: {
                 Text("Sign Up")
                     .padding(.all)
                     .foregroundColor(Color(.systemBackground))
@@ -211,8 +210,7 @@ struct SignUpView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading: Button(action: { presentation.wrappedValue.dismiss()
-            }
-            , label: {
+            }, label: {
                 Image(systemName: "arrow.backward")
                     .imageScale(.large)
             })

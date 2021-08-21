@@ -42,11 +42,24 @@ class SurveyViewModel: ObservableObject {
 
         let uid: String = Auth.auth().currentUser!.uid
 
-        database.collection("surveyData").document("survey1Answers").setData(["\(uid)" : self.bit], merge: true)
+        database.collection("surveyData").document("survey1Answers").setData(["\(uid)": self.bit], merge: true)
     }
 
     func surveyBitRecieve() {
+    }
 
+    func uploadSurvey(completionHandler: @escaping (Result<Bool, Error>) -> Void) {
+        let surveyQuestions = Survey(questions: questions)
+
+        do {
+            try database.collection("surveyData").document("survey1Answers").setData(from: surveyQuestions)
+        } catch let error {
+            let theError = error
+            completionHandler(.failure(error))
+            return
+        }
+
+        completionHandler(.success(true))
     }
 
     init(questions: [Question]) {

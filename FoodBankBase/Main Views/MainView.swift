@@ -16,7 +16,7 @@ struct MainView: View {
                 Image("foodbankMain")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 300, height: 160,   alignment: .center)
+                    .frame(width: 300, height: 160, alignment: .center)
                 Spacer()
                 // MARK: - Info Button
                 NavigationLink(

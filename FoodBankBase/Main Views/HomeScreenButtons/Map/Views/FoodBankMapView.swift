@@ -55,7 +55,6 @@ struct FoodBankMapView: View {
                                 )
                         )
                 }
-
             }
             Text("5130 LEARY AVE NW, SEATTLE, WA 98107")
                 .foregroundColor(Color("customOrange"))
@@ -65,8 +64,7 @@ struct FoodBankMapView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading: Button(action: { presentation.wrappedValue.dismiss()
-            }
-            , label: {
+            }, label: {
                 Image(systemName: "arrow.backward")
                     .imageScale(.large)
                     .accentColor(Color("darkInvert"))

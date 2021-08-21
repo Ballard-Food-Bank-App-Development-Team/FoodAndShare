@@ -19,7 +19,7 @@ struct CalendarIcon: View {
         Text(dayNum)
             .font(.body)
             .foregroundColor(textColor)
-            .frame(width: UIScreen.main.bounds.width/9, height: UIScreen.main.bounds.width/10, alignment: .center)
+            .frame(width: UIScreen.main.bounds.width / 9, height: UIScreen.main.bounds.width / 10, alignment: .center)
             .background(
                 Circle()
                     .fill(circleColor)

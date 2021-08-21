@@ -7,10 +7,16 @@
 
 import Foundation
 
-struct Answer: Hashable {
+struct Answer: Hashable, Codable {
+    enum CodingKeys: String, CodingKey {
+        case text
+        case amount
+    }
+
     var text: String
     var chosen: Bool = false
     var index: Int = 0
+    var amount: Int = 0
 
     init(text: String) {
         self.text = text
