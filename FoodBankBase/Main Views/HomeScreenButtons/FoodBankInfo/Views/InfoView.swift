@@ -12,6 +12,8 @@ struct InfoView: View {
     var body: some View {
         ScrollView {
             VStack {
+                Spacer()
+                Spacer()
                 Image("foodbankInfo")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -26,7 +28,6 @@ struct InfoView: View {
                 Text("Ballard Food Bank’s mission is to bring food and hope to our neighbors because there can be enough for everyone.")
                     .foregroundColor(Color("navyBlue"))
                     .font(.custom("HelveticaNeue-Medium", size: 18))
-                    .padding(.horizontal)
                     .padding()
                 Text("We provide access to nutritious food through our food bank, home delivery, and Weekend Food for Kids program. We also provide housing, medical care, and veterans’ benefits and access to utility assistance, identification vouchers, and our mail program. ")
                     .foregroundColor(Color("navyBlue"))
