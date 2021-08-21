@@ -1,18 +1,18 @@
 //
-//  FirebaseUserErrors.swift
+//  FirebaseErrors.swift
 //  FoodBankBase
 //
-//  Created by Brian Holloway on 7/4/21.
+//  Created by Brian Holloway on 8/21/21.
 //
 
 import Foundation
 
-enum FirebaseUserError: Error {
+enum FirebaseErrors: Error {
     case noUserSignedIn
     case documentDoesNotExist
 }
 
-extension FirebaseUserError: LocalizedError {
+extension FirebaseErrors: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .noUserSignedIn:

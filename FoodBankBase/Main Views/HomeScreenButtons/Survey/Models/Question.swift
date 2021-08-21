@@ -9,7 +9,7 @@ import Foundation
 
 struct Question: Hashable, Codable {
     enum CodingKeys: String, CodingKey {
-        case ask
+        case ask = "question"
         case responses
     }
 

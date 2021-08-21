@@ -9,7 +9,7 @@ import Foundation
 
 struct Answer: Hashable, Codable {
     enum CodingKeys: String, CodingKey {
-        case text
+        case text = "response"
         case amount
     }
 

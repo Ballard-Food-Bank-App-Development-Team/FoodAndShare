@@ -154,7 +154,7 @@ class FirebaseUserViewModel: ObservableObject {
     func fetchUserData(completionHandler: @escaping (Result<Bool, Error>) -> Void) {
         // Check if the current user is for some reason not signed in
         if Auth.auth().currentUser == nil {
-            completionHandler(.failure(FirebaseUserError.noUserSignedIn))
+            completionHandler(.failure(FirebaseErrors.noUserSignedIn))
             return
         }
 
@@ -182,7 +182,7 @@ class FirebaseUserViewModel: ObservableObject {
                     self.userInfo = firebaseUser!
                     completionHandler(.success(true))
                 } else {
-                    completionHandler(.failure(FirebaseUserError.documentDoesNotExist))
+                    completionHandler(.failure(FirebaseErrors.documentDoesNotExist))
                 }
             case .failure(let err):
                 completionHandler(.failure(err))

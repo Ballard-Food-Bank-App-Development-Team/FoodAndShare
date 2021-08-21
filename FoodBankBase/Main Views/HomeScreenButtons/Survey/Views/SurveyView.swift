@@ -10,10 +10,6 @@ import SwiftUI
 struct SurveyView: View {
     @Environment(\.presentationMode) var presentation
 
-    @State private var showAlert: Bool = false
-
-    @State private var error: String = ""
-
     @StateObject var survey = SurveyViewModel(
         questions: [
             // Question #1
@@ -94,16 +90,17 @@ struct SurveyView: View {
                 .padding(.all, 20)
 
                 Button(action: {
-                    self.survey.surveyBitSend()
-                    print("FinalAnswer: \(self.survey.bit)")
-                    self.showAlert = true
-                    presentation.wrappedValue.dismiss()
+                    self.survey.uploadSurvey { (result) in
+                        switch result {
+                        case .failure(let err):
+                            print(err)
+                        case .success(_):
+                            print("Succesfully Updated Value")
+                        }
+                    }
                 }, label: {
-                    Text("Submit")
+                    Text("Upload")
                 })
-                .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Survey Sumbited Successfully"), message: Text("Your responses have been recorded"), dismissButton: .default(Text("OK")))
-                }
                 .padding()
                 .foregroundColor(Color(.systemBackground))
                 .frame(width: UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 2))
@@ -114,17 +111,16 @@ struct SurveyView: View {
                 .padding()
 
                 Button(action: {
-                    self.survey.uploadSurvey { (result) in
+                    self.survey.updateSurveyData { (result) in
                         switch result {
                         case .failure(let err):
-                            self.error = err.localizedDescription
+                            print(err)
                         case .success(_):
-                            print("Uploaded Survey")
+                            print("Succesfully Updated Value")
                         }
                     }
-                    presentation.wrappedValue.dismiss()
                 }, label: {
-                    Text("Upload Survey")
+                    Text("Update")
                 })
                 .padding()
                 .foregroundColor(Color(.systemBackground))
