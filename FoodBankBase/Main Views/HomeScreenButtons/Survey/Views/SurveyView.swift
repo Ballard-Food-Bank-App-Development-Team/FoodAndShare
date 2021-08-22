@@ -89,7 +89,7 @@ struct SurveyView: View {
                 }
                 .padding(.all, 20)
 
-                Button(action: {
+                /*Button(action: {
                     self.survey.uploadSurvey { (result) in
                         switch result {
                         case .failure(let err):
@@ -108,7 +108,7 @@ struct SurveyView: View {
                     RoundedRectangle(cornerRadius: 10)
                         .foregroundColor(.blue)
                 )
-                .padding()
+                .padding()*/
 
                 Button(action: {
                     self.survey.updateSurveyData { (result) in
@@ -120,7 +120,7 @@ struct SurveyView: View {
                         }
                     }
                 }, label: {
-                    Text("Update")
+                    Text("Submit")
                 })
                 .padding()
                 .foregroundColor(Color(.systemBackground))

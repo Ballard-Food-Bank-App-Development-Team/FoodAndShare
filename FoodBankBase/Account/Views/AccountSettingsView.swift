@@ -16,7 +16,7 @@ struct AccountSettingsView: View {
         VStack {
             Form {
                 Text("Name: \(self.user.userInfo.firstName) \(self.user.userInfo.lastName)")
-                Button("Request Permission") {
+                /*Button("Request Permission") {
                     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                         if success {
                             print("All set!")
@@ -41,7 +41,7 @@ struct AccountSettingsView: View {
                     // add our notification request
                     UNUserNotificationCenter.current().add(request)
                 }
-
+                */
                 Button(action: {
                     self.user.logoutUser { (result) in
                         switch result {
