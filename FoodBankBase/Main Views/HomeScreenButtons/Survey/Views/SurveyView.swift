@@ -10,8 +10,6 @@ import SwiftUI
 struct SurveyView: View {
     @Environment(\.presentationMode) var presentation
 
-    @State private var showAlert: Bool = false
-
     @StateObject var survey = SurveyViewModel(
         questions: [
             // Question #1
@@ -92,16 +90,38 @@ struct SurveyView: View {
                 .padding(.all, 20)
 
                 Button(action: {
-                    self.survey.surveyBitSend()
-                    print("FinalAnswer: \(self.survey.bit)")
-                    showAlert = true
-                    presentation.wrappedValue.dismiss()
+                    self.survey.uploadSurvey { (result) in
+                        switch result {
+                        case .failure(let err):
+                            print(err)
+                        case .success(_):
+                            print("Succesfully Updated Value")
+                        }
+                    }
                 }, label: {
-                    Text("Submit")
+                    Text("Upload")
                 })
-                .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Survey Sumbited Successfully"), message: Text("Your responses have been recorded"), dismissButton: .default(Text("OK")))
-                }
+                .padding()
+                .foregroundColor(Color(.systemBackground))
+                .frame(width: UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 2))
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(.blue)
+                )
+                .padding()
+
+                Button(action: {
+                    self.survey.updateSurveyData { (result) in
+                        switch result {
+                        case .failure(let err):
+                            print(err)
+                        case .success(_):
+                            print("Succesfully Updated Value")
+                        }
+                    }
+                }, label: {
+                    Text("Update")
+                })
                 .padding()
                 .foregroundColor(Color(.systemBackground))
                 .frame(width: UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 2))

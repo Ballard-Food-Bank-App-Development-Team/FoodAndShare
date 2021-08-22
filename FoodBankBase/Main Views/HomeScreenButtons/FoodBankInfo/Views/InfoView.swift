@@ -33,6 +33,7 @@ struct InfoView: View {
                     .foregroundColor(Color("navyBlue"))
                     .font(.custom("HelveticaNeue-Medium", size: 18))
                     .padding(.horizontal)
+                    .padding()
             }
         }
         .navigationBarTitleDisplayMode(.inline)

@@ -23,7 +23,7 @@ class SurveyViewModel: ObservableObject {
         }
         self.questions[question].responses[answer].chosen = true
     }
-
+    /*
     func surveyBitSend() {
         var index: Int = 1
 
@@ -46,6 +46,72 @@ class SurveyViewModel: ObservableObject {
     }
 
     func surveyBitRecieve() {
+    }
+    */
+
+    func uploadSurvey(completionHandler: @escaping (Result<Bool, Error>) -> Void) {
+        let surveyQuestions = Survey(questions: self.questions)
+
+        do {
+            try database.collection("surveyData").document("survey1Answers").setData(from: surveyQuestions)
+        } catch let error {
+            completionHandler(.failure(error))
+            return
+        }
+
+        completionHandler(.success(true))
+    }
+
+    func updateSurveyData(completionHandler: @escaping (Result<Bool, Error>) -> Void) {
+
+        self.retriveSurveyData { (result) in
+            switch result {
+            case .failure(let err):
+                completionHandler(.failure(err))
+            case .success(var surveyRetrived):
+                for question in self.questions {
+                    for response in question.responses where response.chosen {
+                        surveyRetrived.questions[question.index].responses[response.index].amount += 1
+                    }
+                }
+
+                do {
+                    try self.database.collection("surveyData").document("survey1Answers").setData(from: surveyRetrived)
+                } catch let error {
+                    completionHandler(.failure(error))
+                    return
+                }
+
+                completionHandler(.success(true))
+            }
+        }
+    }
+
+    func retriveSurveyData(completionHandler: @escaping (Result<Survey, Error>) -> Void) {
+        let docRef = database.collection("surveyData").document("survey1Answers")
+
+        docRef.getDocument { (document, error) in
+            // Check For errors
+            if error != nil {
+                completionHandler(.failure(error!))
+                return
+            }
+
+            let result = Result {
+                try document?.data(as: Survey.self)
+            }
+
+            switch result {
+            case .failure(let err):
+                completionHandler(.failure(err))
+            case .success(let survey):
+                if survey != nil {
+                    completionHandler(.success(survey!))
+                } else {
+                    completionHandler(.failure(FirebaseErrors.documentDoesNotExist))
+                }
+            }
+        }
     }
 
     init(questions: [Question]) {

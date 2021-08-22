@@ -9,7 +9,7 @@ import Foundation
 import MessageUI
 
 class EmailHelper: NSObject, MFMailComposeViewControllerDelegate {
-    public static let shared = EmailHelper()
+    static var shared = EmailHelper()
     private override init() {
         //
     }

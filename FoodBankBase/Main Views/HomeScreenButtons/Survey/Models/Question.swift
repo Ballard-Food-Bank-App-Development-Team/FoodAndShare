@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Question: Hashable {
+struct Question: Hashable, Codable {
+    enum CodingKeys: String, CodingKey {
+        case ask = "question"
+        case responses
+    }
+
     var ask: String
     var responses: [Answer]
     var index: Int = 0

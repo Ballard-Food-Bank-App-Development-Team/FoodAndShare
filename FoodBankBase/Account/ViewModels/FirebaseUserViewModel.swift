@@ -27,31 +27,11 @@ class FirebaseUserViewModel: ObservableObject {
 
     private var database = Firestore.firestore()
 
-    func checkUserState() {
-        self.handle = Auth.auth().addStateDidChangeListener { (_, user) in
-            if user == nil {
-                self.isUserAuthenticated = .signedOut
-                return
-            }
-            self.fetchUserData { (result) in
-                switch result {
-                case .failure(let error):
-                    print(error.localizedDescription)
-                    self.logoutUser { (result) in
-                        switch result {
-                        case .failure(let error):
-                            print(error)
-                        case .success(_):
-                            print("Logged User Out")
-                        }
-                    }
-                case .success(_):
-                    self.isUserAuthenticated = .signedIn
-                    print("Fetched User Data Succesfully")
-                }
-            }
-        }
-    }
+    // MARK: - Validation Error Strings
+    var firstNameErrorText: String = "Enter Your First Name"
+    var lastNameErrorText: String = "Enter Your Last Name"
+    var emailErrorText: String = "Enter a Valid Email"
+    var passwordErrorText: String = "Must have an uppercase letter, a lowercase letter, a number, a special character, no spaces, and be at least 8 characters long"
 
     // MARK: - Text Field Validation
     func isEmpty(field: String) -> Bool {
@@ -68,12 +48,6 @@ class FirebaseUserViewModel: ObservableObject {
         return !passwordTest.evaluate(with: password)
     }
 
-    // MARK: - Validation Error Strings
-    var firstNameErrorText: String = "Enter Your First Name"
-    var lastNameErrorText: String = "Enter Your Last Name"
-    var emailErrorText: String = "Enter a Valid Email"
-    var passwordErrorText: String = "Must have an uppercase letter, a lowercase letter, a number, a special character, no spaces, and be at least 8 characters long"
-
     // MARK: - Firebase Auth
     func signUpUser(firstName: String, lastName: String, email: String, password: String, completionHandler: @escaping (Result<Bool, Error>) -> Void) {
         // Create user
@@ -83,14 +57,11 @@ class FirebaseUserViewModel: ObservableObject {
                 completionHandler(.failure(error!))
                 return
             }
-            // Add user to Firestore
-            self.userInfo.firstName = firstName
-            self.userInfo.lastName = lastName
-            self.userInfo.email = email
-            self.userInfo.role = "User"
+
+            self.userInfo = FirebaseUser(firstname: firstName, lastName: lastName, email: email, role: "User")
 
             do {
-                _ = try self.database.collection("users").document(result!.user.uid).setData(from: self.userInfo)
+                try self.database.collection("users").document(result!.user.uid).setData(from: self.userInfo)
             } catch let err {
                 completionHandler(.failure(err))
                 return
@@ -122,13 +93,10 @@ class FirebaseUserViewModel: ObservableObject {
                 return
             }
 
-            self.userInfo.firstName = "Anonymous"
-            self.userInfo.lastName = "User"
-            self.userInfo.email = ""
-            self.userInfo.role = "User"
+            self.userInfo = FirebaseUser(firstname: "Anonymous", lastName: "User", role: "User")
 
             do {
-                _ = try self.database.collection("users").document(result!.user.uid).setData(from: self.userInfo)
+                try self.database.collection("users").document(result!.user.uid).setData(from: self.userInfo)
             } catch let err {
                 completionHandler(.failure(err))
                 return
@@ -156,11 +124,37 @@ class FirebaseUserViewModel: ObservableObject {
         completionHandler(.success(true))
     }
 
+    func checkUserState() {
+        self.handle = Auth.auth().addStateDidChangeListener { (_, user) in
+            if user == nil {
+                self.isUserAuthenticated = .signedOut
+                return
+            }
+            self.fetchUserData { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error.localizedDescription)
+                    self.logoutUser { (result) in
+                        switch result {
+                        case .failure(let error):
+                            print(error)
+                        case .success(_):
+                            print("Logged User Out")
+                        }
+                    }
+                case .success(_):
+                    self.isUserAuthenticated = .signedIn
+                    print("Fetched User Data Succesfully")
+                }
+            }
+        }
+    }
+
     // MARK: - Firestore
     func fetchUserData(completionHandler: @escaping (Result<Bool, Error>) -> Void) {
         // Check if the current user is for some reason not signed in
         if Auth.auth().currentUser == nil {
-            completionHandler(.failure(FirebaseUserError.noUserSignedIn))
+            completionHandler(.failure(FirebaseErrors.noUserSignedIn))
             return
         }
 
@@ -188,7 +182,7 @@ class FirebaseUserViewModel: ObservableObject {
                     self.userInfo = firebaseUser!
                     completionHandler(.success(true))
                 } else {
-                    completionHandler(.failure(FirebaseUserError.documentDoesNotExist))
+                    completionHandler(.failure(FirebaseErrors.documentDoesNotExist))
                 }
             case .failure(let err):
                 completionHandler(.failure(err))
