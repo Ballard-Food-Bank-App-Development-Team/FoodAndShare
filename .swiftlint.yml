@@ -434,10 +434,6 @@ opt_in_rules: # some rules are only opt-in
   # https://github.com/realm/SwiftLint/blob/master/Rules.md#overridden-methods-call-super
   - overridden_super_call
 
-  # Rationale: Prevents unpredictable behavior
-  # https://github.com/realm/SwiftLint/blob/master/Rules.md#override-in-extension
-  - override_in_extension
-
   # Rationale: Promotes consistency and reduces duplication.
   # https://github.com/realm/SwiftLint/blob/master/Rules.md#pattern-matching-keywords
   - pattern_matching_keywords

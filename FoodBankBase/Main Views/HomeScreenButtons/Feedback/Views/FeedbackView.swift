@@ -20,7 +20,7 @@ struct FeedbackView: View {
                     .padding(.all)
                     .background(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.black, lineWidth: 2)
+                            .stroke(Color("darkInvert"), lineWidth: 2)
                             .foregroundColor(Color("textFieldBackground"))
                     )
                     .padding()
@@ -29,7 +29,7 @@ struct FeedbackView: View {
                     .padding(.all)
                     .background(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.black, lineWidth: 2)
+                            .stroke(Color("darkInvert"), lineWidth: 2)
                             .foregroundColor(Color("textFieldBackground"))
                     )
                     .padding()

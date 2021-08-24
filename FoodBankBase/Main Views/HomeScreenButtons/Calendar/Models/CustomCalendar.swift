@@ -43,8 +43,8 @@ struct CustomCalendarMonth {
 
             self.arrayOfMonthDays.append(CustomCalendarDay(dateOfDay: date))
 
-            let dateDay = myCalendar.component(.day, from: date)
-            let dateMonth = myCalendar.component(.month, from: date)
+            let dateDay = myCalendar.component(.day, from: date.addingTimeInterval(60 * 60 * 24))
+            let dateMonth = myCalendar.component(.month, from: date.addingTimeInterval(60 * 60 * 24))
 
             let curDay = myCalendar.component(.day, from: Date())
             let curMonth = myCalendar.component(.month, from: Date())

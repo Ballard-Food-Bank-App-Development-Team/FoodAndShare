@@ -22,7 +22,7 @@ struct BigButtonHomeScreenView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: frame, height: frame, alignment: .center)
                 .frame(width: 50, height: 50)
-                .background(Color.white)
+                .background(Color(.systemBackground))
                 .clipShape(Circle())
             VStack(alignment: .leading) {
                 Text(name)

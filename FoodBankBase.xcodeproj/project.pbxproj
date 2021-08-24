@@ -15,6 +15,8 @@
 		26F73E8E26C0F78400223EF5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F73E8D26C0F78400223EF5 /* MainView.swift */; };
 		C79AB86A912E76C7D7183A1E /* Pods_FoodBankBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA74145D2760BA1922B87A8 /* Pods_FoodBankBase.framework */; };
 		D313BAD026A502C600903F6E /* CustomCalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D313BACF26A502C600903F6E /* CustomCalendarDay.swift */; };
+		D331319026D5512E00CC5A63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D331318F26D5512E00CC5A63 /* GoogleService-Info.plist */; };
+		D331319326D555BA00CC5A63 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D331319226D555BA00CC5A63 /* WebView.swift */; };
 		D3333DD72675964D00447A3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DD62675964D00447A3B /* AppDelegate.swift */; };
 		D3333DD92675964D00447A3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DD82675964D00447A3B /* SceneDelegate.swift */; };
 		D3333DDB2675964D00447A3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DDA2675964D00447A3B /* ContentView.swift */; };
@@ -33,7 +35,6 @@
 		D371759626D174D000826D60 /* FirebaseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371759526D174D000826D60 /* FirebaseErrors.swift */; };
 		D371759826D1819500826D60 /* SurveyCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371759726D1819500826D60 /* SurveyCreateView.swift */; };
 		D398667C269A4E9400AD313A /* DaySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D398667B269A4E9400AD313A /* DaySelectView.swift */; };
-		D3C4BDC22678125900731539 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3C4BDC12678125900731539 /* GoogleService-Info.plist */; };
 		D3C4BDCB2679803F00731539 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */; };
 		D3C4BDCF267980D200731539 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCE267980D200731539 /* AccountSettingsView.swift */; };
 		D3CFAF9A26C9E048003BB421 /* CustomCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CFAF9926C9E048003BB421 /* CustomCalendarViewModel.swift */; };
@@ -58,6 +59,9 @@
 		5DA74145D2760BA1922B87A8 /* Pods_FoodBankBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodBankBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE3C65D22A815C9E6E2BA559 /* Pods-FoodBankBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.debug.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.debug.xcconfig"; sourceTree = "<group>"; };
 		D313BACF26A502C600903F6E /* CustomCalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarDay.swift; sourceTree = "<group>"; };
+		D331318E26D54FC800CC5A63 /* FoodBankBase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodBankBase.entitlements; sourceTree = "<group>"; };
+		D331318F26D5512E00CC5A63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D331319226D555BA00CC5A63 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		D3333DD32675964D00447A3B /* FoodBankBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBankBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3333DD62675964D00447A3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3333DD82675964D00447A3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +82,6 @@
 		D371759526D174D000826D60 /* FirebaseErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseErrors.swift; sourceTree = "<group>"; };
 		D371759726D1819500826D60 /* SurveyCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCreateView.swift; sourceTree = "<group>"; };
 		D398667B269A4E9400AD313A /* DaySelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelectView.swift; sourceTree = "<group>"; };
-		D3C4BDC12678125900731539 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		D3C4BDCE267980D200731539 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 		D3CFAF9926C9E048003BB421 /* CustomCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarViewModel.swift; sourceTree = "<group>"; };
@@ -163,6 +166,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D331319126D555AA00CC5A63 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D331319226D555BA00CC5A63 /* WebView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		D3333DCA2675964D00447A3B = {
 			isa = PBXGroup;
 			children = (
@@ -184,14 +195,16 @@
 		D3333DD52675964D00447A3B /* FoodBankBase */ = {
 			isa = PBXGroup;
 			children = (
+				D331318E26D54FC800CC5A63 /* FoodBankBase.entitlements */,
 				D3333DD62675964D00447A3B /* AppDelegate.swift */,
 				D3333DD82675964D00447A3B /* SceneDelegate.swift */,
+				D331319126D555AA00CC5A63 /* Helpers */,
 				D3333DF0267596C400447A3B /* Main Views */,
 				D3333DF1267596DB00447A3B /* Account */,
 				D3333DDC2675964E00447A3B /* Assets.xcassets */,
 				D3333DE12675964E00447A3B /* LaunchScreen.storyboard */,
 				D3333DE42675964E00447A3B /* Info.plist */,
-				D3C4BDC12678125900731539 /* GoogleService-Info.plist */,
+				D331318F26D5512E00CC5A63 /* GoogleService-Info.plist */,
 				D3333DDE2675964E00447A3B /* Preview Content */,
 			);
 			path = FoodBankBase;
@@ -455,7 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3333DE32675964E00447A3B /* LaunchScreen.storyboard in Resources */,
-				D3C4BDC22678125900731539 /* GoogleService-Info.plist in Resources */,
+				D331319026D5512E00CC5A63 /* GoogleService-Info.plist in Resources */,
 				D3333DE02675964E00447A3B /* Preview Assets.xcassets in Resources */,
 				D3333DDD2675964E00447A3B /* Assets.xcassets in Resources */,
 			);
@@ -559,6 +572,7 @@
 				D3333DEB2675968D00447A3B /* AccountChoiceView.swift in Sources */,
 				D3E4514326C0439200624C3A /* EmailHelper.swift in Sources */,
 				D3455C6F269E260700E19233 /* CustomCalendar.swift in Sources */,
+				D331319326D555BA00CC5A63 /* WebView.swift in Sources */,
 				D3D46606267C2BAD0006F9A3 /* HomeView.swift in Sources */,
 				26E5486D26CA23A000AFE242 /* BigButtonHomeScreenView.swift in Sources */,
 				D3C4BDCB2679803F00731539 /* ForgotPasswordView.swift in Sources */,
@@ -720,16 +734,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FoodBankBase/FoodBankBase.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodBankBase/Preview Content\"";
-				DEVELOPMENT_TEAM = Z634RQK5UK;
+				DEVELOPMENT_TEAM = CLMH99U2FD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FoodBankBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Ian-Holloway.FoodBankBase";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.foodbankbase.Brian-Holloway.FoodBankBase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -742,16 +757,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FoodBankBase/FoodBankBase.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodBankBase/Preview Content\"";
-				DEVELOPMENT_TEAM = FNVA75PS53;
+				DEVELOPMENT_TEAM = CLMH99U2FD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FoodBankBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Ian-Holloway.FoodBankBase";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.foodbankbase.Brian-Holloway.FoodBankBase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
