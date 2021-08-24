@@ -40,7 +40,7 @@ struct FeedbackView: View {
                 }, label: {
                     Text("Send Email")
                         .padding()
-                        .foregroundColor(Color("textGrey"))
+                        .foregroundColor(Color("darkInvert"))
                 })
                 .padding()
 

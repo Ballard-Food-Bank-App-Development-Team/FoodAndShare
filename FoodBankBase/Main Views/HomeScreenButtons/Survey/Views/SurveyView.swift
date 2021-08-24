@@ -71,7 +71,7 @@ struct SurveyView: View {
                                                 .frame(width: 20, height: 20, alignment: .center)
                                                 .padding(.horizontal, 10)
                                             Text(response.text)
-                                                .foregroundColor(Color("textGrey"))
+                                                .foregroundColor(Color("darkInvert"))
                                                 .font(.body)
                                             Spacer()
                                         }
