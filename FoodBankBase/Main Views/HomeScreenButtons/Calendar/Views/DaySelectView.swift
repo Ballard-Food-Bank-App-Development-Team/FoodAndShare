@@ -64,140 +64,142 @@ struct DaySelectView: View {
     }
 
     var body: some View {
-        VStack {
-            // MARK: - Calendar Title
-            HStack {
-
-                Button(action: {
-                    if calendar.monthState == 0 || calendar.monthState == 1 {
-                        calendar.monthState -= 1
-                    }
-                    calendar.changeActiveMonth()
-                    foodBankState = ""
-                    eventList = ""
-                    updateHours()
-                    updateEvents()
-                }, label: {
-                    Image(systemName: "arrowshape.turn.up.left")
-                        .imageScale(.large)
-                        .foregroundColor(Color("customOrange"))
-                })
-
-                Spacer()
-
-                Text("\(calendar.activeMonth.monthName) \(calendar.activeMonth.yearName)")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color("customOrange"))
-
-                Spacer()
-
-                Button(action: {
-                    calendar.monthState += 1
-                    if calendar.monthState > 1 {
-                        calendar.monthState = 1
-                    }
-                    calendar.changeActiveMonth()
-                    foodBankState = ""
-                    eventList = ""
-                    updateHours()
-                    updateEvents()
-                }, label: {
-                    Image(systemName: "arrowshape.turn.up.right")
-                        .imageScale(.large)
-                        .foregroundColor(Color("customOrange"))
-                })
-            }
-            .padding(.all)
-
-            // MARK: - Week Letters
-            HStack {
-                ForEach(weekLetters, id: \.self) { letter in
-                    Text(letter)
-                        .font(.headline)
-                        .fontWeight(.medium)
-                        .foregroundColor(Color.gray)
-                        .frame(width: UIScreen.main.bounds.width / 9, alignment: .center)
-                }
-            }
-
-            Divider()
-
+        ScrollView {
             VStack {
-                ForEach([1, 2, 3, 4, 5, 6], id: \.self) { weekOn in
-                    HStack {
-                        ForEach([1, 2, 3, 4, 5, 6, 7], id: \.self) { dayOn in
-                            let gridIndex: Int = ((weekOn - 1) * 7) + dayOn - 1
-                            let invalidDays: Int = Int(self.calendar.activeMonth.startingInvalidDays)
+                // MARK: - Calendar Title
+                HStack {
 
-                            if gridIndex < invalidDays || (gridIndex - invalidDays) >= self.calendar.activeMonth.lastDayOfMonth {
-                                CalendarIcon(
-                                    dayNum: "",
-                                    textColor: Color.white,
-                                    circleColor: Color(.systemBackground),
-                                    outlineColor: Color.clear
-                                )
-                            } else if dayOn == 1 || dayOn == 6 || dayOn == 7 {
-                                Button(action: {
-                                    calendar.refreshDaySelect(dayNum: gridIndex - invalidDays)
-                                    updateHours()
-                                    updateEvents()
-                                }, label: {
+                    Button(action: {
+                        if calendar.monthState == 0 || calendar.monthState == 1 {
+                            calendar.monthState -= 1
+                        }
+                        calendar.changeActiveMonth()
+                        foodBankState = ""
+                        eventList = ""
+                        updateHours()
+                        updateEvents()
+                    }, label: {
+                        Image(systemName: "arrowshape.turn.up.left")
+                            .imageScale(.large)
+                            .foregroundColor(Color("customOrange"))
+                    })
+
+                    Spacer()
+
+                    Text("\(calendar.activeMonth.monthName) \(calendar.activeMonth.yearName)")
+                        .font(.title)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color("customOrange"))
+
+                    Spacer()
+
+                    Button(action: {
+                        calendar.monthState += 1
+                        if calendar.monthState > 1 {
+                            calendar.monthState = 1
+                        }
+                        calendar.changeActiveMonth()
+                        foodBankState = ""
+                        eventList = ""
+                        updateHours()
+                        updateEvents()
+                    }, label: {
+                        Image(systemName: "arrowshape.turn.up.right")
+                            .imageScale(.large)
+                            .foregroundColor(Color("customOrange"))
+                    })
+                }
+                .padding(.all)
+
+                // MARK: - Week Letters
+                HStack {
+                    ForEach(weekLetters, id: \.self) { letter in
+                        Text(letter)
+                            .font(.headline)
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.gray)
+                            .frame(width: UIScreen.main.bounds.width / 9, alignment: .center)
+                    }
+                }
+
+                Divider()
+
+                VStack {
+                    ForEach([1, 2, 3, 4, 5, 6], id: \.self) { weekOn in
+                        HStack {
+                            ForEach([1, 2, 3, 4, 5, 6, 7], id: \.self) { dayOn in
+                                let gridIndex: Int = ((weekOn - 1) * 7) + dayOn - 1
+                                let invalidDays: Int = Int(self.calendar.activeMonth.startingInvalidDays)
+
+                                if gridIndex < invalidDays || (gridIndex - invalidDays) >= self.calendar.activeMonth.lastDayOfMonth {
                                     CalendarIcon(
-                                        dayNum: String(gridIndex - invalidDays + 1),
-                                        textColor: Color("darkInvert"),
-                                        circleColor: Color(.systemBackground),
-                                        outlineColor: self.calendar.activeMonth.arrayOfMonthDays[gridIndex - invalidDays].choosen ? Color("darkInvert") : Color.clear
-                                    )
-                                })
-                            } else {
-                                Button(action: {
-                                    calendar.refreshDaySelect(dayNum: gridIndex - invalidDays)
-                                    updateHours()
-                                    updateEvents()
-                                }, label: {
-                                    CalendarIcon(
-                                        dayNum: String(gridIndex - invalidDays + 1),
+                                        dayNum: "",
                                         textColor: Color.white,
-                                        circleColor: Color("customOrange"),
-                                        outlineColor: self.calendar.activeMonth.arrayOfMonthDays[gridIndex - invalidDays].choosen ? Color("darkInvert") : Color.clear
+                                        circleColor: Color(.systemBackground),
+                                        outlineColor: Color.clear
                                     )
-                                })
+                                } else if dayOn == 1 || dayOn == 6 || dayOn == 7 {
+                                    Button(action: {
+                                        calendar.refreshDaySelect(dayNum: gridIndex - invalidDays)
+                                        updateHours()
+                                        updateEvents()
+                                    }, label: {
+                                        CalendarIcon(
+                                            dayNum: String(gridIndex - invalidDays + 1),
+                                            textColor: Color("darkInvert"),
+                                            circleColor: Color(.systemBackground),
+                                            outlineColor: self.calendar.activeMonth.arrayOfMonthDays[gridIndex - invalidDays].choosen ? Color("darkInvert") : Color.clear
+                                        )
+                                    })
+                                } else {
+                                    Button(action: {
+                                        calendar.refreshDaySelect(dayNum: gridIndex - invalidDays)
+                                        updateHours()
+                                        updateEvents()
+                                    }, label: {
+                                        CalendarIcon(
+                                            dayNum: String(gridIndex - invalidDays + 1),
+                                            textColor: Color.white,
+                                            circleColor: Color("customOrange"),
+                                            outlineColor: self.calendar.activeMonth.arrayOfMonthDays[gridIndex - invalidDays].choosen ? Color("darkInvert") : Color.clear
+                                        )
+                                    })
+                                }
                             }
                         }
+                        .padding(.all, 0.5)
                     }
-                    .padding(.all, 0.5)
+                }
+                VStack(alignment: .center) {
+                    Text(foodBankState)
+                        .font(.largeTitle)
+                    Divider()
+                    Text(eventList)
+                        .font(.headline)
+                        .foregroundColor(Color("textGrey"))
+                        .font(.system(size: 20))
+                        .fontWeight(.medium)
+                        .lineSpacing(20)
+                        .padding(.all, 10)
+                    Spacer()
                 }
             }
-            VStack(alignment: .center) {
-                Text(foodBankState)
-                    .font(.largeTitle)
-                Divider()
-                Text(eventList)
-                    .font(.headline)
-                    .foregroundColor(Color("textGrey"))
-                    .font(.system(size: 20))
-                    .fontWeight(.medium)
-                    .lineSpacing(20)
-                    .padding(.all, 10)
-                Spacer()
+            .onAppear {
+                updateHours()
+                updateEvents()
             }
-        }
-        .onAppear {
-            updateHours()
-            updateEvents()
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle("Calendar")
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(
-            leading: Button(action: { presentation.wrappedValue.dismiss()
-            }, label: {
-                Image(systemName: "arrow.backward")
-                    .imageScale(.large)
-                    .accentColor(Color("darkInvert"))
-            })
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Calendar")
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(
+                leading: Button(action: { presentation.wrappedValue.dismiss()
+                }, label: {
+                    Image(systemName: "arrow.backward")
+                        .imageScale(.large)
+                        .accentColor(Color("darkInvert"))
+                })
         )
+        }
     }
 }
 
