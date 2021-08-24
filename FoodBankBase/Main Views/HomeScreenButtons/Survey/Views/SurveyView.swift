@@ -56,6 +56,7 @@ struct SurveyView: View {
                                 Text(question.ask)
                                     .bold()
                                     .font(.title3)
+                                    .foregroundColor(Color("textGrey"))
                                 Spacer()
                             }
                             VStack {
@@ -70,7 +71,7 @@ struct SurveyView: View {
                                                 .frame(width: 20, height: 20, alignment: .center)
                                                 .padding(.horizontal, 10)
                                             Text(response.text)
-                                                .foregroundColor(.black)
+                                                .foregroundColor(Color("textGrey"))
                                                 .font(.body)
                                             Spacer()
                                         }
