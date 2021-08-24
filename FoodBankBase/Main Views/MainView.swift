@@ -18,7 +18,7 @@ struct MainView: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 165, height: 85, alignment: .center)
                 Spacer()
-                // MARK: - Info Button
+                // MARK: - Info Buttono
                 NavigationLink(
                     destination: InfoView(),
                     label: {

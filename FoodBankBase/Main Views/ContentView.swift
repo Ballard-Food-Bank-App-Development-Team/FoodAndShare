@@ -18,7 +18,7 @@ struct ContentView: View {
                     Color("LoadingBackground")
                         .ignoresSafeArea()
                     VStack {
-                        Image("LoadingLogo")
+                        Image("ballardFoodBankLogoSmall")
                             .resizable()
                             .frame(width: 200, height: 200, alignment: .center)
                     }
