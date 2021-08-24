@@ -20,16 +20,17 @@ struct FeedbackView: View {
                     .padding(.all)
                     .background(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.black, lineWidth: 2)
+                            .stroke(Color("darkInvert"), lineWidth: 2)
                             .foregroundColor(Color("textFieldBackground"))
                     )
                     .padding()
-
+                
                 TextEditor(text: $bodyText)
                     .padding(.all)
+                    .foregroundColor(Color("textGrey"))
                     .background(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.black, lineWidth: 2)
+                            .stroke(Color("darkInvert"), lineWidth: 2)
                             .foregroundColor(Color("textFieldBackground"))
                     )
                     .padding()
@@ -39,6 +40,7 @@ struct FeedbackView: View {
                 }, label: {
                     Text("Send Email")
                         .padding()
+                        .foregroundColor(Color("textGrey"))
                 })
                 .padding()
 
