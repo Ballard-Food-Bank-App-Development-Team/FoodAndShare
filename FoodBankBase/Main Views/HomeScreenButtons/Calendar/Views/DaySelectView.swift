@@ -39,7 +39,7 @@ struct DaySelectView: View {
         }
     }
     @State private var eventList: String = ""
-    let mainList = ["Drive Through (2 - 6)", "Mail", "No Cook Bags", "Sandwiches at Door", "ID Assistance (12 - 4)", "Home Delivery", "Drive Through (12 - 4)"]
+    let mainList = ["Drive Through (2 - 6)", "Mail (2 - 6)", "No Cook Bags (2 - 6)", "Sandwiches at Door (2 - 6)", "ID Assistance (12 - 4)", "Home Delivery (All Day)", "Drive Through (12 - 4)", "Mail (11 - 4)", "Mail (12 - 4)", "No Cook Bags (11 - 4)", "No Cook Bags (12 - 4)", "Sandwiches at Door (11 - 4)", "Sandwiches at Door (12 - 4)"]
     private func updateEvents() {
         for dayOn in 1...self.calendar.activeMonth.arrayOfMonthDays.count where self.calendar.activeMonth.arrayOfMonthDays[dayOn - 1].choosen == true {
             switch self.calendar.activeMonth.arrayOfMonthDays[dayOn - 1].dayOfWeek {
@@ -48,9 +48,9 @@ struct DaySelectView: View {
             case 2:
                 eventList = mainList[0] + "\n" + mainList[1] + "\n" + mainList[2] + "\n" + mainList[3]
             case 3:
-                eventList = mainList[1] + "\n" + mainList[2] + "\n" + mainList[3] + "\n" + mainList[4] + "\n" + mainList[5]
+                eventList = mainList[7] + "\n" + mainList[9] + "\n" + mainList[11] + "\n" + mainList[4] + "\n" + mainList[5]
             case 4:
-                eventList = mainList[6] + "\n" + mainList[1] + "\n" + mainList[2] + "\n" + mainList[3] + "\n" + mainList[5]
+                eventList = mainList[6] + "\n" + mainList[8] + "\n" + mainList[10] + "\n" + mainList[12] + "\n" + mainList[5]
             case 5:
                 eventList = mainList[0] + "\n" + mainList[1] + "\n" + mainList[2] + "\n" + mainList[3] + "\n" + mainList[5]
             case 6:
