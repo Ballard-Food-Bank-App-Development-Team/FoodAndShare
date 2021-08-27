@@ -13,8 +13,6 @@ class SurveyViewModel: ObservableObject {
 
     @Published var questions: [Question]
 
-    @Published var bit: Int = 0
-
     private var database = Firestore.firestore()
 
     func select(question: Int, answer: Int) {
@@ -23,31 +21,6 @@ class SurveyViewModel: ObservableObject {
         }
         self.questions[question].responses[answer].chosen = true
     }
-    /*
-    func surveyBitSend() {
-        var index: Int = 1
-
-        for question in self.questions {
-            for response in question.responses {
-                if response.chosen {
-                    bit += (response.index + 1) * index
-                    index *= 10
-                    break
-                }
-                if response.index == question.responses.count - 1 {
-                    index *= 10
-                }
-            }
-        }
-
-        let uid: String = Auth.auth().currentUser!.uid
-
-        database.collection("surveyData").document("survey1Answers").setData(["\(uid)": self.bit], merge: true)
-    }
-
-    func surveyBitRecieve() {
-    }
-    */
 
     func uploadSurvey(completionHandler: @escaping (Result<Bool, Error>) -> Void) {
         let surveyQuestions = Survey(questions: self.questions)
@@ -114,10 +87,37 @@ class SurveyViewModel: ObservableObject {
         }
     }
 
-    init(questions: [Question]) {
-        self.questions = questions
-        for question in 0...(questions.count - 1) {
-            self.questions[question].index = question
+    init() {
+        var surveyRetrived = Survey(questions: [Question(ask: "Error Displaying Survey Questions", responses: ["Error Displaying Survey Answers"])])
+        self.questions = surveyRetrived.questions
+
+        let docRef = database.collection("surveyData").document("survey1Answers")
+
+        docRef.getDocument { (document, error) in
+            // Check For errors
+            if error != nil {
+                print(error!)
+                return
+            }
+
+            let result = Result {
+                try document?.data(as: Survey.self)
+            }
+
+            switch result {
+            case .failure(let err):
+                print(err)
+            case .success(var survey):
+                if survey != nil {
+                    for question in 0...(survey!.questions.count - 1) {
+                        survey!.questions[question].index = question
+                    }
+                    surveyRetrived = survey!
+                    self.questions = surveyRetrived.questions
+                } else {
+                    print(FirebaseErrors.documentDoesNotExist)
+                }
+            }
         }
     }
 }

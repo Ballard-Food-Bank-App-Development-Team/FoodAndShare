@@ -16,15 +16,15 @@ struct ForgotPasswordView: View {
 
     var body: some View {
         VStack {
-        TextField("", text: $email)
-            .padding(.all)
-            .disableAutocorrection(true)
-            .modifier(PlaceholderStyle(showPlaceHolder: self.email.isEmpty, placeholder: "Email"))
-            .background(
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color.black, lineWidth: 2)
-                    .foregroundColor(Color(.systemBackground))
-            )
+            TextField("", text: $email)
+                .padding(.all)
+                .disableAutocorrection(true)
+                .modifier(PlaceholderStyle(showPlaceHolder: self.email.isEmpty, placeholder: "Email"))
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color("darkInvert"), lineWidth: 2)
+                        .foregroundColor(Color(.systemBackground))
+                )
             Button(action: {
                 Auth.auth().sendPasswordReset(withEmail: self.email) { (error) in
                     if error != nil {
@@ -46,6 +46,7 @@ struct ForgotPasswordView: View {
             Text(error)
                 .foregroundColor(.red)
                 .padding()
+            Spacer()
         }
         .padding(.all)
         .navigationBarTitleDisplayMode(.large)

@@ -9,8 +9,11 @@ import SwiftUI
 
 struct SurveyView: View {
     @Environment(\.presentationMode) var presentation
+    @EnvironmentObject var user: FirebaseUserViewModel
 
-    @StateObject var survey = SurveyViewModel(
+    @StateObject var survey = SurveyViewModel()
+
+    /*    SurveyViewModel(
         questions: [
             // Question #1
             Question(
@@ -46,6 +49,7 @@ struct SurveyView: View {
                     "It's Good"
                 ])
         ])
+    */
     var body: some View {
         ScrollView {
             VStack {
@@ -89,35 +93,22 @@ struct SurveyView: View {
                     }
                 }
                 .padding(.all, 20)
-
-                /*Button(action: {
-                    self.survey.uploadSurvey { (result) in
-                        switch result {
-                        case .failure(let err):
-                            print(err)
-                        case .success(_):
-                            print("Succesfully Updated Value")
-                        }
-                    }
-                }, label: {
-                    Text("Upload")
-                })
-                .padding()
-                .foregroundColor(Color(.systemBackground))
-                .frame(width: UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 2))
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(.blue)
-                )
-                .padding()*/
-
+                
                 Button(action: {
                     self.survey.updateSurveyData { (result) in
                         switch result {
                         case .failure(let err):
                             print(err)
                         case .success(_):
-                            print("Succesfully Updated Value")
+                            print("Succesfully Updated Survey Value")
+                        }
+                    }
+                    self.user.updateSurveyStatus { (result) in
+                        switch result {
+                        case .failure(let err):
+                            print(err)
+                        case .success(_):
+                            print("Succesfully Updated Survey State")
                         }
                     }
                 }, label: {
@@ -133,6 +124,7 @@ struct SurveyView: View {
                 .padding()
             }
         }
+
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Survey")
         .navigationBarBackButtonHidden(true)
@@ -142,6 +134,7 @@ struct SurveyView: View {
                 }, label: {
                     Image(systemName: "arrow.backward")
                         .imageScale(.large)
+                        .accentColor(Color("darkInvert"))
                 })
         )
     }
@@ -150,5 +143,6 @@ struct SurveyView: View {
 struct SurveyView_Previews: PreviewProvider {
     static var previews: some View {
         SurveyView()
+            .environmentObject(FirebaseUserViewModel())
     }
 }

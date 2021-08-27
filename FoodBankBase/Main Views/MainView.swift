@@ -56,7 +56,7 @@ struct MainView: View {
 
                 // MARK: - Survey Button
                 NavigationLink(
-                    destination: SurveyView(),
+                    destination: SurveyCheckView(),
                     label: {
                         BigButtonHomeScreenView(
                             name: "Surveys",

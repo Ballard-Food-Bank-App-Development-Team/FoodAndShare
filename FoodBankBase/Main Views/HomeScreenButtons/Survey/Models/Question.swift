@@ -11,6 +11,7 @@ struct Question: Hashable, Codable {
     enum CodingKeys: String, CodingKey {
         case ask = "question"
         case responses
+        case index
     }
 
     var ask: String

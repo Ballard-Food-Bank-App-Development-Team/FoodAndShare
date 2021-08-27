@@ -17,7 +17,7 @@ struct HomeView: View {
             case 0:
                 DaySelectView()
             case 1:
-                SurveyView()
+                SurveyCheckView()
             case 2:
                 MainView()
             case 3:

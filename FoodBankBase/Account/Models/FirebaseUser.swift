@@ -14,6 +14,7 @@ struct FirebaseUser: Identifiable, Codable {
         case lastName
         case email
         case role
+        case surveysCompleted
     }
 
     var id: String? = UUID().uuidString
@@ -21,11 +22,13 @@ struct FirebaseUser: Identifiable, Codable {
     var lastName: String
     var email: String
     var role: String
+    var surveysCompleted: [Bool]
 
     init(firstname: String = "", lastName: String = "", email: String = "", role: String = "User") {
         self.firstName = firstname
         self.lastName = lastName
         self.email = email
         self.role = role
+        self.surveysCompleted = [false]
     }
 }

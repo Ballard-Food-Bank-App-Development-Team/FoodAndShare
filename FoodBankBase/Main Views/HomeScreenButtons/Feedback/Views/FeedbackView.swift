@@ -39,9 +39,14 @@ struct FeedbackView: View {
                     EmailHelper.shared.sendEmail(subject: subject, body: bodyText, sendTo: "ian.m.holloway@gmail.com")
                 }, label: {
                     Text("Send Email")
-                        .padding()
-                        .foregroundColor(Color("darkInvert"))
                 })
+                .padding()
+                .foregroundColor(Color(.systemBackground))
+                .frame(width: UIScreen.main.bounds.width - (UIScreen.main.bounds.width / 2))
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(.blue)
+                )
                 .padding()
 
                 Spacer()

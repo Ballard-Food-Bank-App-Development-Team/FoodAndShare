@@ -15,6 +15,8 @@ class FirebaseUserViewModel: ObservableObject {
         case undefined, signedOut, signedIn
     }
 
+    @Published var showSurveys = true
+
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var firstName: String = ""
@@ -80,7 +82,8 @@ class FirebaseUserViewModel: ObservableObject {
                 completionHandler(.failure(error!))
                 return
             }
-
+            // TODO: Must set pull user fields down from database then use that to overight an empty account
+            // This will fix error when adding new fields to to the user but the user doesn't have them because they are an old account
             self.checkUserState()
             completionHandler(.success(true))
         }
@@ -186,6 +189,52 @@ class FirebaseUserViewModel: ObservableObject {
                 }
             case .failure(let err):
                 completionHandler(.failure(err))
+            }
+        }
+    }
+
+    // MARK: - Check Survey Status
+    func checkSurveyStatus(completionHandler: @escaping (Result<Bool, Error>) -> Void) {
+        self.fetchUserData { result in
+            switch result {
+            case .failure(let err):
+                completionHandler(.failure(err))
+            case .success(_):
+                if self.userInfo.surveysCompleted[0] == false {
+                    self.showSurveys = true
+                } else {
+                    self.showSurveys = false
+                }
+                completionHandler(.success(true))
+            }
+        }
+    }
+
+    func updateSurveyStatus(completionHandler: @escaping (Result<Bool, Error>) -> Void) {
+        // Check if the current user is for some reason not signed in
+        if Auth.auth().currentUser == nil {
+            completionHandler(.failure(FirebaseErrors.noUserSignedIn))
+            return
+        }
+
+        // Setup the correct document to fetch from
+        let user = Auth.auth().currentUser
+        let docRef = database.collection("users").document(user!.uid)
+
+        docRef.updateData([
+            "surveysCompleted": [true]
+        ]) { err in
+            if let err = err {
+                completionHandler(.failure(err))
+            } else {
+                self.checkSurveyStatus { (result) in
+                    switch result {
+                    case .failure(let err):
+                        completionHandler(.failure(err))
+                    case .success(_):
+                        completionHandler(.success(true))
+                    }
+                }
             }
         }
     }
