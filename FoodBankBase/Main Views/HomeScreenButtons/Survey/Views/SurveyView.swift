@@ -11,45 +11,6 @@ struct SurveyView: View {
     @Environment(\.presentationMode) var presentation
     @EnvironmentObject var user: FirebaseUserViewModel
 
-    @StateObject var survey = SurveyViewModel()
-
-    /*    SurveyViewModel(
-        questions: [
-            // Question #1
-            Question(
-                ask: "Would you recommend the Ballard Foodbank?",
-                responses: [
-                    "Yes",
-                    "No"
-                ]),
-            // Question #2
-            Question(
-                ask: "What types of foods do you want more of?",
-                responses: [
-                    "Dry foods",
-                    "Produce",
-                    "Frozen Food",
-                    "Dairy"
-                ]),
-            // Question #3
-            Question(
-                ask: "Do you get enough food?",
-                responses: [
-                    "I barely have enough",
-                    "Sometimes I get enough",
-                    "I get plenty of food"
-                ]),
-            // Question #4
-            Question(
-                ask: "What times do you want the foodbank open?",
-                responses: [
-                    "Earlier",
-                    "Later",
-                    "Earlier & Later",
-                    "It's Good"
-                ])
-        ])
-    */
     var body: some View {
         ScrollView {
             VStack {

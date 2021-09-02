@@ -35,6 +35,8 @@
 		D371759826D1819500826D60 /* SurveyCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371759726D1819500826D60 /* SurveyCreateView.swift */; };
 		D37756B526D6FF140045DA3C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D37756B426D6FF140045DA3C /* GoogleService-Info.plist */; };
 		D37756B726D706B50045DA3C /* SurveyCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37756B626D706B50045DA3C /* SurveyCheckView.swift */; };
+		D38F919C26DAFD8800820D0A /* SurveyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F919B26DAFD8800820D0A /* SurveyListView.swift */; };
+		D38F91A226DAFEFF00820D0A /* SurveyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F91A126DAFEFF00820D0A /* SurveyListViewModel.swift */; };
 		D398667C269A4E9400AD313A /* DaySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D398667B269A4E9400AD313A /* DaySelectView.swift */; };
 		D3C4BDCB2679803F00731539 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */; };
 		D3C4BDCF267980D200731539 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCE267980D200731539 /* AccountSettingsView.swift */; };
@@ -83,6 +85,8 @@
 		D371759726D1819500826D60 /* SurveyCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCreateView.swift; sourceTree = "<group>"; };
 		D37756B426D6FF140045DA3C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D37756B626D706B50045DA3C /* SurveyCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCheckView.swift; sourceTree = "<group>"; };
+		D38F919B26DAFD8800820D0A /* SurveyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListView.swift; sourceTree = "<group>"; };
+		D38F91A126DAFEFF00820D0A /* SurveyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewModel.swift; sourceTree = "<group>"; };
 		D398667B269A4E9400AD313A /* DaySelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelectView.swift; sourceTree = "<group>"; };
 		D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		D3C4BDCE267980D200731539 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
@@ -255,8 +259,9 @@
 		D34C4C2C26C86BC9005519FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D34C4C2E26C86BE3005519FD /* SurveyView.swift */,
 				D37756B626D706B50045DA3C /* SurveyCheckView.swift */,
+				D38F919B26DAFD8800820D0A /* SurveyListView.swift */,
+				D34C4C2E26C86BE3005519FD /* SurveyView.swift */,
 				D371759726D1819500826D60 /* SurveyCreateView.swift */,
 				26AA78EA26CE29E600BC27EB /* SurveyDataView.swift */,
 			);
@@ -284,6 +289,7 @@
 		D34C4C3F26C8976F005519FD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				D38F91A126DAFEFF00820D0A /* SurveyListViewModel.swift */,
 				D34C4C4026C8979D005519FD /* SurveyViewModel.swift */,
 			);
 			path = ViewModels;
@@ -568,6 +574,7 @@
 				D3333DD72675964D00447A3B /* AppDelegate.swift in Sources */,
 				D371759626D174D000826D60 /* FirebaseErrors.swift in Sources */,
 				D3F47B8E269233CA009E73E8 /* FirebaseUser.swift in Sources */,
+				D38F919C26DAFD8800820D0A /* SurveyListView.swift in Sources */,
 				D34C4C3426C86E33005519FD /* Answer.swift in Sources */,
 				26AA78EB26CE29E600BC27EB /* SurveyDataView.swift in Sources */,
 				D3F47B9026923533009E73E8 /* FirebaseUserViewModel.swift in Sources */,
@@ -589,6 +596,7 @@
 				D3E4514026C041E500624C3A /* FeedbackView.swift in Sources */,
 				D3F5A05A26D0851C004BA872 /* Survey.swift in Sources */,
 				26F73E7F26BEE6D800223EF5 /* InfoView.swift in Sources */,
+				D38F91A226DAFEFF00820D0A /* SurveyListViewModel.swift in Sources */,
 				26F73E8E26C0F78400223EF5 /* MainView.swift in Sources */,
 				26F73E8326C035D600223EF5 /* NewsUIView.swift in Sources */,
 				D3CFAF9A26C9E048003BB421 /* CustomCalendarViewModel.swift in Sources */,
