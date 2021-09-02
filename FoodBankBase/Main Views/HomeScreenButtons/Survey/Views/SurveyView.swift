@@ -95,6 +95,7 @@ struct SurveyView: View {
                 .padding(.all, 20)
                 
                 Button(action: {
+                    presentation.wrappedValue.dismiss()
                     self.survey.updateSurveyData { (result) in
                         switch result {
                         case .failure(let err):
