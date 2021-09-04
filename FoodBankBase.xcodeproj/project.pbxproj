@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2651265526E3F49A0096C4CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2651265426E3F49A0096C4CB /* GoogleService-Info.plist */; };
 		268A585E26A6A2F00069A74A /* CalendarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A585D26A6A2F00069A74A /* CalendarIcon.swift */; };
 		26AA78EB26CE29E600BC27EB /* SurveyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA78EA26CE29E600BC27EB /* SurveyDataView.swift */; };
 		26E5486D26CA23A000AFE242 /* BigButtonHomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5486C26CA23A000AFE242 /* BigButtonHomeScreenView.swift */; };
@@ -50,7 +49,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2651265426E3F49A0096C4CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		268A585D26A6A2F00069A74A /* CalendarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarIcon.swift; sourceTree = "<group>"; };
 		26AA78EA26CE29E600BC27EB /* SurveyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDataView.swift; sourceTree = "<group>"; };
 		26E5486C26CA23A000AFE242 /* BigButtonHomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButtonHomeScreenView.swift; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 				D3333DDC2675964E00447A3B /* Assets.xcassets */,
 				D3333DE12675964E00447A3B /* LaunchScreen.storyboard */,
 				D3333DE42675964E00447A3B /* Info.plist */,
-				2651265426E3F49A0096C4CB /* GoogleService-Info.plist */,
 				D3333DDE2675964E00447A3B /* Preview Content */,
 			);
 			path = FoodBankBase;
@@ -471,7 +468,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3333DE32675964E00447A3B /* LaunchScreen.storyboard in Resources */,
-				2651265526E3F49A0096C4CB /* GoogleService-Info.plist in Resources */,
 				D3333DE02675964E00447A3B /* Preview Assets.xcassets in Resources */,
 				D3333DDD2675964E00447A3B /* Assets.xcassets in Resources */,
 			);
