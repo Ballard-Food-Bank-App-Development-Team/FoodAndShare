@@ -33,7 +33,6 @@
 		D35E184326BF418B00274EF9 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35E184226BF418B00274EF9 /* Location.swift */; };
 		D371759626D174D000826D60 /* FirebaseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371759526D174D000826D60 /* FirebaseErrors.swift */; };
 		D371759826D1819500826D60 /* SurveyCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371759726D1819500826D60 /* SurveyCreateView.swift */; };
-		D37756B526D6FF140045DA3C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D37756B426D6FF140045DA3C /* GoogleService-Info.plist */; };
 		D37756B726D706B50045DA3C /* SurveyCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37756B626D706B50045DA3C /* SurveyCheckView.swift */; };
 		D398667C269A4E9400AD313A /* DaySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D398667B269A4E9400AD313A /* DaySelectView.swift */; };
 		D3C4BDCB2679803F00731539 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */; };
@@ -81,7 +80,6 @@
 		D35E184226BF418B00274EF9 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		D371759526D174D000826D60 /* FirebaseErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseErrors.swift; sourceTree = "<group>"; };
 		D371759726D1819500826D60 /* SurveyCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCreateView.swift; sourceTree = "<group>"; };
-		D37756B426D6FF140045DA3C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D37756B626D706B50045DA3C /* SurveyCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCheckView.swift; sourceTree = "<group>"; };
 		D398667B269A4E9400AD313A /* DaySelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelectView.swift; sourceTree = "<group>"; };
 		D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 				D3333DDC2675964E00447A3B /* Assets.xcassets */,
 				D3333DE12675964E00447A3B /* LaunchScreen.storyboard */,
 				D3333DE42675964E00447A3B /* Info.plist */,
-				D37756B426D6FF140045DA3C /* GoogleService-Info.plist */,
 				D3333DDE2675964E00447A3B /* Preview Content */,
 			);
 			path = FoodBankBase;
@@ -471,7 +468,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3333DE32675964E00447A3B /* LaunchScreen.storyboard in Resources */,
-				D37756B526D6FF140045DA3C /* GoogleService-Info.plist in Resources */,
 				D3333DE02675964E00447A3B /* Preview Assets.xcassets in Resources */,
 				D3333DDD2675964E00447A3B /* Assets.xcassets in Resources */,
 			);
@@ -739,9 +735,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FoodBankBase/FoodBankBase.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodBankBase/Preview Content\"";
-				DEVELOPMENT_TEAM = CLMH99U2FD;
+				DEVELOPMENT_TEAM = Z634RQK5UK;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FoodBankBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -749,8 +746,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.3;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.foodbankbase.Brian-Holloway.FoodBankBase";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.foodbankbase.Ben-Roberts.FoodBankBase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -763,9 +761,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FoodBankBase/FoodBankBase.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodBankBase/Preview Content\"";
-				DEVELOPMENT_TEAM = CLMH99U2FD;
+				DEVELOPMENT_TEAM = Z634RQK5UK;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FoodBankBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -773,8 +772,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.3;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.foodbankbase.Brian-Holloway.FoodBankBase";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.foodbankbase.Ben-Roberts.FoodBankBase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
