@@ -4,7 +4,6 @@
 //
 //  Created by Brian Holloway on 8/8/21.
 //
-
 import SwiftUI
 
 struct FeedbackView: View {
@@ -15,6 +14,8 @@ struct FeedbackView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Text("Send us feedback for the app sent via email")
+                    
                 Spacer()
                 TextField("Subject", text: $subject)
                     .padding(.all)
