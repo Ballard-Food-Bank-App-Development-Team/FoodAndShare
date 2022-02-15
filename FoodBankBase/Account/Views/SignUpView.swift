@@ -11,8 +11,7 @@ import FirebaseFirestore
 
 struct SignUpView: View {
     @Environment(\.presentationMode) var presentation
-    @EnvironmentObject var userInfo: UserInfo
-    @State var user : UserViewModel = UserViewModel()
+    @EnvironmentObject var user: FirebaseUserViewModel
 
     @State private var firstNameBorder: Color = Color("darkInvert")
     @State private var firstNameErrorOpacity: Double = 0.0
@@ -30,6 +29,8 @@ struct SignUpView: View {
     @State private var firebaseError: String = "No Errors"
     @State private var firebaseErrorOpacity: Double = 0.0
 
+    @State private var signUpSelected: Bool = false
+
     var body: some View {
 
         VStack(alignment: .center, spacing: 5) {
@@ -46,7 +47,7 @@ struct SignUpView: View {
                                 .foregroundColor(Color("textFieldBackground"))
                         )
                         .onChange(of: self.user.firstName, perform: { _ in
-                            if self.user.isEmpty(self.user.firstName.trimmingCharacters(in: .whitespacesAndNewlines)) {
+                            if self.user.isEmpty(field: self.user.firstName.trimmingCharacters(in: .whitespacesAndNewlines)) {
                                 firstNameBorder = .red
                                 firstNameErrorOpacity = 1.0
                             } else {
@@ -55,9 +56,9 @@ struct SignUpView: View {
                             }
                         })
                     Text(self.user.firstNameErrorText)
-                            .padding(.leading, 16.0)
-                            .foregroundColor(.red.opacity(firstNameErrorOpacity))
-                            .font(.system(size: 11.0))
+                        .padding(.leading, 16.0)
+                        .foregroundColor(.red.opacity(firstNameErrorOpacity))
+                        .font(.system(size: 11.0))
                 }
 
                 // MARK: - Last Name TextField
@@ -72,18 +73,18 @@ struct SignUpView: View {
                                 .foregroundColor(Color(.systemBackground))
                         )
                         .onChange(of: self.user.lastName, perform: { _ in
-                            if self.user.isEmpty(self.user.lastName.trimmingCharacters(in: .whitespacesAndNewlines)) {
-                            lastNameBorder = .red
-                            lastNameErrorOpacity = 1.0
-                        } else {
-                            lastNameBorder = .green
-                            lastNameErrorOpacity = 0.0
-                        }
+                            if self.user.isEmpty(field: self.user.lastName.trimmingCharacters(in: .whitespacesAndNewlines)) {
+                                lastNameBorder = .red
+                                lastNameErrorOpacity = 1.0
+                            } else {
+                                lastNameBorder = .green
+                                lastNameErrorOpacity = 0.0
+                            }
                         })
                     Text(self.user.lastNameErrorText)
-                            .padding(.leading, 16.0)
-                            .foregroundColor(.red.opacity(lastNameErrorOpacity))
-                            .font(.system(size: 11.0))
+                        .padding(.leading, 16.0)
+                        .foregroundColor(.red.opacity(lastNameErrorOpacity))
+                        .font(.system(size: 11.0))
                 }
             }
             // MARK: - Email TextField
@@ -99,7 +100,7 @@ struct SignUpView: View {
                             .foregroundColor(Color(.systemBackground))
                     )
                     .onChange(of: self.user.email, perform: { _ in
-                        if self.user.isEmailValid(self.user.email.trimmingCharacters(in: .whitespacesAndNewlines)) {
+                        if self.user.isEmailValid(email: self.user.email.trimmingCharacters(in: .whitespacesAndNewlines)) {
                             emailBorder = .red
                             emailErrorOpacity = 1.0
                         } else {
@@ -107,10 +108,10 @@ struct SignUpView: View {
                             emailErrorOpacity = 0.0
                         }
                     })
-                    Text(user.emailErrorText)
-                        .padding(.leading, 16.0)
-                        .foregroundColor(.red.opacity(emailErrorOpacity))
-                        .font(.system(size: 11.0))
+                Text(user.emailErrorText)
+                    .padding(.leading, 16.0)
+                    .foregroundColor(.red.opacity(emailErrorOpacity))
+                    .font(.system(size: 11.0))
             }
 
             // MARK: - Password TextField
@@ -128,7 +129,7 @@ struct SignUpView: View {
                     .disableAutocorrection(true)
                     .modifier(PlaceholderStyle(showPlaceHolder: self.user.password.isEmpty, placeholder: "Password"))
                     .onChange(of: self.user.password, perform: { _ in
-                        if self.user.isPasswordValid(self.user.password) {
+                        if self.user.isPasswordValid(password: self.user.password) {
                             passwordBorder = .red
                             passwordErrorOpacity = 1.0
                         } else {
@@ -152,36 +153,41 @@ struct SignUpView: View {
                         .foregroundColor(Color(.systemBackground))
                 )
                 Text(self.user.passwordErrorText)
-                        .padding(.leading, 16.0)
-                        .foregroundColor(.red.opacity(passwordErrorOpacity))
-                        .font(.system(size: 11.0))
+                    .padding(.leading, 16.0)
+                    .foregroundColor(.red.opacity(passwordErrorOpacity))
+                    .font(.system(size: 11.0))
             }
 
             // MARK: - Sign Up Button
             Button(action: {
-                // Validate all Feilds
-                if firstNameBorder == .red || lastNameBorder == .red || emailBorder == .red || passwordBorder == .red {
-                    return
-                }
-
-                // Sign Up User
-                FBAuth.signUpUser(
-                    firstName: self.user.firstName.trimmingCharacters(in: .whitespacesAndNewlines),
-                    lastName: self.user.lastName.trimmingCharacters(in: .whitespacesAndNewlines),
-                    email: self.user.email.trimmingCharacters(in: .whitespacesAndNewlines),
-                    password: self.user.password.trimmingCharacters(in: .whitespacesAndNewlines)
-                ) { (result) in
-                    switch result {
-                    case .failure(let error):
-                        firebaseError = error.localizedDescription
-                        firebaseErrorOpacity = 1.0
-                    case .success(_):
-                        self.userInfo.updateUserStateToSignedIn()
-                        print("Sign Up Success")
+                if signUpSelected == false {
+                    self.signUpSelected = true                    // Validate all Feilds
+                    if firstNameBorder == .red || lastNameBorder == .red || emailBorder == .red || passwordBorder == .red {
+                        return
                     }
+
+                    // Sign Up User
+                    user.signUpUser(
+                        firstName: self.user.firstName.trimmingCharacters(in: .whitespacesAndNewlines),
+                        lastName: self.user.lastName.trimmingCharacters(in: .whitespacesAndNewlines),
+                        email: self.user.email.trimmingCharacters(in: .whitespacesAndNewlines),
+                        password: self.user.password.trimmingCharacters(in: .whitespacesAndNewlines)
+                    ) { (result) in
+                        switch result {
+                        case .failure(let error):
+                            self.signUpSelected = false
+                            firebaseError = error.localizedDescription
+                            firebaseErrorOpacity = 1.0
+                            return
+                        case .success(_):
+                            firebaseErrorOpacity = 0.0
+                            print("Sign Up Success")
+                        }
+                    }
+                } else {
+                    print("Don't Spam Button")
                 }
-            }
-            , label: {
+            }, label: {
                 Text("Sign Up")
                     .padding(.all)
                     .foregroundColor(Color(.systemBackground))
@@ -204,8 +210,7 @@ struct SignUpView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
             leading: Button(action: { presentation.wrappedValue.dismiss()
-            }
-            , label: {
+            }, label: {
                 Image(systemName: "arrow.backward")
                     .imageScale(.large)
             })
@@ -234,6 +239,6 @@ public struct PlaceholderStyle: ViewModifier {
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
         SignUpView()
-            .preferredColorScheme(.light)
+            .environmentObject(FirebaseUserViewModel())
     }
 }

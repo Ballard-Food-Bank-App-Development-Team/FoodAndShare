@@ -10,8 +10,7 @@ import FirebaseAuth
 
 struct LoginView: View {
     @Environment(\.presentationMode) var presentation
-    @EnvironmentObject var userInfo: UserInfo
-    @State var user : UserViewModel = UserViewModel()
+    @EnvironmentObject var user: FirebaseUserViewModel
 
     @State private var emailBorder: Color = Color("darkInvert")
     @State private var emailErrorOpacity: Double = 0.0
@@ -22,6 +21,8 @@ struct LoginView: View {
 
     @State private var firebaseError: String = "No Errors"
     @State private var firebaseErrorOpacity: Double = 0.0
+
+    @State private var loginSelected: Bool = false
 
     var body: some View {
         VStack {
@@ -38,7 +39,7 @@ struct LoginView: View {
                             .foregroundColor(Color(.systemBackground))
                     )
                     .onChange(of: self.user.email, perform: { _ in
-                        if self.user.isEmpty(self.user.email) {
+                        if self.user.isEmpty(field: self.user.email) {
                             emailBorder = .red
                             emailErrorOpacity = 1.0
                         } else {
@@ -67,7 +68,7 @@ struct LoginView: View {
                     .disableAutocorrection(true)
                     .modifier(PlaceholderStyle(showPlaceHolder: self.user.password.isEmpty, placeholder: "Password"))
                     .onChange(of: self.user.password, perform: { _ in
-                        if self.user.isEmpty(self.user.password) {
+                        if self.user.isEmpty(field: self.user.password) {
                             passwordBorder = .red
                             passwordErrorOpacity = 1.0
                         } else {
@@ -98,20 +99,27 @@ struct LoginView: View {
 
             // MARK: - Login Button
             Button(action: {
-                // Validate all Fields
-                if emailBorder == .red || passwordBorder == .red {
-                    return
-                }
-
-                FBAuth.loginUser(email: self.user.email.trimmingCharacters(in: .whitespacesAndNewlines), password: self.user.password.trimmingCharacters(in: .whitespacesAndNewlines)) { (result) in
-                    switch result {
-                    case .failure(let error):
-                        firebaseError = error.localizedDescription
-                        firebaseErrorOpacity = 1.0
-                    case .success(_):
-                        self.userInfo.updateUserStateToSignedIn()
-                        print("Login Success")
+                if loginSelected == false {
+                    self.loginSelected = true
+                    // Validate all Fields
+                    if emailBorder == .red || passwordBorder == .red {
+                        return
                     }
+
+                    user.loginUser(email: self.user.email.trimmingCharacters(in: .whitespacesAndNewlines), password: self.user.password.trimmingCharacters(in: .whitespacesAndNewlines)) { (result) in
+                        switch result {
+                        case .failure(let error):
+                            self.loginSelected = false
+                            firebaseError = error.localizedDescription
+                            firebaseErrorOpacity = 1.0
+                            return
+                        case .success(_):
+                            firebaseErrorOpacity = 0.0
+                            print("Login Success")
+                        }
+                    }
+                } else {
+                    print("Don't Spam Button")
                 }
             }, label: {
                 Text("Login")
@@ -125,10 +133,10 @@ struct LoginView: View {
 
             // MARK: - Forgot Password
             NavigationLink(destination: ForgotPasswordView(),
-                label: {
-                    Text("Forgot Password?")
-                        .foregroundColor(.blue)
-                })
+                           label: {
+                            Text("Forgot Password?")
+                                .foregroundColor(.blue)
+                           })
 
             // MARK: - Firebase Error display
             Text(firebaseError)
@@ -144,8 +152,7 @@ struct LoginView: View {
         .navigationBarItems(
             leading: Button(action: {
                 presentation.wrappedValue.dismiss()
-            }
-            , label: {
+            }, label: {
                 Image(systemName: "arrow.backward")
                     .imageScale(.large)
             })
@@ -156,5 +163,6 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .environmentObject(FirebaseUserViewModel())
     }
 }

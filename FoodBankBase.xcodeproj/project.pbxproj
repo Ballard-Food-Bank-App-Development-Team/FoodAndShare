@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		260CADCA268ED2DC00782ABE /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260CADC9268ED2DC00782ABE /* ElegantCalendar.xcassets */; };
-		D30086B72680F5220054514E /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086B62680F5220054514E /* FBAuth.swift */; };
-		D30086BB26811CE40054514E /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086BA26811CE40054514E /* UserInfo.swift */; };
-		D30086C126812C900054514E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30086C026812C900054514E /* UserViewModel.swift */; };
+		262D5CA126E5A1D700A207EF /* privacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D5CA026E5A1D700A207EF /* privacyPolicyView.swift */; };
+		268A585E26A6A2F00069A74A /* CalendarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268A585D26A6A2F00069A74A /* CalendarIcon.swift */; };
+		268BC76E26E3FEED00CEADDC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 268BC76D26E3FEED00CEADDC /* GoogleService-Info.plist */; };
+		268BC77126E424F400CEADDC /* aboutDevelopersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268BC77026E424F400CEADDC /* aboutDevelopersView.swift */; };
+		26AA78EB26CE29E600BC27EB /* SurveyDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AA78EA26CE29E600BC27EB /* SurveyDataView.swift */; };
+		26E5486D26CA23A000AFE242 /* BigButtonHomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5486C26CA23A000AFE242 /* BigButtonHomeScreenView.swift */; };
+		26F73E7F26BEE6D800223EF5 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F73E7E26BEE6D800223EF5 /* InfoView.swift */; };
+		26F73E8326C035D600223EF5 /* NewsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F73E8226C035D600223EF5 /* NewsUIView.swift */; };
+		26F73E8E26C0F78400223EF5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F73E8D26C0F78400223EF5 /* MainView.swift */; };
+		C79AB86A912E76C7D7183A1E /* Pods_FoodBankBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA74145D2760BA1922B87A8 /* Pods_FoodBankBase.framework */; };
+		D313BAD026A502C600903F6E /* CustomCalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D313BACF26A502C600903F6E /* CustomCalendarDay.swift */; };
+		D331319326D555BA00CC5A63 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D331319226D555BA00CC5A63 /* WebView.swift */; };
 		D3333DD72675964D00447A3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DD62675964D00447A3B /* AppDelegate.swift */; };
 		D3333DD92675964D00447A3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DD82675964D00447A3B /* SceneDelegate.swift */; };
 		D3333DDB2675964D00447A3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DDA2675964D00447A3B /* ContentView.swift */; };
@@ -20,23 +28,45 @@
 		D3333DEB2675968D00447A3B /* AccountChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DEA2675968D00447A3B /* AccountChoiceView.swift */; };
 		D3333DED267596AB00447A3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DEC267596AB00447A3B /* LoginView.swift */; };
 		D3333DEF267596BD00447A3B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3333DEE267596BD00447A3B /* SignUpView.swift */; };
-		D3A163A2268BF539003CEA31 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = D3A163A1268BF539003CEA31 /* ElegantCalendar */; };
-		D3A5621D268E6DC2007674DF /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A5621C268E6DC2007674DF /* CalendarView.swift */; };
-		D3C4BDC22678125900731539 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3C4BDC12678125900731539 /* GoogleService-Info.plist */; };
+		D3455C6F269E260700E19233 /* CustomCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3455C6E269E260700E19233 /* CustomCalendar.swift */; };
+		D34C4C2F26C86BE3005519FD /* SurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C4C2E26C86BE3005519FD /* SurveyView.swift */; };
+		D34C4C3226C86DCB005519FD /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C4C3126C86DCB005519FD /* Question.swift */; };
+		D34C4C3426C86E33005519FD /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C4C3326C86E33005519FD /* Answer.swift */; };
+		D34C4C4126C8979D005519FD /* SurveyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C4C4026C8979D005519FD /* SurveyViewModel.swift */; };
+		D35E184326BF418B00274EF9 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35E184226BF418B00274EF9 /* Location.swift */; };
+		D371759626D174D000826D60 /* FirebaseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371759526D174D000826D60 /* FirebaseErrors.swift */; };
+		D371759826D1819500826D60 /* SurveyCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371759726D1819500826D60 /* SurveyCreateView.swift */; };
+		D37756B726D706B50045DA3C /* SurveyCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37756B626D706B50045DA3C /* SurveyCheckView.swift */; };
+		D398667C269A4E9400AD313A /* DaySelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D398667B269A4E9400AD313A /* DaySelectView.swift */; };
 		D3C4BDCB2679803F00731539 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */; };
 		D3C4BDCF267980D200731539 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C4BDCE267980D200731539 /* AccountSettingsView.swift */; };
+		D3CFAF9A26C9E048003BB421 /* CustomCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CFAF9926C9E048003BB421 /* CustomCalendarViewModel.swift */; };
 		D3D46606267C2BAD0006F9A3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D46605267C2BAD0006F9A3 /* HomeView.swift */; };
-		EE11511B4EB9D84FC2267333 /* Pods_FoodBankBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F396719407A92FFB2C66947 /* Pods_FoodBankBase.framework */; };
+		D3E4514026C041E500624C3A /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4513F26C041E500624C3A /* FeedbackView.swift */; };
+		D3E4514326C0439200624C3A /* EmailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4514226C0439200624C3A /* EmailHelper.swift */; };
+		D3E79D0E2691379E00A389E6 /* FoodBankListChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E79D0D2691379E00A389E6 /* FoodBankListChoiceView.swift */; };
+		D3E79D162691382200A389E6 /* FoodBankMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E79D152691382200A389E6 /* FoodBankMapView.swift */; };
+		D3F47B8E269233CA009E73E8 /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F47B8D269233CA009E73E8 /* FirebaseUser.swift */; };
+		D3F47B9026923533009E73E8 /* FirebaseUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F47B8F26923533009E73E8 /* FirebaseUserViewModel.swift */; };
+		D3F5A05A26D0851C004BA872 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F5A05926D0851C004BA872 /* Survey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		260CADC9268ED2DC00782ABE /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = ../../../SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets; sourceTree = BUILT_PRODUCTS_DIR; };
-		3625E3D1B890F58F54CB597B /* Pods-FoodBankBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.debug.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.debug.xcconfig"; sourceTree = "<group>"; };
-		8F396719407A92FFB2C66947 /* Pods_FoodBankBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodBankBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE6584F326D1C3EEAB28DB6A /* Pods-FoodBankBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.release.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.release.xcconfig"; sourceTree = "<group>"; };
-		D30086B62680F5220054514E /* FBAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAuth.swift; sourceTree = "<group>"; };
-		D30086BA26811CE40054514E /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		D30086C026812C900054514E /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		262D5CA026E5A1D700A207EF /* privacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = privacyPolicyView.swift; sourceTree = "<group>"; };
+		268A585D26A6A2F00069A74A /* CalendarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarIcon.swift; sourceTree = "<group>"; };
+		268BC76D26E3FEED00CEADDC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		268BC77026E424F400CEADDC /* aboutDevelopersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aboutDevelopersView.swift; sourceTree = "<group>"; };
+		26AA78EA26CE29E600BC27EB /* SurveyDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDataView.swift; sourceTree = "<group>"; };
+		26E5486C26CA23A000AFE242 /* BigButtonHomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButtonHomeScreenView.swift; sourceTree = "<group>"; };
+		26F73E7E26BEE6D800223EF5 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		26F73E8226C035D600223EF5 /* NewsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsUIView.swift; sourceTree = "<group>"; };
+		26F73E8D26C0F78400223EF5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4B9A5D093AA0F3E757FFE20D /* Pods-FoodBankBase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.release.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.release.xcconfig"; sourceTree = "<group>"; };
+		5DA74145D2760BA1922B87A8 /* Pods_FoodBankBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodBankBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE3C65D22A815C9E6E2BA559 /* Pods-FoodBankBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodBankBase.debug.xcconfig"; path = "Target Support Files/Pods-FoodBankBase/Pods-FoodBankBase.debug.xcconfig"; sourceTree = "<group>"; };
+		D313BACF26A502C600903F6E /* CustomCalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarDay.swift; sourceTree = "<group>"; };
+		D331318E26D54FC800CC5A63 /* FoodBankBase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodBankBase.entitlements; sourceTree = "<group>"; };
+		D331319226D555BA00CC5A63 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		D3333DD32675964D00447A3B /* FoodBankBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBankBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3333DD62675964D00447A3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3333DD82675964D00447A3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,11 +78,27 @@
 		D3333DEA2675968D00447A3B /* AccountChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountChoiceView.swift; sourceTree = "<group>"; };
 		D3333DEC267596AB00447A3B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D3333DEE267596BD00447A3B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		D3A5621C268E6DC2007674DF /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		D3C4BDC12678125900731539 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D3455C6E269E260700E19233 /* CustomCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendar.swift; sourceTree = "<group>"; };
+		D34C4C2E26C86BE3005519FD /* SurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyView.swift; sourceTree = "<group>"; };
+		D34C4C3126C86DCB005519FD /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		D34C4C3326C86E33005519FD /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		D34C4C4026C8979D005519FD /* SurveyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewModel.swift; sourceTree = "<group>"; };
+		D35E184226BF418B00274EF9 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		D371759526D174D000826D60 /* FirebaseErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseErrors.swift; sourceTree = "<group>"; };
+		D371759726D1819500826D60 /* SurveyCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCreateView.swift; sourceTree = "<group>"; };
+		D37756B626D706B50045DA3C /* SurveyCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCheckView.swift; sourceTree = "<group>"; };
+		D398667B269A4E9400AD313A /* DaySelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelectView.swift; sourceTree = "<group>"; };
 		D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		D3C4BDCE267980D200731539 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
+		D3CFAF9926C9E048003BB421 /* CustomCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarViewModel.swift; sourceTree = "<group>"; };
 		D3D46605267C2BAD0006F9A3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D3E4513F26C041E500624C3A /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
+		D3E4514226C0439200624C3A /* EmailHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailHelper.swift; sourceTree = "<group>"; };
+		D3E79D0D2691379E00A389E6 /* FoodBankListChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBankListChoiceView.swift; sourceTree = "<group>"; };
+		D3E79D152691382200A389E6 /* FoodBankMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodBankMapView.swift; sourceTree = "<group>"; };
+		D3F47B8D269233CA009E73E8 /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
+		D3F47B8F26923533009E73E8 /* FirebaseUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserViewModel.swift; sourceTree = "<group>"; };
+		D3F5A05926D0851C004BA872 /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,18 +106,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE11511B4EB9D84FC2267333 /* Pods_FoodBankBase.framework in Frameworks */,
-				D3A163A2268BF539003CEA31 /* ElegantCalendar in Frameworks */,
+				C79AB86A912E76C7D7183A1E /* Pods_FoodBankBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D7F2742E430BC67AF5448DC /* Frameworks */ = {
+		26E5486E26CA289D00AFE242 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8F396719407A92FFB2C66947 /* Pods_FoodBankBase.framework */,
+				26E5486C26CA23A000AFE242 /* BigButtonHomeScreenView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		26F73E8026C035B000223EF5 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				26F73E8126C035BC00223EF5 /* Views */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		26F73E8126C035BC00223EF5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				26F73E8226C035D600223EF5 /* NewsUIView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9ACE3BAA7B3622735441D71C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DA74145D2760BA1922B87A8 /* Pods_FoodBankBase.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -87,20 +156,45 @@
 		A452C5E351033CFCAC4E6094 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3625E3D1B890F58F54CB597B /* Pods-FoodBankBase.debug.xcconfig */,
-				CE6584F326D1C3EEAB28DB6A /* Pods-FoodBankBase.release.xcconfig */,
+				BE3C65D22A815C9E6E2BA559 /* Pods-FoodBankBase.debug.xcconfig */,
+				4B9A5D093AA0F3E757FFE20D /* Pods-FoodBankBase.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D313BACD26A5024100903F6E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D398667B269A4E9400AD313A /* DaySelectView.swift */,
+				268A585D26A6A2F00069A74A /* CalendarIcon.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D313BACE26A5025E00903F6E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D3455C6E269E260700E19233 /* CustomCalendar.swift */,
+				D313BACF26A502C600903F6E /* CustomCalendarDay.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D331319126D555AA00CC5A63 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D331319226D555BA00CC5A63 /* WebView.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D3333DCA2675964D00447A3B = {
 			isa = PBXGroup;
 			children = (
-				260CADC9268ED2DC00782ABE /* ElegantCalendar.xcassets */,
 				D3333DD52675964D00447A3B /* FoodBankBase */,
 				D3333DD42675964D00447A3B /* Products */,
 				A452C5E351033CFCAC4E6094 /* Pods */,
-				1D7F2742E430BC67AF5448DC /* Frameworks */,
+				9ACE3BAA7B3622735441D71C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,15 +209,17 @@
 		D3333DD52675964D00447A3B /* FoodBankBase */ = {
 			isa = PBXGroup;
 			children = (
+				D331318E26D54FC800CC5A63 /* FoodBankBase.entitlements */,
 				D3333DD62675964D00447A3B /* AppDelegate.swift */,
 				D3333DD82675964D00447A3B /* SceneDelegate.swift */,
+				D331319126D555AA00CC5A63 /* Helpers */,
 				D3333DF0267596C400447A3B /* Main Views */,
 				260CADCB268ED7C300782ABE /* Calendar */,
 				D3333DF1267596DB00447A3B /* Account */,
 				D3333DDC2675964E00447A3B /* Assets.xcassets */,
 				D3333DE12675964E00447A3B /* LaunchScreen.storyboard */,
 				D3333DE42675964E00447A3B /* Info.plist */,
-				D3C4BDC12678125900731539 /* GoogleService-Info.plist */,
+				268BC76D26E3FEED00CEADDC /* GoogleService-Info.plist */,
 				D3333DDE2675964E00447A3B /* Preview Content */,
 			);
 			path = FoodBankBase;
@@ -142,6 +238,9 @@
 			children = (
 				D3333DDA2675964D00447A3B /* ContentView.swift */,
 				D3D46605267C2BAD0006F9A3 /* HomeView.swift */,
+				26F73E8D26C0F78400223EF5 /* MainView.swift */,
+				26E5486E26CA289D00AFE242 /* Helpers */,
+				D3E79D1726913AA200A389E6 /* HomeScreenButtons */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -149,20 +248,83 @@
 		D3333DF1267596DB00447A3B /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				D3C4BDD02679897900731539 /* Firebase */,
+				D3F47B8C269233A0009E73E8 /* ViewModels */,
+				D3F47B8B26923396009E73E8 /* Models */,
 				D3D46601267BF9D00006F9A3 /* Views */,
 			);
 			path = Account;
 			sourceTree = "<group>";
 		};
-		D3C4BDD02679897900731539 /* Firebase */ = {
+		D34C4C2B26C86BC1005519FD /* Survey */ = {
 			isa = PBXGroup;
 			children = (
-				D30086B62680F5220054514E /* FBAuth.swift */,
-				D30086BA26811CE40054514E /* UserInfo.swift */,
-				D30086C026812C900054514E /* UserViewModel.swift */,
+				D34C4C3F26C8976F005519FD /* ViewModels */,
+				D34C4C3026C86DB5005519FD /* Models */,
+				D34C4C2C26C86BC9005519FD /* Views */,
 			);
-			path = Firebase;
+			path = Survey;
+			sourceTree = "<group>";
+		};
+		D34C4C2C26C86BC9005519FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D34C4C2E26C86BE3005519FD /* SurveyView.swift */,
+				D37756B626D706B50045DA3C /* SurveyCheckView.swift */,
+				D371759726D1819500826D60 /* SurveyCreateView.swift */,
+				26AA78EA26CE29E600BC27EB /* SurveyDataView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D34C4C3026C86DB5005519FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D3F5A05926D0851C004BA872 /* Survey.swift */,
+				D34C4C3126C86DCB005519FD /* Question.swift */,
+				D34C4C3326C86E33005519FD /* Answer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D34C4C3C26C89498005519FD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D3CFAF9926C9E048003BB421 /* CustomCalendarViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D34C4C3F26C8976F005519FD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D34C4C4026C8979D005519FD /* SurveyViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D35E184426BF424C00274EF9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D3E79D152691382200A389E6 /* FoodBankMapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D35E184526BF425D00274EF9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D35E184226BF418B00274EF9 /* Location.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D3A60FC726915D1A00C1C268 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				26F73E7E26BEE6D800223EF5 /* InfoView.swift */,
+				D3E79D0D2691379E00A389E6 /* FoodBankListChoiceView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D3D46601267BF9D00006F9A3 /* Views */ = {
@@ -173,8 +335,92 @@
 				D3333DEC267596AB00447A3B /* LoginView.swift */,
 				D3C4BDCA2679803F00731539 /* ForgotPasswordView.swift */,
 				D3C4BDCE267980D200731539 /* AccountSettingsView.swift */,
+				268BC77026E424F400CEADDC /* aboutDevelopersView.swift */,
+				262D5CA026E5A1D700A207EF /* privacyPolicyView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D3E4513B26C0417100624C3A /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				D3E4514126C0438000624C3A /* Helpers */,
+				D3E4513D26C0418600624C3A /* Views */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		D3E4513D26C0418600624C3A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D3E4513F26C041E500624C3A /* FeedbackView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D3E4514126C0438000624C3A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D3E4514226C0439200624C3A /* EmailHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D3E79D0A269136B200A389E6 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				D34C4C3C26C89498005519FD /* ViewModels */,
+				D313BACE26A5025E00903F6E /* Models */,
+				D313BACD26A5024100903F6E /* Views */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		D3E79D0B2691376A00A389E6 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				D35E184526BF425D00274EF9 /* Models */,
+				D35E184426BF424C00274EF9 /* Views */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		D3E79D0F269137AE00A389E6 /* FoodBankInfo */ = {
+			isa = PBXGroup;
+			children = (
+				D3A60FC726915D1A00C1C268 /* Views */,
+			);
+			path = FoodBankInfo;
+			sourceTree = "<group>";
+		};
+		D3E79D1726913AA200A389E6 /* HomeScreenButtons */ = {
+			isa = PBXGroup;
+			children = (
+				D34C4C2B26C86BC1005519FD /* Survey */,
+				D3E4513B26C0417100624C3A /* Feedback */,
+				26F73E8026C035B000223EF5 /* News */,
+				D3E79D0B2691376A00A389E6 /* Map */,
+				D3E79D0F269137AE00A389E6 /* FoodBankInfo */,
+				D3E79D0A269136B200A389E6 /* Calendar */,
+			);
+			path = HomeScreenButtons;
+			sourceTree = "<group>";
+		};
+		D3F47B8B26923396009E73E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D3F47B8D269233CA009E73E8 /* FirebaseUser.swift */,
+				D371759526D174D000826D60 /* FirebaseErrors.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D3F47B8C269233A0009E73E8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D3F47B8F26923533009E73E8 /* FirebaseUserViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,22 +430,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3333DE72675964E00447A3B /* Build configuration list for PBXNativeTarget "FoodBankBase" */;
 			buildPhases = (
-				398DE41F44C086CE1EC1582B /* [CP] Check Pods Manifest.lock */,
+				D4C60ACCCBF1FCEE617E2959 /* [CP] Check Pods Manifest.lock */,
 				D3CDFB41267EA441001A7C4D /* SwiftLint */,
 				D3CDFB42267EBBB1001A7C4D /* SwiftLint Autocorrect */,
 				D3333DCF2675964D00447A3B /* Sources */,
 				D3333DD02675964D00447A3B /* Frameworks */,
 				D3333DD12675964D00447A3B /* Resources */,
-				74256114C9371A9C14AC664B /* [CP] Embed Pods Frameworks */,
+				12D929837C7F64D2AB6DC508 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = FoodBankBase;
-			packageProductDependencies = (
-				D3A163A1268BF539003CEA31 /* ElegantCalendar */,
-			);
 			productName = FoodBankBase;
 			productReference = D3333DD32675964D00447A3B /* FoodBankBase.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +455,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					D3333DD22675964D00447A3B = {
 						CreatedOnToolsVersion = 12.5;
@@ -227,9 +471,6 @@
 				Base,
 			);
 			mainGroup = D3333DCA2675964D00447A3B;
-			packageReferences = (
-				D3A163A0268BF539003CEA31 /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
-			);
 			productRefGroup = D3333DD42675964D00447A3B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -245,39 +486,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3333DE32675964E00447A3B /* LaunchScreen.storyboard in Resources */,
-				D3C4BDC22678125900731539 /* GoogleService-Info.plist in Resources */,
+				268BC76E26E3FEED00CEADDC /* GoogleService-Info.plist in Resources */,
 				D3333DE02675964E00447A3B /* Preview Assets.xcassets in Resources */,
 				D3333DDD2675964E00447A3B /* Assets.xcassets in Resources */,
-				260CADCA268ED2DC00782ABE /* ElegantCalendar.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		398DE41F44C086CE1EC1582B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FoodBankBase-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		74256114C9371A9C14AC664B /* [CP] Embed Pods Frameworks */ = {
+		12D929837C7F64D2AB6DC508 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -311,7 +529,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		D3CDFB42267EBBB1001A7C4D /* SwiftLint Autocorrect */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -330,7 +548,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		D4C60ACCCBF1FCEE617E2959 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodBankBase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -339,17 +579,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34C4C2F26C86BE3005519FD /* SurveyView.swift in Sources */,
 				D3333DD72675964D00447A3B /* AppDelegate.swift in Sources */,
+				D371759626D174D000826D60 /* FirebaseErrors.swift in Sources */,
+				262D5CA126E5A1D700A207EF /* privacyPolicyView.swift in Sources */,
+				D3F47B8E269233CA009E73E8 /* FirebaseUser.swift in Sources */,
+				D34C4C3426C86E33005519FD /* Answer.swift in Sources */,
+				26AA78EB26CE29E600BC27EB /* SurveyDataView.swift in Sources */,
+				D3F47B9026923533009E73E8 /* FirebaseUserViewModel.swift in Sources */,
+				268BC77126E424F400CEADDC /* aboutDevelopersView.swift in Sources */,
+				D34C4C4126C8979D005519FD /* SurveyViewModel.swift in Sources */,
 				D3333DEB2675968D00447A3B /* AccountChoiceView.swift in Sources */,
+				D3E4514326C0439200624C3A /* EmailHelper.swift in Sources */,
+				D3455C6F269E260700E19233 /* CustomCalendar.swift in Sources */,
+				D331319326D555BA00CC5A63 /* WebView.swift in Sources */,
 				D3D46606267C2BAD0006F9A3 /* HomeView.swift in Sources */,
-				D30086BB26811CE40054514E /* UserInfo.swift in Sources */,
-				D30086C126812C900054514E /* UserViewModel.swift in Sources */,
+				26E5486D26CA23A000AFE242 /* BigButtonHomeScreenView.swift in Sources */,
 				D3C4BDCB2679803F00731539 /* ForgotPasswordView.swift in Sources */,
-				D3A5621D268E6DC2007674DF /* CalendarView.swift in Sources */,
+				D313BAD026A502C600903F6E /* CustomCalendarDay.swift in Sources */,
+				D371759826D1819500826D60 /* SurveyCreateView.swift in Sources */,
+				D3E79D0E2691379E00A389E6 /* FoodBankListChoiceView.swift in Sources */,
+				D398667C269A4E9400AD313A /* DaySelectView.swift in Sources */,
+				268A585E26A6A2F00069A74A /* CalendarIcon.swift in Sources */,
+				D35E184326BF418B00274EF9 /* Location.swift in Sources */,
 				D3333DD92675964D00447A3B /* SceneDelegate.swift in Sources */,
+				D3E4514026C041E500624C3A /* FeedbackView.swift in Sources */,
+				D3F5A05A26D0851C004BA872 /* Survey.swift in Sources */,
+				26F73E7F26BEE6D800223EF5 /* InfoView.swift in Sources */,
+				26F73E8E26C0F78400223EF5 /* MainView.swift in Sources */,
+				26F73E8326C035D600223EF5 /* NewsUIView.swift in Sources */,
+				D3CFAF9A26C9E048003BB421 /* CustomCalendarViewModel.swift in Sources */,
+				D37756B726D706B50045DA3C /* SurveyCheckView.swift in Sources */,
 				D3C4BDCF267980D200731539 /* AccountSettingsView.swift in Sources */,
+				D34C4C3226C86DCB005519FD /* Question.swift in Sources */,
 				D3333DED267596AB00447A3B /* LoginView.swift in Sources */,
-				D30086B72680F5220054514E /* FBAuth.swift in Sources */,
+				D3E79D162691382200A389E6 /* FoodBankMapView.swift in Sources */,
 				D3333DEF267596BD00447A3B /* SignUpView.swift in Sources */,
 				D3333DDB2675964D00447A3B /* ContentView.swift in Sources */,
 			);
@@ -487,45 +751,53 @@
 		};
 		D3333DE82675964E00447A3B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3625E3D1B890F58F54CB597B /* Pods-FoodBankBase.debug.xcconfig */;
+			baseConfigurationReference = BE3C65D22A815C9E6E2BA559 /* Pods-FoodBankBase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FoodBankBase/FoodBankBase.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodBankBase/Preview Content\"";
-				DEVELOPMENT_TEAM = FNVA75PS53;
+				DEVELOPMENT_TEAM = CLMH99U2FD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FoodBankBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Ian-Holloway.FoodBankBase";
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.foodbankbase.Brian-Holloway.FoodBankBase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		D3333DE92675964E00447A3B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE6584F326D1C3EEAB28DB6A /* Pods-FoodBankBase.release.xcconfig */;
+			baseConfigurationReference = 4B9A5D093AA0F3E757FFE20D /* Pods-FoodBankBase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FoodBankBase/FoodBankBase.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodBankBase/Preview Content\"";
-				DEVELOPMENT_TEAM = FNVA75PS53;
+				DEVELOPMENT_TEAM = CLMH99U2FD;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FoodBankBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Ian-Holloway.FoodBankBase";
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.foodbankbase.Brian-Holloway.FoodBankBase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -551,25 +823,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		D3A163A0268BF539003CEA31 /* XCRemoteSwiftPackageReference "ElegantCalendar" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ThasianX/ElegantCalendar.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		D3A163A1268BF539003CEA31 /* ElegantCalendar */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D3A163A0268BF539003CEA31 /* XCRemoteSwiftPackageReference "ElegantCalendar" */;
-			productName = ElegantCalendar;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D3333DCB2675964D00447A3B /* Project object */;
 }

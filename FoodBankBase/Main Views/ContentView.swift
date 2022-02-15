@@ -8,18 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
-     @EnvironmentObject var userInfo: UserInfo
+
+    @EnvironmentObject var user: FirebaseUserViewModel
 
     var body: some View {
-        LoadingScreen()
-        /*Group {
-            if userInfo.signedIn {
+        Group {
+            if self.user.isUserAuthenticated == .undefined {
+                ZStack {
+                    Color("LoadingBackground")
+                        .ignoresSafeArea()
+                    VStack {
+                        Image("ballardFoodBankLogoSmall")
+                            .resizable()
+                            .frame(width: 200, height: 200, alignment: .center)
+                    }
+                }
+            } else if self.user.isUserAuthenticated == .signedOut {
+                AccountChoiceView()
+            } else {
                 HomeView()
-            } else { AccountChoiceView() }
+            }
         }
         .onAppear {
-            self.userInfo.checkUserState()
-        }*/
+            self.user.checkUserState()
+        }
     }
 }
 
@@ -33,5 +45,6 @@ struct LoadingScreen: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(FirebaseUserViewModel())
     }
 }
