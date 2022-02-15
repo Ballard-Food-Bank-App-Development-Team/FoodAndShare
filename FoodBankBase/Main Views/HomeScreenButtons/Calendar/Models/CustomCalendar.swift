@@ -51,6 +51,7 @@ struct CustomCalendarMonth {
 
             if dateDay == curDay && dateMonth == curMonth {
                 self.arrayOfMonthDays[dayOn].choosen = true
+                self.arrayOfMonthDays[dayOn].isToday = true
             }
         }
     }

@@ -160,7 +160,7 @@ struct DaySelectView: View {
                                         CalendarIcon(
                                             dayNum: String(gridIndex - invalidDays + 1),
                                             textColor: Color.white,
-                                            circleColor: Color("customOrange"),
+                                            circleColor: self.calendar.activeMonth.arrayOfMonthDays[gridIndex - invalidDays].isToday ? Color.blue : Color("customOrange"),
                                             outlineColor: self.calendar.activeMonth.arrayOfMonthDays[gridIndex - invalidDays].choosen ? Color("darkInvert") : Color.clear
                                         )
                                     })
