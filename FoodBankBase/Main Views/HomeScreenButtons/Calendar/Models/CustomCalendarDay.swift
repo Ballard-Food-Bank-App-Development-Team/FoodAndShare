@@ -11,12 +11,14 @@ struct CustomCalendarDay: Hashable {
     var date: Date
     var dayNum: String
     var dayOfWeek: Int
+    var isToday: Bool
 
     var choosen: Bool
 
     init(dateOfDay: Date) {
         self.date = dateOfDay
         self.choosen = false
+        self.isToday = false
 
         let myCalendar = Calendar(identifier: .gregorian)
         self.dayNum = String(myCalendar.component(.day, from: dateOfDay.addingTimeInterval(60 * 60 * 24)))
