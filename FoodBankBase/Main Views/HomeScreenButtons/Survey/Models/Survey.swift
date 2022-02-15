@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Survey: Codable {
+struct Survey: Hashable, Codable {
     enum CodingKeys: String, CodingKey {
         case questions
     }

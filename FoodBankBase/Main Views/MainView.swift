@@ -54,7 +54,8 @@ struct MainView: View {
                         )
                     })
 
-                // MARK: - Survey Button
+                /*
+                 // MARK: - Survey Button
                 NavigationLink(
                     destination: SurveyCheckView(),
                     label: {
@@ -65,6 +66,7 @@ struct MainView: View {
                             frame: 50
                         )
                     })
+                 */
 
                 Spacer()
             }

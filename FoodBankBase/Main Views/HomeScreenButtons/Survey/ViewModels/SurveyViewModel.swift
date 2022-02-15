@@ -111,6 +111,9 @@ class SurveyViewModel: ObservableObject {
                 if survey != nil {
                     for question in 0...(survey!.questions.count - 1) {
                         survey!.questions[question].index = question
+                        for response in 0...(survey!.questions[question].responses.count - 1) {
+                            survey!.questions[question].responses[response].index = response
+                        }
                     }
                     surveyRetrived = survey!
                     self.questions = surveyRetrived.questions

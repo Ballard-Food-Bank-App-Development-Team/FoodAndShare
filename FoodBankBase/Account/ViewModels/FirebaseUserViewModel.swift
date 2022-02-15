@@ -82,8 +82,9 @@ class FirebaseUserViewModel: ObservableObject {
                 completionHandler(.failure(error!))
                 return
             }
-            // TODO: Must set pull user fields down from database then use that to overight an empty account
-            // This will fix error when adding new fields to to the user but the user doesn't have them because they are an old account
+            
+            self.userInfo = FirebaseUser()
+
             self.checkUserState()
             completionHandler(.success(true))
         }

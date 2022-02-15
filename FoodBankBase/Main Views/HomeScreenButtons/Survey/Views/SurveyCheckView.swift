@@ -8,25 +8,21 @@
 import SwiftUI
 
 struct SurveyCheckView: View {
-    @EnvironmentObject var user: FirebaseUserViewModel
+    @EnvironmentObject var surveyList: SurveyListViewModel
 
     var body: some View {
         Group {
-            if self.user.showSurveys == false {
-                Spacer()
-                Text("Survey Already Completed")
-                Spacer()
-            } else {
-                SurveyView()
-            }
-        }
-        .onAppear {
-            self.user.checkSurveyStatus { (result) in
-                switch result {
-                case .failure(_):
-                    self.user.showSurveys = false
-                case .success(_): break
+            switch surveyList.isSurveyReady {
+            case .loading:
+                VStack {
+                    Text("Loading...")
                 }
+            case .error:
+                VStack {
+                    Text("Error Loading Survey")
+                }
+            case .ready:
+                SurveyListView()
             }
         }
     }
