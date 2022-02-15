@@ -8,10 +8,12 @@ target 'FoodBankBase' do
   # Pods for FoodBankBase
 
     # Firebase Pods
-    
     pod 'Firebase/Analytics'
     pod 'Firebase/Auth'
     pod 'Firebase/Firestore'
     pod 'FirebaseFirestoreSwift'
+
+    # Date
+    pod 'SwiftDate'
     
 end
