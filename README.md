@@ -25,8 +25,7 @@ Created By
 
 # Awards
 
-<h3><a href="https://www.congressionalappchallenge.us/21-WA07/">Congressional App Challenge WA07 Winner 2021</a><h3>
-<p>Food&Share was awarded as the best app by Congresswoman Pramila Jayapal</p>
+<h3><a href="https://www.congressionalappchallenge.us/21-WA07/">Congressional App Challenge WA07 Winner 2021</a> - Food&Share was awarded as the best app by Congresswoman Pramila Jayapal <h3>
 
 # Backend
 
