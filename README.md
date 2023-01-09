@@ -1,9 +1,73 @@
-<p align="center">
-  <img width="200" height="200" src="https://is3-ssl.mzstatic.com/image/thumb/Purple116/v4/bb/9e/17/bb9e17d5-c4dd-1043-1fe6-f3b75306ef5e/AppIcon-0-1x_U007emarketing-0-7-sRGB-85-220.jpeg/460x0w.webp">
-</p>
+<h1 align="center">Food&Share</h1>
+<div align="center">
+  <img 
+    src="images/BFBLogo.webp"
+    width=150
+    style="border-radius: 30%"
+  >
+</div>
+<div align="center" style="font-size: 20px">
+Created By
+<div>
 
-# Food&Share
-Created By Ian Holloway and Ben Roberts
+<div>
+  <strong style="font-size: 20px">Ian Holloway</strong>
+    <a href="https://www.linkedin.com/in/ianmholloway/">
+      <img src="images/linkedin.png" width=20>
+    </a>
+  <strong style="font-size: 20px">& Ben Roberts<strong>
+    <a href="https://www.linkedin.com/in/benjaminradclyfferoberts/">
+      <img src="images/linkedin.png" width=20>
+    </a>
+</div>
 
-The app is now available on the Apple Appstore [(Click Here)](https://apps.apple.com/us/app/food-share/id1582582491)
+<div align="left" style="font-size: 14px">
 
+# Awards
+
+<h2><a href="https://www.congressionalappchallenge.us/21-WA07/">Congressional App Challenge WA07 Winner 2021</a><h3>
+<p>Food&Share was awarded as the best app by Congresswoman Pramila Jayapal</p>
+
+# Backend
+
+<p>This app uses Firebase to store data from surveys and the user account data. This allows staff at the food bank to sign in to the app to make changes to information like survey questions.</p>
+
+# Frontend
+
+<div align="center">
+<h2>Homepage</h2>
+<img
+  src="images/homepage.png"
+  height=500
+  style="border-radius: 3%"
+>
+</div>
+
+<div align="center">
+<h2>Calender</h2>
+<img
+  src="images/calendar.png"
+  height=500
+  style="border-radius: 3%"
+>
+</div>
+
+<div align="center">
+<h2>Map</h2>
+<img
+  src="images/map.png"
+  height=500
+  style="border-radius: 3%"
+>
+</div>
+
+<div align="center">
+<h2>Surveys</h2>
+<img
+  src="images/survey.png"
+  height=500
+  style="border-radius: 3%"
+>
+</div>
+
+</div>
